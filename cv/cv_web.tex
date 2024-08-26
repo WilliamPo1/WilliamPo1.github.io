@@ -1,0 +1,231 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.3 (29/10/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{black} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.75,ansiapaper,
+  margin=0.8in,
+  headsep=3pt,]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+\def\Vhrulefill{\leavevmode\leaders\hrule height 0.7ex depth \dimexpr0.4pt-0.7ex\hfill\kern0pt}
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{William} % Your first name
+\familyname{Poirier} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Curriculum Vitae}
+%\address{71 King Street, app. 2101}{London, ON}
+%\mobile{(819) 734-8079}
+%\phone{(000) 111 1112}
+%\fax{(000) 111 1113}
+\email{wpoirier@uwo.ca}
+%\homepage{clessn.com}{clessn.com} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+%\extrainfo{additional information}
+%\photo[70pt][0.4pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+%\quote{"A witty and playful quotation" - John Smith}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	COVER LETTER
+%----------------------------------------------------------------------------------------
+
+% To remove the cover letter, comment out this entire block
+
+%\clearpage
+%
+%\recipient{HR Department}{Corporation\\123 Pleasant Lane\\12345 City, State} % Letter recipient
+%\date{\today} % Letter date
+%\opening{Dear Sir or Madam,} % Opening greeting
+%\closing{Sincerely yours,} % Closing phrase
+%\enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
+%
+%\makelettertitle % Print letter title
+%
+%\lipsum[1-2] % Dummy text
+%\lipsum[4] % Dummy text
+%
+%\makeletterclosing % Print letter signature
+%
+%\newpage
+%
+%----------------------------------------------------------------------------------------
+%	CURRICULUM VITAE
+%----------------------------------------------------------------------------------------
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+\subsection{\Vhrulefill~University~\Vhrulefill}
+\cventry{2023--}{Ph.D. in Political Science}{University of Western Ontario (UWO)}{}{}{} 
+\cventry{2022--2023}{Pre-Ph.D. track in Political Science}{New York University (NYU)}{}{\textit{GPA -- 3.815/4.00}}{} 
+\cventry{2020--2023}{MA in Political Science}{Université Laval}{}{\textit{GPA -- 4.26/4.33}}{}  % Arguments not required can be left empty
+\cventry{2017--2019}{BA in Political Science -- Honours}{Université Laval}{}{\textit{GPA -- 4.01/4.33}}{}
+
+\subsection{\Vhrulefill~Specialised workshops~\Vhrulefill}
+\cventry{2022}{Interdisciplinary school of tools \& methods (EIOM)}{Université Laval}{Causality and experimentation track}{}{}
+\cventry{2020}{ICPSR Summer Program in Quantitative Methods of Social Research}{University of Michigan}{}{}{Mathematics for Scocial Scientists, II; \\ Measurement, Scaling, and Dimentional Analysis; \\ Regression Analysis II: Linear Models.}
+%\section{Mémoire}
+%
+%\cvitem{Title}{\emph{Money Is The Root Of All Evil -- Or Is It?}}
+%\cvitem{Supervisors}{Professor James Smith \& Associate Professor Jane Smith}
+%\cvitem{Description}{This thesis explored the idea that money has been the cause of untold anguish and suffering in the world. I found that it has, in fact, not.}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\subsection{\Vhrulefill~Teaching~\Vhrulefill}
+\cventry{2022-2023}{Consultant}{NYU IT -- Data Services}{Responsible for R and Quantitative Analysis}{}{New York University}
+\cventry{2022}{Lecturer}{Special subject -- Advanced Data Visualization}{POL-6003/POL-2601}{}{Université Laval}
+\cventry{2021,2022}{Teaching assistant}{Quantitative Analysis}{POL-7004}{}{Université Laval}
+\cventry{2020,2021}{Teaching assistant}{Persuasion and Public Opinion}{POL-2425}{}{Université Laval}
+
+\subsection{\Vhrulefill~Research~\Vhrulefill}
+\cventry{2023-Present}{Research assistant}{}{Canada Research Chair in Political Methodology}{David Armstrong}{University of Western Ontario}
+\cventry{2023}{Research assistant}{}{Patrick Egan}{}{New York University}
+\cventry{2021}{Research assistant}{}{Anja Kilibarda}{}{Columbia University}
+\cventry{2019--Present}{Research assistant}{}{CLESSN}{Yannick Dufresne}{Université Laval}
+\cventry{2019}{Research assistant}{Canada Research Chair in Immigration and Security}{}{CRCIS}{Université Laval}
+
+%------------------------------------------------
+
+\subsection{\Vhrulefill~Projects~\Vhrulefill}
+\cventry{2021}{Development of Datagotchi}{}{CLESSN}{\href{https://datagotchi.com}{\color{gray}{(https://datagotchi.com)}}}{An educational and playful web application generating predictions based on your lifestyle.}
+\cventry{2021}{Development of the Japanese Barometer on attitudes towards artificial intelligence}{}{OBVIA,CLESSN}{}{}
+\cventry{2020}{Development of the Canadian Barometer on attitudes towards artificial intelligence}{}{OBVIA,CLESSN}{}{}
+\cventry{2020}{Development of ProjetQuorum}{}{CLESSN}{\href{https://projetquorum.com}{\color{gray}{(https://projetquorum.com)}}}{The platform allows Quebecers to take the pulse of their society in real time, to understand the mood and perceptions of both public decision-makers, the media and general public opinion in relation to Covid-19.}
+\cventry{2019}{Development of Radar+'s analyses during the 2019 federal elections}{}{CLESSN}{}{\href{https://www.clessn.com/radar/index.html}{\color{gray}{(https://www.clessn.com/radar/index.html)}}}
+\cventry{2019}{Workshop on methodology for the CRCIS}{}{CLESSN}{}{}
+\cventry{2019}{WordPress Website Development}{}{CRCIS}{}{
+  \begin{itemize}
+    \item For Professor Philippe Bourbeau \href{http://www.philippebourbeau.net/}{\color{gray}{(http://www.philippebourbeau.net/)}}
+    \item For the CRCIS \href{https://immigration-securite.chaire.ulaval.ca/en/}{\color{gray}{(https://immigration-securite.chaire.ulaval.ca/en/)}}
+  \end{itemize}}
+  
+
+%----------------------------------------------------------------------------------------
+%	Articles
+%----------------------------------------------------------------------------------------
+
+\section{Publications}
+
+\renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
+
+\subsection{\Vhrulefill~Peer-reviewed article~\Vhrulefill}
+
+\cvitem{2023}{Dumouchel, D., Dufresne, Y., Nadeau, R., \& \textbf{Poirier, W.} A Missed Opportunity? Making Sense of the Low Adoption Rate of COVID Alert, Canada’s Contact-Tracing Application. \emph{Canadian Journal of Communication}, 43 (3). \href{https://doi.org/10.3138/cjc-2022-0055}{\color{gray}{DOI: 10.3138/cjc-2022-0055}}}
+
+\cvitem{2023}{Rancourt, M.-A., Déry, A., \textbf{Poirier, W.}, \& Dufresne, Y. Down with the Senate? Understanding Public Support for the Abolition of the Senate in Canada. \emph{American Review of Canadian Studies}, 53 (2). \href{https://doi.org/10.1080/02722011.2023.2204796}{\color{gray}{DOI: 10.1080/02722011.2023.2204796}}}
+
+\cvitem{2020}{\textbf{Poirier, W.}, Ouellet, C., Rancourt, M.-A., Béchard, J., \& Dufresne, Y. (Un)covering the COVID-19 pandemic: Framing analysis of the crisis in Canada. \emph{Canadian Journal of Political Science}. \href{https://doi.org/10.1017/S0008423920000372}{\color{gray}{DOI: 10.1017/S0008423920000372}}}{}
+
+
+%\subsection{\Vhrulefill~Review and resubmit article~\Vhrulefill}
+%
+%\subsection{\Vhrulefill~Submitted to peer-reviewed journals~\Vhrulefill}
+
+\subsection{\Vhrulefill~Master thesis~\Vhrulefill}
+
+\cvitem{2023}{\textbf{Poirier, W.}, Dufresne, Y., Charest, A.-S. Données probantes ou feuilles de thé ? De l’importance du principe d’ignorabilité dans la correction du biais de sélection. \emph{Université Laval}}{}
+
+\cvitem{2023}{\textbf{Poirier, W.}, Egan, P. Inattentives and How to Find Them. \emph{New York University}}{}
+
+\subsection{\Vhrulefill~Book chapter~\Vhrulefill}
+
+\cvitem{2022}{Dufresne, Y., Rancourt, M.-A, \& \textbf{Poirier, W.} L'opinion publique. In Alloing, C. (Eds.), \emph{Évaluer la communication des organisations : 7 concepts et leurs mesures}. Presses de l'Université du Québec.}{}
+
+\subsection{\Vhrulefill~Other publications~\Vhrulefill}
+
+\cvitem{2021}{Dufresne, Y., Dumouchel, D. \& \textbf{Poirier, W.} \emph{Fondements de l’acceptabilité sociale des applications de traçage en temps de pandémie: Technophobie? Crainte sanitaire? ou Idéologie démocratique?} OBVIA. \href{https://www.docdroid.com/8B7QzzK/fondements-de-lacceptabilite-sociale-des-applications-de-tracage-en-temps-de-pandemie-technophobie-crainte-sanitaire-ou-ideologie-democratique-pdf\#page=1}{\color{gray}{https://www.docdroid.com/8B7QzzK/fondements-de-lacceptabilite-sociale-des-applications-de-tracage-en-temps-de-pandemie-technophobie-crainte-sanitaire-ou-ideologie-democratique-pdf\#page=1}}}{}
+\cvitem{2020}{CLESSN (Yannick Dufresne et al.) et Vox Pop Labs (Clifton van der Linden et al.). Enjeux prioritaires des électeurs et reflet médiatique. Policy Options/Options politiques. 15 janvier 2020}{}
+
+%----------------------------------------------------------------------------------------
+%	COMMUNICATION SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Academic conferences}
+\cventry{2024}{Canadian Political Science Association (CPSA) annual conference}{Inattentives and How to Find Them}{William Poirier}{}{}
+\cventry{2024}{Maple Meth}{Optimal Confidence Intervals for Visual Testing}{William Poirier and Dave Armstrong}{}{}
+\cventry{2022}{Canadian Political Science Association (CPSA) annual conference}{Down with the Senate?! Understanding Public Support for the Abolition of the Canadian Senate}{William Poirier and Marc-Antoine Rancourt}{}{}
+\cventry{2021}{Canadian Political Science Association (CPSA) annual conference}{Our Lives or Your Liberties: The Social Acceptability of Technological Solutions to the COVID-19 Pandemic}{William Poirier and David Dumouchel}{}{}
+\cventry{2021}{Western Political Science Association (WPSA) annual conference}{Down with the Senate?! Understanding Public Support for the Abolition of the Canadian Senate}{William Poirier and Marc-Antoine Rancourt}{}{}
+\cventry{2019}{GRCP's research seminar}{RADAR+ : Méthodes et Visualisations}{William Poirier et Marc-Antoine Rancourt}{}{}
+
+%----------------------------------------------------------------------------------------
+%	R GROUPS
+%----------------------------------------------------------------------------------------
+
+\section{Research group membership}
+
+\cventry{2023--Present}{CRCPM}{Canada Research Chair in Political Methodology}{}{}{\href{https://www.ssc.uwo.ca/research/canada\_research\_chairs/david\_armstrong.html}{\color{gray}{(https://www.ssc.uwo.ca/research/canada\_research\_chairs/david\_armstrong.html)}}}
+\cventry{2019--Present}{CLESSN}{Leardership Chair in the Teaching of Digital Social Science}{}{}{\href{https://www.clessn.com}{\color{gray}{(https://www.clessn.com)}}}
+\cventry{2020--2023}{BDRC}{Big Data Research Center}{}{}{\href{https://crdm.ulaval.ca}{\color{gray}{(https://crdm.ulaval.ca)}}}
+\cventry{2020--2023}{GRCP}{Political Communication Research Group}{}{}{\href{https://www.grcp.ulaval.ca}{\color{gray}{(https://www.grcp.ulaval.ca)}}}
+\cventry{2020--2023}{CSDC}{Centre for the Study of Democratic Citizenship}{}{}{\href{https://csdc-cecd.ca}{\color{gray}{(https://csdc-cecd.ca)}}}
+
+
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Awards}
+\cvitem{2023-2024}{Honor List of the Faculty of Graduate and Postdoctoral Studies -- Université Laval}
+\cvitem{2022 \\ \textbf{15 542 USD}}{GSAS Tuition Incentive Program -- NYU}
+\cvitem{2022 \\ \textbf{80 000 CAD}}{Canada Doctoral Fellowship -- SSHRC}
+\cvitem{2021 \\ \textbf{500 CAD}}{Methods Training Grant for EIOM -- CSDC}
+\cvitem{2021 \\ \textbf{1 500 CAD}}{2021 Excellence Scholarship -- Political Science Department\newline Université Laval}
+\cvitem{2021 \\ \textbf{1 000 CAD}}{Master Program Research Grant -- Research Chair in Public Administration in the Digital Age (RCPADA)}
+\cvitem{2021 \\ \textbf{3 500 CAD}}{Research Grant -- BDRC}
+\cvitem{2020 \\ \textbf{3 500 CAD}}{Research Grant -- BDRC}
+\cvitem{2020 \\ \textbf{17 500 CAD}}{Joseph-Armand Bombardier Canada Graduate Scholarships -- SSHRC}
+\cvitem{2020 \\ \textbf{1 200 CAD}}{Methods Summer School Grant -- CSDC}
+\cvitem{2020 \\ \textbf{2 000 CAD}}{Methodological Training Grant -- Vincent-Lemieux's Fund -- Political Science Department\newline Université Laval}
+\cvitem{2019-2020}{Honor Roll of the Faculty of Social Sciences -- Université Laval}
+\cvitem{2019 \\ \textbf{500 CAD}}{CLESSN's Excellence Scholarship}
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

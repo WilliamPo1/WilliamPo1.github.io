@@ -6,6 +6,7 @@
    Default button
    ========================================================================== */
 
+
 .btn {
   /* default button */
   display: inline-block;
@@ -150,4 +151,27 @@
   &--small {
     font-size: $type-size-7;
   }
+
+  &--faicon {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    height: 27px; 
+    width: 27px;
+    overflow: hidden; /* Ensures text doesn't overflow the container */
+    color: $link-color;
+    text-decoration: none !important;
+    border: none;
+    font-size: 18px;
+    transition: font-size 0s ease-in-out;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+  
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
+
