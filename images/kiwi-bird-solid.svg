@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 576 512"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="kiwi-bird-solid.svg"
+   inkscape:version="1.3 (0e150ed, 2023-07-21)"
+   inkscape:export-filename="kiwi-bird-solid.png"
+   inkscape:export-xdpi="1080"
+   inkscape:export-ydpi="1080"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect7"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="0.96730212"
+     inkscape:cx="271.89023"
+     inkscape:cy="301.35363"
+     inkscape:window-width="1312"
+     inkscape:window-height="822"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+  <path
+     style="fill:#56018d;stroke:#ffffff;stroke-width:9.8409;stroke-dasharray:none"
+     d="M 111.38729,469.05626 C 100.63094,463.02572 99.084725,456.6727 99.080537,418.49072 l -0.0038,-34.79937 -9.114395,-5.75775 C 84.94941,374.76684 74.771872,366.67733 67.345577,359.95692 31.076931,327.13569 8.9174248,281.39665 5.8442517,233.01311 0.1109763,142.74938 58.446344,62.488449 147.12129,38.636579 c 13.50239,-3.631886 23.11668,-4.594141 45.90196,-4.594141 43.27027,0 53.40153,3.241973 120.62609,38.59994 39.13267,20.582529 54.34522,23.864179 110.71055,23.882463 43.19266,0.01401 55.80442,2.283496 78.23475,14.078319 37.00898,19.46092 61.42274,55.40683 66.27174,97.57612 1.10828,9.63815 2.02236,69.19448 2.03125,132.3474 0.0134,94.91773 -0.51459,116.09384 -3.04556,122.15135 -3.73033,8.92793 -11.61552,11.68005 -19.2092,6.70449 -2.83802,-1.85955 -24.02221,-30.30725 -47.07593,-63.21712 l -41.91585,-59.83611 h -42.23595 c -51.52503,0 -64.90837,2.78044 -99.49585,20.6706 -12.91659,6.68103 -32.33481,16.53235 -43.15162,21.89181 l -19.66687,9.74448 -0.11311,27.75468 c -0.12766,31.32343 -1.6774,36.37463 -13.03909,42.49902 -9.32957,5.029 -17.1484,3.48371 -25.71417,-5.08207 -6.03736,-6.03734 -6.13138,-6.50596 -6.13138,-30.55957 v -24.42819 l -26.15344,-1.32418 c -14.3844,-0.72827 -29.27584,-1.92777 -33.09212,-2.66551 l -6.93867,-1.34139 v 26.89582 c 0,26.33874 -0.1216,27.03073 -5.87118,33.40858 -7.09378,7.86896 -18.12714,10.047 -26.66035,5.26289 z M 454.34726,243.00852 c 9.77855,-4.08574 14.09704,-11.0321 14.0403,-22.58406 -0.0709,-14.45008 -9.1233,-23.54343 -23.43725,-23.54343 -14.31394,0 -23.36627,9.09335 -23.43725,23.54343 -0.0558,11.35499 4.20486,18.41727 13.57004,22.49321 8.51101,3.70421 10.59269,3.71403 19.26416,0.0908 z"
+     id="path2"
+     inkscape:label="path2" />
+  <circle
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:17.491;stroke-dasharray:none"
+     id="path6"
+     cx="446.23312"
+     cy="218.10309"
+     r="23.94273" />
+</svg>
