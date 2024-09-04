@@ -49,8 +49,8 @@ details {
   <summary>R Tutorials</summary>
   <ul>
     <li>
-      R Data Structures 
-      <a href="/files/uwo/R_Workshop_2024/DataStructures.R" class="btn--faicon">
+      UWO R Workshop 2024 
+      <a href="/files/uwo/R_Workshop_2024.zip" class="btn--faicon">
         <i class="fa fa-cloud-arrow-down"></i>
       </a>
     </li>

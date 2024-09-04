@@ -1,0 +1,46 @@
+---
+title: "Introduction to R --- Working Directories and RStudio Projects"
+author: "William Poirier"
+date: "2024-09-03"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Working Directory
+
+1. What is a directory? 
+  - A pointer, a map, a set of directions, A FILE SYSTEM
+  - How your computer knows where your files are in the hard drive/SSD, in memory.
+  - Also known as a PATH. 
+
+2. What is a working directory?
+  - Where you are working right now.
+  - Points to the sub directory you are using. 
+  - Prevents you from having to specify the whole path each time. 
+  
+3. How do you set your working directory?
+  - Use `setwd()` in console or at the begining of your R file. 
+  - Has this structure on MAC: /Users/williampoirier/Dropbox/etc
+    - `option + command + c`
+  - Has this structure on PC: C:\\Users\\williampoirier\\Dropbox\\etc
+    - This sucks because the `setwd()` function expects this format: C:/Users/williampoirier/Dropbox/etc.
+    - `shift + right click > Copy as Path`  
+
+3. A note on organisation
+  - REALLY IMPORTANT TO CREATE A STRUCTURE! 
+  - t+10 years you is gonna be thankfull. 
+  
+## RStudio Projects
+
+1. Not necessary, but very helpfull when working on multiple things.
+2. That's because it:
+  - Sets a working directory.
+  - Remembers which files were openned when last closed. 
+  - Saves your last environement (if you want it to).
+3. Let's create a project!
+  - File > New Project > Existing Directory > where the workshop folder is
