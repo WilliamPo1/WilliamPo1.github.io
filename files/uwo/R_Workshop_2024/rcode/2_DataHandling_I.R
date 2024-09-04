@@ -37,15 +37,15 @@ setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 ### Importing data into R Studio -----------------------------------------------
 # R data files can be imported using load()
 # Objects will automatically be named whatever they were named when last saved
-load("cora-cdem-2022_F1.RData")
+load("../data/cora-cdem-2022_F1.RData")
 rm(data) # removes dataframe "data" from our local environment
 
 # Other types of data files must be imported using special functions and named
 # read_csv() and read_tsv() can be used after loading the "tidyverse" library
-data <- read_csv("cora-cdem-2022_F1.csv")
+data <- read_csv("../data/cora-cdem-2022_F1.csv")
 rm(data)
 
-data <- read_tsv("cora-cdem-2022_F1.tab")
+data <- read_tsv("../data/cora-cdem-2022_F1.tab")
 rm(data)
 
 # Some data types require may require special packages to be installed
@@ -53,16 +53,16 @@ rm(data)
 install.packages("haven")
 library(haven)
 
-data <- read_sav("cora-cdem-2022_F1.sav")
+data <- read_sav("../data/cora-cdem-2022_F1.sav")
 rm(data)
 
-data <- read_dta("cora-cdem-2022_F1.dta")
+data <- read_dta("../data/cora-cdem-2022_F1.dta")
 rm(data)
 
 install.packages("readxl")
 library(readxl)
 
-data <- read_excel("cora-cdem-2022_F1.xlsx")
+data <- read_excel("../data/cora-cdem-2022_F1.xlsx")
 
 
 ### Understanding the dimensions of our data -----------------------------------

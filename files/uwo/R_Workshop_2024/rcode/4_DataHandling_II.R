@@ -9,7 +9,7 @@
 
 # Installing the Dataset ####
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
-DC22 <- read.csv("DC22_rworkshop_data.csv")
+DC22 <- read.csv("../data/DC22_rworkshop_data.csv")
 
 # Handling Missing Data ####
 # NULL ####

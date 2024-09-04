@@ -150,5 +150,5 @@ myFunction <- function(stuff_in){
 
 #### 5. Loading a dataset ######################################################
 
-Data <- read.csv("data/Democracy Checkup 2022/cora-cdem-2022_F1.csv")
+Data <- read.csv("data/cora-cdem-2022_F1.csv")
 

@@ -202,7 +202,7 @@ mean(iris$Sepal.Length) > mean(iris$Sepal.Width)
 # To load in data, we are using the assignment operator to assign our dataset 
 # to an object in R, just like we did for the previous objects. 
 
-DC22 <- read.csv("~/Desktop/R GAPS Workshop/DC22_rworkshop_data.csv")
+DC22 <- read.csv("../data/DC22_rworkshop_data.csv")
 
 # Now, try to subset this dataset again to only contain respondents whose interest
 # in politics (interest_pol) is greater than 5 and assign it to an object called 
