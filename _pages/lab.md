@@ -46,6 +46,18 @@ details {
 <p> <font color="#56018D"> <i class="fa fa-frog"></i></font> A collection of things I've been working on to help the understanding of statistics. </p>
 
 <details>
+  <summary>Presentations </summary>
+  <ul>
+    <li>
+      Publication Workshop 2024 
+      <a href="/_pages/missTimePubWork.html">
+        <i class="fa fa-cloud-arrow-down"></i>
+      </a>
+    </li>
+  </ul>
+</details>
+
+<details>
   <summary>R Tutorials</summary>
   <ul>
     <li>
