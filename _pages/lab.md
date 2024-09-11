@@ -58,6 +58,18 @@ details {
 </details>
 
 <details>
+  <summary>UWO Quant 1 — Labs</summary>
+  <ul>
+    <li>
+      Lab 0
+      <a href="/files/uwo/Quant1/quant1_Lab0.Rmd" class="btn--faicon">
+        <i class="fa fa-cloud-arrow-down"></i>
+      </a>
+    </li>
+  </ul>
+</details>
+
+<details>
   <summary>Shiny Apps</summary>
   <ul>
     <li>

@@ -1,0 +1,316 @@
+---
+title: "POLISCI 9590 - Lab0: Introduction to R and RMD"
+author: "William Poirier"
+date: "2024-09-10"
+output: 
+  html_document:
+      toc: true
+      toc_float:
+        collapsed: true
+      theme: journal
+---
+<style>
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #4F2683;
+    border-color: #4F2683;
+}
+
+a {
+    color: #4F2683;
+    text-decoration: none;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 0. Bonjour/Hi!
+
+- Office: SSC 7323 
+- Email: wpoirier@uwo.ca
+- Contact policy:
+  - Open door = please come in, I would be happy to help!
+  - Closed door = I'm working or in a meeting! Knock if important and urgent!
+
+## 1. R and RStudio
+
+#### 1.1 Installation
+
+|Software  | PC | MAC |
+|:---------|:---|:----|
+| R        |[Here](https://cran.r-project.org/bin/windows/base/)|[There](https://cran.r-project.org/bin/macosx/)     |
+| RStudio  |[Here](https://posit.co/download/rstudio-desktop/)|[There](https://posit.co/download/rstudio-desktop/)|
+
+#### 1.2 Coding languages and integrated development environments (IDE)
+
+- R is a **language**, like Spanish, Japanese, or French.
+- RStudio is an **IDE**, like paper or a word document. 
+- Hence, you write a language (R) on paper (RStudio).
+
+#### 1.3 Managing your directories
+
+- **Directory**: a file system.
+- **Working directory**: the folder your computer is currently pointing to.
+
+You need to tell your computer where to look at in order for it to find the documents, datasets, or files you want to use. 
+
+So **PLEASE**, make sure to organize your files in some way. Otherwise you are going to get lost.
+
+## 2. RMarkdown
+
+```{r, echo=T}
+# install.packages("rmarkdown")
+```
+
+
+#### 2.1 What? 
+
+- **Markup language**: a text-encoding system tailored towards the formatting and structure of a document. Some popular ones:
+  - HTML for websites,
+  - LaTeX for pdf,
+  - Markdown for websites, pdf, and Word.
+
+#### 2.3 Why **R**-Markdown?
+
+- RMarkdown is an extension of Markdown.
+- Allow the integration of `code chunks`.
+- Very useful for short technical reports, as the homework you'll be asked to produce.
+
+#### 2.4 How?
+
+- As with R files, *Files > New File > R Markdown...*
+- Basic formatting:
+  - Headers from largest to smallest: \#, \#\#, \#\#\#, etc.
+  - Bullet points and numbered list: indentation and either \- or a number.
+  - Italic: \*italic stuff\*.
+  - Bold: \*\*bold stuff\*\*.
+  - Comments: \<\!\-\- a comment \-\-\>
+  - Write math: \$\\frac{\\sum_{i=1}^{n}x_i}{n}\$ -> $\frac{\sum_{i=1}^{n}x_i}{n}$
+- Code Chuncks:
+  - PC: `Ctrl + Alt + i`
+  - MAC: `Cmd + Option + i`
+
+## 3. Writing code in RMD files
+
+#### 3.1 Making sure you have the basic tools
+```{r}
+# Installing packages
+#install.packages("tidyverse")
+#install.packages("haven")
+#install.packages("devtools")
+#devtools::install_github("https://github.com/davidaarmstrong/damisc.git")
+#install.packages("knitr")
+
+# Loading packages
+library(tidyverse)
+library(haven)
+library(devtools)
+library(DAMisc)
+library(knitr)
+```
+
+#### 3.2 Basic Operations
+
+```{r,eval=F}
+# Assignment
+A <- 1
+B <- "1"
+C <- TRUE
+D <- 3
+
+# Add
+A+A
+
+# Substract
+A-B
+
+# Multiply
+A*C
+
+# Divide
+A/A
+
+# Power
+D^D
+
+# Square root
+sqrt(D^D)
+
+# Modulo
+12%%5
+
+```
+#### 3.3 Comparison and Logic
+
+```{r,eval=F}
+# New objects
+A <- 3
+B <- 8
+C <- 2
+
+# Comparisons
+A == B
+A != B
+A > B
+A < B
+A >= B
+A <= B
+
+# Logic
+A > C & A < B
+A < C | A < B
+A %in% 1:10
+!A > B
+```
+
+#### 3.3 Data structures
+
+```{r}
+# Vector
+myVector <- c(1,2,3)
+
+# Matrix
+myMatrix <- matrix(seq(1:16),nrow=4,ncol=4)
+
+# Dataframe
+## Generating data
+### X from a normal distribution
+X <- rnorm(1000,mean=0,sd=1) 
+
+### W some group
+W <- sample(c("Red","Blue","Orange"),size=1000,replace = T,prob=c(0.4,0.4,0.1))
+
+### W_num the groups as numbers
+W_num <- ifelse(W %in% c("Red","Blue"),0.3,-0.5)
+
+### Y depends on X, W and some normally distributed error.
+Y <- 0.6*X+W_num+X*W_num+rnorm(1000,mean=0,sd=1)
+
+myDataFrame <- data.frame(id=1:100,X,Y,W)
+```
+
+#### 3.4 Showing off
+
+```{r}
+ggplot(myDataFrame, aes(x=X,y=Y,color=W,fill=W))+
+  geom_point(alpha=0.3)+
+  geom_smooth(method="lm")+
+  scale_color_manual(values=c("blue","orange","red"))+
+  scale_fill_manual(values=c("blue","orange","red"))+
+  scale_x_continuous("X title",breaks = seq(-5,5,1))+
+  scale_y_continuous("Y title",breaks = seq(-5,5,1))+
+  theme_minimal()+
+  theme(legend.position = "top")
+```
+
+#### 3.5 Indexing
+
+```{r, eval=F}
+# Use Square Brakets []
+myVector[1]
+myVector[-1]
+myVector[c(1,3)]
+myVector[2:3]
+
+# for matrices and dataframes [row,column]
+myDataFrame[1,4]
+myDataFrame[1,2:ncol(myDataFrame)]
+myDataFrame[1:6,2:ncol(myDataFrame)]
+head(myDataFrame)
+
+# $ used to extract a column
+myDataFrame$W
+
+# Indexing can be used to create subsets
+myDataFrame[myDataFrame$W=="Orange",]
+```
+
+#### 3.6 Usefull functions
+
+```{r, eval=F}
+# Dimensions of objects
+length(myVector)
+length(myDataFrame)
+dim(myDataFrame)
+nrow(myDataFrame)
+ncol(myDataFrame)
+
+# What's going on in the data
+head(myDataFrame)
+tail(myDataFrame)
+summary(myDataFrame)
+table(myDataFrame$W)
+hist(myDataFrame$Y)
+```
+
+## 4. Exercises
+
+1. Install and Load the `carData` package.
+```{r}
+
+```
+
+2. How many columns and rows does the `TitanicSurvival` dataset from `carData` have?
+```{r}
+
+```
+
+3. What is the mean age of known passenger of the titanic? (Hint: use the `mean()` function and one of its arguments.)
+```{r}
+
+```
+
+4. Create a graph of the distribution of age of the titanic passengers. (Hint: use the `hist()` function.)
+```{r}
+
+```
+
+
+## 5. What/Who can help me?
+
+- What:
+  - Check out the W3 school for their R tutorials [here](https://www.w3schools.com/R/).
+  - Check out [this](https://rmarkdown.rstudio.com/authoring_quick_tour.html#Overview) ressource for RMarkdown.
+  - Check out [these](https://guides.nyu.edu/c.php?g=277138&p=1847146) pages for any stats and/or data wrangling problems.
+  - Stackoverflow
+  - GPT-4 -> _would not be my first choice_.
+  - **_Google is your best friend!_**
+
+- Who:
+  - Me
+  - Any upper-year PhD student.
+  - Prof. Armstrong, but please bother me first! 
+  
+#### 5.1 An algorithm on how to solve your problems
+
+0. You've notices that you have been stuck on a problem for a good 10-20 min.
+1. STOP! Get up, take a walk.
+2. Take a piece of **_paper_**.
+3. Write down the **end goal**, what the thing you're looking at should look like.
+  - Draw pictures/write with words/write math/whatever -> you have to know what you want!
+4. Write down the state the data/analysis is in.
+  - Draw pictures/write with words/write math/whatever -> you have to know where you are!
+  - At this point you may notice you are not actually where you are supposed to be.
+    - Go back a step in the code, and start at 3 again. Do this until you are at a point where everything is in order.
+    - This might take you further up the code than you thought, don't give up!
+5. Now you have a point A and a point B. You just need to figure out how to get to B. Easy!
+  - Sometimes doing 3 and 4 will make the solution readily apparent! Lucky you!
+  - If it is not the case, you now have A and B clear enough that searching for a solution on Google or GPT-4 should give good results. 
+6. If after all these steps, you still can't find a solution, come see me!
+
+#### 5.2 An algorithm on how to not have problems in the first place
+
+0. You want to do something in R.
+1. STOP! Take a piece of **_paper_**!!!
+2. Write down the **end goal**, what you are trying to achieve.
+  - Draw pictures/write with words/write math/whatever -> you have to know what you want!
+3. Write down the step you'll have to take to get there.
+  - From opening the data to the end graph.
+  - You now have a guide to what needs doing, you now just have to worry about R syntax.
+4. Write R code for each step, making sure to comment along the way and check that **_every line works_** before moving to the next step.
+  - Future you is gonna be thankful that present you (or future past you) wrote down what was going on in their head at the time. 
+
+
