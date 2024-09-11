@@ -62,7 +62,7 @@ details {
   <ul>
     <li>
       Lab 0
-      <a href="/files/uwo/Quant1/quant1_Lab0.Rmd" class="btn--faicon">
+      <a href="/files/uwo/Quant1/quant1_Lab0.zip" download class="btn--faicon">
         <i class="fa fa-cloud-arrow-down"></i>
       </a>
     </li>
