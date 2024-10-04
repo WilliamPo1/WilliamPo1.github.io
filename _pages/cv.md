@@ -16,7 +16,7 @@ Here's the pdf <a href="/files/pdf/cv_web.pdf" class="btn--faicon"><i class="fa 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
 
 <script>
-    const url = '/cv/cv_web.pdf';
+    const url = '/files/pdf/cv_web.pdf';
 
     const loadingTask = pdfjsLib.getDocument(url);
     loadingTask.promise.then(pdf => {
