@@ -78,6 +78,12 @@ details {
         <i class="fa fa-cloud-arrow-down"></i>
       </a>
     </li>
+    <li>
+      Lab 3
+      <a href="/files/uwo/Quant1/quant1_Lab3.zip" download class="btn--faicon">
+        <i class="fa fa-cloud-arrow-down"></i>
+      </a>
+    </li>
   </ul>
 </details>
 
