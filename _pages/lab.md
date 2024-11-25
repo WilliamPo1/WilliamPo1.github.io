@@ -114,6 +114,12 @@ details {
         <i class="fa fa-cloud-arrow-down"></i>
       </a>
     </li>
+    <li>
+      Lab 9
+      <a href="/files/uwo/Quant1/quant1_Lab9.zip" download class="btn--faicon">
+        <i class="fa fa-cloud-arrow-down"></i>
+      </a>
+    </li>
   </ul>
 </details>
 
