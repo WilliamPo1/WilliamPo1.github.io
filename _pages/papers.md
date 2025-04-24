@@ -3,6 +3,16 @@ title: "Papers"
 permalink: /papers/
 ---
 <p><font color="#56018D"> <i class="fa fa-otter"></i> </font> The research articles that have made it through publishing!</p>
+
+## Decoupling Visualization and Testing when Presenting Confidence Intervals
+Armstrong II , D. A. & Poirier, W. (2025). Decoupling Visualization and Testing when Presenting Confidence Intervals. *Political Analysis*, Published online 2025:1-6. doi:10.1017/pan.2024.24 \
+  <a href="https://www.cambridge.org/core/journals/political-analysis/article/decoupling-visualization-and-testing-when-presenting-confidence-intervals/1926867029A7A42DE520866923C05274#article" class="btn--faicon">
+    <i class="fa fa-rocket"></i>
+  </a>
+  <a href="/files/pdf/armstrong_poirier_2025.pdf" class="btn--faicon">
+    <i class="fa fa-paperclip"></i>
+  </a>
+
 ## A Missed Opportunity? Making Sense of the Low Adoption Rate of COVID Alert, Canada’s Contact-Tracing Application
 Dumouchel, D., Dufresne, Y., Nadeau, R., & Poirier, W. (2023). A Missed Opportunity? Making Sense of the Low Adoption Rate of COVID Alert, Canada’s Contact-Tracing Application. *Canadian Journal of Communication*, 48(3). doi:10.3138/cjc-2022-0055 \
   <a href="https://cjc.utpjournals.press/doi/full/10.3138/cjc-2022-0055" class="btn--faicon">
