@@ -5,7 +5,7 @@ permalink: /papers/
 <p><font color="#56018D"> <i class="fa fa-otter"></i> </font> The research articles that have made it through publishing!</p>
 
 ## Decoupling Visualization and Testing when Presenting Confidence Intervals
-Armstrong II , D. A. & Poirier, W. (2025). Decoupling Visualization and Testing when Presenting Confidence Intervals. *Political Analysis*, Published online 2025:1-6. doi:10.1017/pan.2024.24 \
+Armstrong II , D. A. & Poirier, W. (2025). Decoupling Visualization and Testing when Presenting Confidence Intervals. *Political Analysis*, 33(3). doi:10.1017/pan.2024.24 \
   <a href="https://www.cambridge.org/core/journals/political-analysis/article/decoupling-visualization-and-testing-when-presenting-confidence-intervals/1926867029A7A42DE520866923C05274#article" class="btn--faicon">
     <i class="fa fa-rocket"></i>
   </a>
