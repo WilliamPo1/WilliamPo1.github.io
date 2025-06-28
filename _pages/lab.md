@@ -45,6 +45,7 @@ details {
 
 <p> <font color="#56018D"> <i class="fa fa-frog"></i></font> A collection of things I've been working on to help the understanding of statistics. </p>
 
+<!--
 <details>
   <summary>Talks</summary>
   <ul>
@@ -56,6 +57,7 @@ details {
     </li>
   </ul>
 </details>
+-->
 
 <details>
   <summary>R Tutorials</summary>
