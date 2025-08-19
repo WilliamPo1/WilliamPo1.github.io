@@ -9,8 +9,7 @@ Poirier, W., Charest, A.-S., Dufresne, Y., Fortier-Chouinard, Alexandre & Fréch
   <a href="https://www.cambridge.org/core/journals/canadian-journal-of-political-science-revue-canadienne-de-science-politique/article/sondages-probabilistes-et-autres-creatures-mythiques-usages-et-limites-de-la-calibration-des-sondages-non-probabilistes/FEBB9BF7B6215429115961D89A3FB7C9" class="btn--faicon">
     <i class="fa fa-rocket"></i>
   </a>
-  <a href="/files/pdf/poirier_etal_2025.pdf" class="btn--faicon">
-    <i class="fa fa-paperclip"></i>
+ 
   </a>
 
 ## Decoupling Visualization and Testing when Presenting Confidence Intervals
