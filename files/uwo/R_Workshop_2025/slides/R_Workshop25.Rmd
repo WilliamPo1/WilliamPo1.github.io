@@ -3,7 +3,7 @@ title: "GAPS R Workshop 2025"
 subtitle: ""  
 author: 
   - "William Poirier"
-date: '`r Sys.Date()`'
+date: '27-08-2025'
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
