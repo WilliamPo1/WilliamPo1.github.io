@@ -4,6 +4,15 @@ permalink: /papers/
 ---
 <p><font color="#56018D"> <i class="fa fa-otter"></i> </font> The research articles that have made it through publishing!</p>
 
+## Sondages probabilistes et autres créatures mythiques : usages et limites de la calibration des sondages non probabilistes
+Poirier, W., Charest, A.-S., Dufresne, Y., Fortier-Chouinard, Alexandre & Fréchet, Nadjim (2025). Sondages probabilistes et autres créatures mythiques : usages et limites de la calibration des sondages non probabilistes. *Canadian Journal of Political Science/Revue canadienne de science politique*, 1–18. doi:10.1017/S0008423925100528 \
+  <a href="https://www.cambridge.org/core/journals/canadian-journal-of-political-science-revue-canadienne-de-science-politique/article/sondages-probabilistes-et-autres-creatures-mythiques-usages-et-limites-de-la-calibration-des-sondages-non-probabilistes/FEBB9BF7B6215429115961D89A3FB7C9" class="btn--faicon">
+    <i class="fa fa-rocket"></i>
+  </a>
+  <a href="/files/pdf/poirier_etal_2025.pdf" class="btn--faicon">
+    <i class="fa fa-paperclip"></i>
+  </a>
+
 ## Decoupling Visualization and Testing when Presenting Confidence Intervals
 Armstrong II , D. A. & Poirier, W. (2025). Decoupling Visualization and Testing when Presenting Confidence Intervals. *Political Analysis*, 33(3). doi:10.1017/pan.2024.24 \
   <a href="https://www.cambridge.org/core/journals/political-analysis/article/decoupling-visualization-and-testing-when-presenting-confidence-intervals/1926867029A7A42DE520866923C05274#article" class="btn--faicon">

@@ -1,0 +1,149 @@
+---
+title: "GAPS R Workshop 2025"
+subtitle: ""  
+author: 
+  - "William Poirier"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{css echo=FALSE}
+.purpleb {
+  font-weight: bold;
+  color: #4F2683;
+  font-size: 1.25em;
+}
+
+.small {
+  font-size:.75rem;
+}
+.tiny {
+  font-size:.25rem;
+}
+.shift { 
+  position:relative; 
+  top: -40px;
+  }
+
+.plot-callout {
+  height: 225px;
+  width: 450px;
+  bottom: 5%;
+  right: 5%;
+  position: absolute;
+  padding: 0px;
+  z-index: 100;
+}
+.plot-callout img {
+  width: 100%;
+  border: 4px solid
+  #  23373B;
+}
+```
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+xaringanExtra::use_panelset()
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#4F2683",
+  secondary_color = "#201436",
+  inverse_header_color = "#ffffff",
+  inverse_background_color = "#4F2683",
+  inverse_text_color = "#ffffff"
+)
+```
+
+## What will we be doing today? 
+
+.pull-left[
+**Main Objective**: Getting familiar with R & RStudio.
+
+**Schedule**:
+- 10:00-12:00: First Steps
+- 12:00-13:00: Lunch
+- 13:00-15:00: Working with R
+
+**ASK QUESTIONS!**
+
+Katie and Noah will be roaming the room to troubleshoot.
+]
+.pull-right[
+```{r out.width="65%", fig.align="center"}
+knitr::include_graphics("gifs/giphy.gif")
+```
+]
+
+---
+
+class: inverse,middle,center
+
+## Session 1: First Steps
+
+---
+
+## Session 1: First Steps
+
+1. What is R?
+2. Why R?
+3. Managing anxieties
+4. Software installation
+5. RStudio interface
+6. AN EXAMPLE
+
+
+
+---
+
+## Potential Solutions — Bounds Method
+
+.panelset[
+  .panel[.panel-name[What?]
+  Webb, Lebo, and Linn (2020):
+  - ADL: $y_t=\alpha_0+\alpha_1 y_{t-1}+\beta_0 x_t+\beta_1x_{t-1}+\varepsilon_t$
+  - LRM: $\lambda = \frac{\beta_0+\beta_1}{1-\alpha_1}$, gives the total effect of a unit change in x on y.
+  - Use Bewley or Delta method to estimate $\lambda$ and its SE.
+  - Distribution of the LRM t-statistic depends on the univariate characteristics of variables in the model, deterministic features of DGP for y, number of IVs, and sample size.
+  - Webb, Linn, and Lebo (2019) provide us with bounds, such that:
+    - Below the lower bound, we would **fail to reject the null** whatever the true univariate characteristics of the series.
+    - Above the upper bound, we would **reject the null** whatever the true univariate characteristics of the series.
+    ] 
+  .panel[.panel-name[Problem Solved?]
+  - Solves part of the problem, no need to bother with Dickey-Fuller tests. `r emo::ji("check")`
+  - But, still need to check for model specification (appropriate lag-lengths). `r emo::ji("x")`
+  ]
+ ]
+ 
+---
+
+
+
+---
+
+class: inverse,middle,center
+
+## Questions? Comments? Testimonies?
+
+---
+
