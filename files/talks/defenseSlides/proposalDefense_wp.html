@@ -140,21 +140,23 @@ Supervisory Committee:
 
 2025-08-25
 
+
+
 &lt;img src="images/social-science/PNG/SSC_Horiz_Rev.png" width="30%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-## Plan of Presentation
+## Plan of presentation
 .pull-left[
 00. Introduction
 
 0. Overarching literature
 
-1. Article 1: Longitudinal properties of inattentive respondents
+1. Article 1
 
-2. Article 2: Validation of the measures of IR with an experiment
+2. Article 2
 
-3. Article 3: Creation of a holistic measure of IR
+3. Article 3
 
 4. Conclusion
 ]
@@ -374,23 +376,31 @@ layout: true
 ]
 
 ---
-## Research questions
+## Plan of proposal
 
-- Mitigating and identifying IR is of high importance for all survey-based research.
+Mitigating and **identifying IR** is of high importance for all survey-based research.
 
----
-## Research questions
-
-- Mitigating and **identifying IR** is of high importance for all survey-based research.
-
---
-
-### 3 Questions
-
-- Article 1: Who are inattentives and how do they behave over multiple survey events?
-- Article 2: What is the validity of current measures of inattention in survey research?
-- Article 3: How can we holistically assess survey-wide inattention?
-
+.panelset[
+  .panel[.panel-name[Article 1]
+  - RQ: **Who are inattentives and how do they behave over multiple survey events?**
+  - Longitudinal panel data (USA, UK, Germany);
+  - Measure IR via RTAC;
+  - Transition probabilities estimated via Markov chain transition models.
+  ]
+  .panel[.panel-name[Article 2]
+  - RQ: **What is the validity of current measures of inattention in survey research?**
+  - 2x2 experimental design;
+  - Treatment is vignette + reduction in progress bar;
+  - Test validity of IMC, response time index, and RTAC;
+  - That is against eye-tracking, EDA, and HRV;
+  - ITT estimated via SUR.
+  ]
+  .panel[.panel-name[Article 3]
+  - RQ: **How can we holistically assess survey-wide inattention?**
+  - HAM! `\(\mapsto\)` GLRM followed by EM.
+  - Test validity with open-ended question, experimental ATE, `\(\alpha\)` of ideological scale, physiological measures from A2, and 2021 CES.
+  ]
+]
 
 ---
 
@@ -1267,24 +1277,6 @@ Recall the original model: `$$IR_{mi}=\beta_m D_{i}+\mathbf{X}\boldsymbol{\gamma
 
 ---
 
-## A2: Design — Why do it this way?
-
-.pull-left[
-1. IR isn't guarantee to happen in every survey, especially one taking place in a university laboratory.
-2. The Tobii glasses, Biopac ring, and ECG will likely worsen this.
-3. Can be turned into a within design to check for power related issues if treatment isn't satistically significant.
-4. If both fail, I will still have great descriptive data with which I can compare eye-tracking to response time measures.
-
-- Will pilot it as a simple survey to see if treatment works.
-- Can measure eye mouvement (WebGazer) and HRV (rPPG) via a webcam, this way I could have a lot more respondents.
-
-]
-.pull-right[
-&lt;img src="images/risk.gif" width="80%" style="display: block; margin: auto;" /&gt;
-]
-
----
-
 ## A2: Contribution
 
 .pull-left[
@@ -1360,18 +1352,18 @@ layout: true
 
 ## A3: A solution — RTAC
 
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-49-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+## A3: A solution — RTAC
+
 &lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-50-1.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
+
 ## A3: A solution — RTAC
 
 &lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-51-1.png" width="100%" style="display: block; margin: auto;" /&gt;
-
----
-
-## A3: A solution — RTAC
-
-&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-52-1.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 - Principal component analysis (PCA) answer:
   - **What is the minimum amount of "dimensions" (variables) I need to explain the maximum amount of variance?**
@@ -1380,7 +1372,7 @@ layout: true
 
 ## A3: A solution — RTAC
 
-&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-53-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-52-1.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 - Gaussian mixture models (GMM) answer:
   - **To which of `\(k\)` distribution is `\(i\)` more likely to come from?**
@@ -1445,17 +1437,17 @@ layout: true
 ---
 ## A3: Proposed solution — HAM
 
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-54-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+## A3: Proposed solution — HAM
+
 &lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-55-1.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 ## A3: Proposed solution — HAM
 
 &lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-56-1.png" width="100%" style="display: block; margin: auto;" /&gt;
-
----
-## A3: Proposed solution — HAM
-
-&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-57-1.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 `$$r \Bigg \{ \overbrace{\Bigg [\quad A \quad \Bigg ]}^c \approx r \Bigg \{ \overbrace{\Bigg [ X \Bigg ]}^k \overbrace{\big [ \quad Y \quad \big ]}^c \big \} k$$`
 
@@ -1465,7 +1457,7 @@ layout: true
 ---
 ## A3: Proposed solution — HAM
 
-&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-58-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-57-1.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 - Maybe, this time, we try to let the model decide the number of clusters?
 - Or, at least, empirically compare between 3 and 4.
@@ -1707,6 +1699,24 @@ Appendix: Motivation 1/2
   - Maybe "thighter" cultures (norm enforcing) would yield lower amounts of IR in surveys.
   - Three countries score similarly (5.1, 6.9, and 7 respectivelly) on cultural tightness scale &lt;a name=cite-gelfand2011differences&gt;&lt;/a&gt;([Gelfand, Raver, Nishii, Leslie, Lun, Lim, Duan, Almaliach, Ang, Arnadottir, and others, 2011](#bib-gelfand2011differences)).
 - Still, expanding the selection would be nice, especially since the literature is entirely based on western countries.
+
+---
+
+## Appendix A2: Design — Why do it this way?
+
+.pull-left[
+1. IR isn't guarantee to happen in every survey, especially one taking place in a university laboratory.
+2. The Tobii glasses, Biopac ring, and ECG will likely worsen this.
+3. Can be turned into a within design to check for power related issues if treatment isn't satistically significant.
+4. If both fail, I will still have great descriptive data with which I can compare eye-tracking to response time measures.
+
+- Will pilot it as a simple survey to see if treatment works.
+- Can measure eye mouvement (WebGazer) and HRV (rPPG) via a webcam, this way I could have a lot more respondents.
+
+]
+.pull-right[
+&lt;img src="images/risk.gif" width="80%" style="display: block; margin: auto;" /&gt;
+]
 
 ---
 ## Bibliography 1/11
