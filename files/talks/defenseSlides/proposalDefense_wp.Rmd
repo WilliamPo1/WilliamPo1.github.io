@@ -2,7 +2,7 @@
 title: "Assessing Construct and Measurement Validity of Inattentive Responding in Survey Research"
 author: 
 - "William Poirier"
-date: '`r Sys.Date()`'
+date: '2025-08-25'
 output:
   xaringan::moon_reader:
     seal: false
@@ -175,7 +175,7 @@ Supervisory Committee:
 
 #### David A. Armstrong II, Matthew Lebo, Amanda Friesen
 
-`r Sys.Date()`
+2025-08-25
 
 ```{r  fig.align="center", out.width="30%",include=TRUE}
 knitr::include_graphics("images/social-science/PNG/SSC_Horiz_Rev.png")
