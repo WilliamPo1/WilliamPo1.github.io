@@ -60,6 +60,18 @@ details {
 -->
 
 <details>
+  <summary>Talks</summary>
+  <ul>
+    <li>
+      Proposal Defense 
+      <a href="/files/talks/defenseSlides/proposalDefense_wp.html" class="btn--faicon">
+        <i class="fa fa-rocket"></i>
+      </a>
+    </li>
+  </ul>
+</details>
+
+<details>
   <summary>R Tutorials</summary>
   <ul>
     <li>

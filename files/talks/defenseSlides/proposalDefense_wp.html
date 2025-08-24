@@ -1,0 +1,2269 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Assessing Construct and Measurement Validity of Inattentive Responding in Survey Research</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="William Poirier" />
+    <meta name="date" content="2025-08-24" />
+    <script src="proposalDefense_wp_files/header-attrs/header-attrs.js"></script>
+    <link href="proposalDefense_wp_files/panelset/panelset.css" rel="stylesheet" />
+    <script src="proposalDefense_wp_files/panelset/panelset.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: inverse,middle,center
+&lt;style type="text/css"&gt;
+.purpleb {
+  font-weight: bold;
+  color: #4F2683;
+  font-size: 1.25em;
+}
+
+.purplebL {
+  font-weight: bold;
+  color: #4F2683;
+  font-size: 1.5em;
+}
+
+.footnote {
+  position: absolute;
+  bottom: 60px;
+  padding-right: 4em;
+  font-size: .75em;
+}
+
+.large {
+  font-size:1.5rem;
+}
+
+.Small {
+  font-size:.9rem;
+}
+
+.small {
+  font-size:.75rem;
+}
+.tiny {
+  font-size:.25rem;
+}
+.shift { 
+  position:relative; 
+  top: -40px;
+  }
+
+.plot-callout {
+  height: 225px;
+  width: 450px;
+  bottom: 5%;
+  right: 5%;
+  position: absolute;
+  padding: 0px;
+  z-index: 100;
+}
+.plot-callout img {
+  width: 100%;
+  border: 4px solid
+  #  23373B;
+}
+
+.remark-slide table tr:nth-child(even) {
+  background: none !important;
+}
+.remark-slide table thead {
+  background: none !important;
+}
+.remark-slide table thead th {
+  border-bottom: 1px solid #666;
+}
+
+.pull-leftL {
+  float: left;
+  width: 57%;
+}
+.pull-rightS {
+  float: right;
+  width: 37%;
+}
+
+.footer {
+    font-size: .75rem;
+    position: fixed;
+    bottom: -8px; 
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    color: #4F2683;
+}
+
+.footer a {
+    margin: 0 3rem;
+    text-decoration: none;
+    color: #4F2683;
+    font-weight: 500;
+}
+
+.footer a:visited {
+    color: #4F2683;
+}
+
+.footer a strong,
+.footer a b {
+    color: #4F2683;
+    font-weight: 700;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+&lt;/style&gt;
+
+
+
+
+
+
+## Assessing Construct and Measurement Validity of Inattentive Responding in Survey Research
+
+Proposal Defense by
+
+### William &lt;span style="text-decoration:underline"&gt;Poirier&lt;/span&gt;
+
+Supervisory Committee: 
+
+#### David A. Armstrong II, Matthew Lebo, Amanda Friesen
+
+2025-08-24
+
+&lt;img src="images/social-science/PNG/SSC_Horiz_Rev.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Plan of Presentation
+.pull-left[
+00. Introduction
+
+0. Overarching literature
+
+1. Article 1: Longitudinal properties of inattentive respondents
+
+2. Article 2: Validation of the measures of IR with an experiment
+
+3. Article 3: Creation of a holistic measure of IR
+
+4. Conclusion
+]
+.pull-right[
+&lt;img src="images/iam-looking-for-someone-to-share-in-an-adventure-gandalf.gif" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+class: inverse,middle,center
+name: intro
+
+# Introduction
+
+---
+layout: true
+
+.footer[[**Introduction**](#intro) [Literature](#lit) [Article 1](#A1) [Article 2](#A2) [Article 3](#A3) [Conclusion ](#conclu) ]
+
+---
+
+## Why should I care? 1/2
+
+.pull-left[  
+#### Descriptive Inference
+  - Conditional IR `\(\rightarrow\)` upward/downward bias.
+  - Random IR `\(\rightarrow\)` increased variance.
+  - IR:
+    - Bias towards non-attitudes;
+    - Scale reliability;
+    - Random sampling not quite random.
+  - Can think of it as a missing data problem (MCAR, MAR, NMAR).
+
+.small[&lt;a name=cite-huang2015insufficient&gt;&lt;/a&gt;&lt;a name=cite-curran2016methods&gt;&lt;/a&gt;&lt;a name=cite-silber2019impact&gt;&lt;/a&gt;&lt;a name=cite-pyo2021cognitive&gt;&lt;/a&gt;([Huang, Liu, and Bowling, 2015](#bib-huang2015insufficient); [Curran, 2016](#bib-curran2016methods); [Silber, Danner, and Rammstedt, 2019](#bib-silber2019impact); [Pyo and Maxfield, 2021](#bib-pyo2021cognitive))]
+    
+]
+.pull-right[
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Why should I care? 1/2
+
+.pull-left[  
+#### Descriptive Inference
+  - Conditional IR `\(\rightarrow\)` upward/downward bias.
+  - Random IR `\(\rightarrow\)` increased variance.
+  - IR:
+    - Bias towards non-attitudes;
+    - Scale reliability;
+    - Random sampling not quite random.
+  - Can think of it as a missing data problem (MCAR, MAR, NMAR).
+  
+.small[([Huang, Liu, and Bowling, 2015](#bib-huang2015insufficient); [Curran, 2016](#bib-curran2016methods); [Silber, Danner, and Rammstedt, 2019](#bib-silber2019impact); [Pyo and Maxfield, 2021](#bib-pyo2021cognitive))]
+]
+.pull-right[
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-5-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+
+]
+
+---
+
+## Why should I care? 1/2
+
+.pull-left[  
+#### Descriptive Inference
+  - Conditional IR `\(\rightarrow\)` upward/downward bias.
+  - Random IR `\(\rightarrow\)` increased variance.
+  - IR:
+    - Bias towards non-attitudes;
+    - Scale reliability;
+    - Random sampling not quite random.
+  - Can think of it as a missing data problem (MCAR, MAR, NMAR).
+    
+.small[([Huang, Liu, and Bowling, 2015](#bib-huang2015insufficient); [Curran, 2016](#bib-curran2016methods); [Silber, Danner, and Rammstedt, 2019](#bib-silber2019impact); [Pyo and Maxfield, 2021](#bib-pyo2021cognitive))]  
+]
+.pull-right[
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-6-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Why should I care? 1/2
+
+.pull-left[  
+#### Descriptive Inference
+  - Conditional IR `\(\rightarrow\)` upward/downward bias.
+  - Random IR `\(\rightarrow\)` increased variance.
+  - IR:
+    - Bias towards non-attitudes;
+    - Scale reliability;
+    - Random sampling not quite random.
+  - Can think of it as a missing data problem (MCAR, MAR, NMAR).
+    
+.small[([Huang, Liu, and Bowling, 2015](#bib-huang2015insufficient); [Curran, 2016](#bib-curran2016methods); [Silber, Danner, and Rammstedt, 2019](#bib-silber2019impact); [Pyo and Maxfield, 2021](#bib-pyo2021cognitive))]  
+]
+.pull-right[
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-7-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Why should I care? 2/2
+
+.pull-left[  
+#### Causal Inference
+  - Even random distribution of IR is problematic: 
+    - Control group permeates to the treatment group; 
+    - Treatment effect biased toward 0.
+    
+.small[&lt;a name=cite-kane2025more&gt;&lt;/a&gt;&lt;a name=cite-bruhlmann2020quality&gt;&lt;/a&gt;&lt;a name=cite-desimone2018dirty&gt;&lt;/a&gt;&lt;a name=cite-abbey2017attention&gt;&lt;/a&gt;&lt;a name=cite-berinsky2014separating&gt;&lt;/a&gt;&lt;a name=cite-maniaci2014caring&gt;&lt;/a&gt;([Kane, 2025](#bib-kane2025more); [Brühlmann, Petralito, Aeschbach, and Opwis, 2020](#bib-bruhlmann2020quality); [DeSimone and Harms, 2018](#bib-desimone2018dirty); [Abbey and Meloy, 2017](#bib-abbey2017attention); [Berinsky, Margolis, and Sances, 2014](#bib-berinsky2014separating); [Maniaci and Rogge, 2014](#bib-maniaci2014caring))]  
+]
+.pull-right[
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-8-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Why should I care? 2/2
+
+.pull-left[  
+#### Causal Inference
+  - Even random distribution of IR is problematic: 
+    - Control group permeates to the treatment group; 
+    - Treatment effect biased toward 0.
+    
+.small[([Kane, 2025](#bib-kane2025more); [Brühlmann, Petralito, Aeschbach et al., 2020](#bib-bruhlmann2020quality); [DeSimone and Harms, 2018](#bib-desimone2018dirty); [Abbey and Meloy, 2017](#bib-abbey2017attention); [Berinsky, Margolis, and Sances, 2014](#bib-berinsky2014separating); [Maniaci and Rogge, 2014](#bib-maniaci2014caring))]  
+]
+.pull-right[
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-9-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Why should I care? 2/2
+
+.pull-left[  
+#### Causal Inference
+  - Even random distribution of IR is problematic: 
+    - Control group permeates to the treatment group; 
+    - Treatment effect biased toward 0.
+    
+.small[([Kane, 2025](#bib-kane2025more); [Brühlmann, Petralito, Aeschbach et al., 2020](#bib-bruhlmann2020quality); [DeSimone and Harms, 2018](#bib-desimone2018dirty); [Abbey and Meloy, 2017](#bib-abbey2017attention); [Berinsky, Margolis, and Sances, 2014](#bib-berinsky2014separating); [Maniaci and Rogge, 2014](#bib-maniaci2014caring))]  
+]
+.pull-right[
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-10-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Why should I care? 2/2
+
+.pull-left[  
+#### Causal Inference
+  - Even random distribution of IR is problematic: 
+    - Control group permeates to the treatment group; 
+    - Treatment effect biased toward 0.
+    
+.small[([Kane, 2025](#bib-kane2025more); [Brühlmann, Petralito, Aeschbach et al., 2020](#bib-bruhlmann2020quality); [DeSimone and Harms, 2018](#bib-desimone2018dirty); [Abbey and Meloy, 2017](#bib-abbey2017attention); [Berinsky, Margolis, and Sances, 2014](#bib-berinsky2014separating); [Maniaci and Rogge, 2014](#bib-maniaci2014caring))]  
+]
+.pull-right[
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Why should I care? 2/2
+
+.pull-left[  
+#### Causal Inference
+  - Even random distribution of IR is problematic: 
+    - Control group permeates to the treatment group; 
+    - Treatment effect biased toward 0.
+    
+.small[([Kane, 2025](#bib-kane2025more); [Brühlmann, Petralito, Aeschbach et al., 2020](#bib-bruhlmann2020quality); [DeSimone and Harms, 2018](#bib-desimone2018dirty); [Abbey and Meloy, 2017](#bib-abbey2017attention); [Berinsky, Margolis, and Sances, 2014](#bib-berinsky2014separating); [Maniaci and Rogge, 2014](#bib-maniaci2014caring))]  
+]
+.pull-right[
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Why should I care? 2/2
+
+.pull-left[  
+#### Causal Inference
+  - Even random distribution of IR is problematic: 
+    - Control group permeates to the treatment group; 
+    - Treatment effect biased toward 0.
+    
+.small[([Kane, 2025](#bib-kane2025more); [Brühlmann, Petralito, Aeschbach et al., 2020](#bib-bruhlmann2020quality); [DeSimone and Harms, 2018](#bib-desimone2018dirty); [Abbey and Meloy, 2017](#bib-abbey2017attention); [Berinsky, Margolis, and Sances, 2014](#bib-berinsky2014separating); [Maniaci and Rogge, 2014](#bib-maniaci2014caring))]  
+]
+.pull-right[
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Why should I care? 2/2
+
+.pull-left[  
+#### Causal Inference
+  - Even random distribution of IR is problematic: 
+    - Control group permeates to the treatment group; 
+    - Treatment effect biased toward 0.
+    
+.small[([Kane, 2025](#bib-kane2025more); [Brühlmann, Petralito, Aeschbach et al., 2020](#bib-bruhlmann2020quality); [DeSimone and Harms, 2018](#bib-desimone2018dirty); [Abbey and Meloy, 2017](#bib-abbey2017attention); [Berinsky, Margolis, and Sances, 2014](#bib-berinsky2014separating); [Maniaci and Rogge, 2014](#bib-maniaci2014caring))]  
+]
+.pull-right[
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+## Research questions
+
+- Mitigating and identifying IR is of high importance for all survey-based research.
+
+---
+## Research questions
+
+- Mitigating and **identifying IR** is of high importance for all survey-based research.
+
+--
+
+### 3 Questions
+
+- Article 1: Who are inattentives and how do they behave over multiple survey events?
+- Article 2: What is the validity of current measures of inattention in survey research?
+- Article 3: How can we holistically assess survey-wide inattention?
+
+
+---
+
+class: inverse,middle,center
+name: lit
+
+# Overarching literature
+
+---
+layout: true
+
+.footer[[Introduction](#intro) [**Literature**](#lit) [Article 1](#A1) [Article 2](#A2) [Article 3](#A3) [Conclusion ](#conclu) ]
+
+---
+
+## Inattention as a concept
+
+Theory of optimal answering &lt;a name=cite-tourangeau1988cognitive&gt;&lt;/a&gt;([Tourangeau and Rasinski, 1988](#bib-tourangeau1988cognitive)):
+
+
+
+
+---
+
+## Inattention as a concept
+
+Theory of optimal answering ([Tourangeau and Rasinski, 1988](#bib-tourangeau1988cognitive)):
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-15-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Inattention as a concept
+
+Theory of optimal answering ([Tourangeau and Rasinski, 1988](#bib-tourangeau1988cognitive)):
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-16-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Inattention as a concept
+
+Theory of optimal answering ([Tourangeau and Rasinski, 1988](#bib-tourangeau1988cognitive)):
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Inattention as a concept
+
+Theory of optimal answering ([Tourangeau and Rasinski, 1988](#bib-tourangeau1988cognitive)):
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Inattention as a concept
+
+Theory of optimal answering ([Tourangeau and Rasinski, 1988](#bib-tourangeau1988cognitive)):
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-19-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+(Not unlike &lt;a name=cite-zaller1992nature&gt;&lt;/a&gt;[Zaller (1992)](#bib-zaller1992nature)'s RAS model.)
+
+---
+
+## Inattention as a concept
+
+.large[ `\(\boldsymbol\mapsto\)` We define inattentive responding (IR) as a failing to follow one or multiple of
+these steps due to a lack of **motivation** or **ability**.]
+
+Formally:
+
+`$$IR_i = M_i\times A_i= 
+\left\lbrace\begin{align}
+&amp;1 \quad \mathrm{if}\; M_i=0\lor A_i=0 \\ 
+&amp;0 \quad \mathrm{if}\; M_i=1\land A_i=1
+\end{align}\right.$$`
+
+.footnote[&lt;a name=cite-anduiza2017answering&gt;&lt;/a&gt;&lt;a name=cite-berinsky2024measuring&gt;&lt;/a&gt;([Anduiza and Galais, 2017](#bib-anduiza2017answering); [Berinsky, Frydman, Margolis, Sances, and Valerio, 2024](#bib-berinsky2024measuring))]
+
+---
+
+## Inattention as a concept — Motivation
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Inattention as a concept — Motivation
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Inattention as a concept — Motivation
+
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-22-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Inattention as a concept — Motivation
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-23-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Inattention as a concept — Motivation
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-24-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Inattention as a concept — Ability
+
+### What am I refering to?
+
+- Capacity of individuals to truely represent themselves:
+  - Reading level;
+  - Understanding of the conclusions of the linguistic acts;
+  - Working memory &lt;a name=cite-johnson2005ascertaining&gt;&lt;/a&gt;&lt;a name=cite-bishop2001response&gt;&lt;/a&gt;([Johnson, 2005](#bib-johnson2005ascertaining); [Bishop and Smith, 2001](#bib-bishop2001response)).
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-25-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Inattention as a concept — Ability
+
+### What am I refering to?
+
+- Capacity of individuals to truely represent themselves:
+  - **Reading level**;
+  - Understanding of the conclusions of the linguistic acts;
+  - Working memory ([Johnson, 2005](#bib-johnson2005ascertaining); [Bishop and Smith, 2001](#bib-bishop2001response)).
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-26-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Inattention as a concept — Ability
+
+### What am I refering to?
+
+- Capacity of individuals to truely represent themselves:
+  - Reading level;
+  - **Understanding of the conclusions of the linguistic acts**;
+  - Working memory ([Johnson, 2005](#bib-johnson2005ascertaining); [Bishop and Smith, 2001](#bib-bishop2001response)).
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-27-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+## Inattention as a concept — Ability
+
+### What am I refering to?
+
+- Capacity of individuals to truely represent themselves:
+  - Reading level;
+  - Understanding of the conclusions of the linguistic acts;
+  - **Working memory** ([Johnson, 2005](#bib-johnson2005ascertaining); [Bishop and Smith, 2001](#bib-bishop2001response)).
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-28-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Inattention as a concept — Ability
+
+### What am I refering to?
+
+- Capacity of individuals to truely represent themselves:
+  - Reading level;
+  - Understanding of the conclusions of the linguistic acts;
+  - **Working memory** ([Johnson, 2005](#bib-johnson2005ascertaining); [Bishop and Smith, 2001](#bib-bishop2001response)).
+
+.pull-left[
+- For example: Degradation of working memory with age `\(\rightarrow\)` higher susceptibility to response ordering effects &lt;a name=cite-knauper1999impact&gt;&lt;/a&gt;([Knauper, 1999](#bib-knauper1999impact)).
+]
+.pull-right[
+&lt;img src="images/gandalf_memory.gif" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Inattention as a concept — Ability
+
+### What am I refering to?
+
+- Capacity of individuals to truely represent themselves:
+  - Reading level;
+  - Understanding of the conclusions of the linguistic acts;
+  - Working memory ([Johnson, 2005](#bib-johnson2005ascertaining); [Bishop and Smith, 2001](#bib-bishop2001response)).
+
+`\(\mapsto\)` Ability is **not widely included** in definitions of IR, but integral for optimal answers.
+
+`\(\mapsto\)` Mostly comes from sastisficing theory. Survey taking is costly without apparent rewards, need to minimize the effort.
+
+---
+
+## Measurement strategies
+
+.panelset[
+  .panel[.panel-name[Direct]
+  - **Provide snapshot assessments!**
+  - Intructional Manipulation Checks (IMC):
+    - "[...] Forget previous instructions and choose 'Strongly Agree'."
+    - Can be more or less overt.
+  - Bogus/Infrequency items:
+    - "I am paid biweekly by leprechauns."
+    - Covert
+  - Factual Manipulation Checks (FMC)/Mock Vignette Checks (MVC):
+    - For experimental designs, to check treatment compliance.
+    
+  .small[&lt;a name=cite-oppenheimer2009instructional&gt;&lt;/a&gt;&lt;a name=cite-meade2012identifying&gt;&lt;/a&gt;&lt;a name=cite-kane2019no&gt;&lt;/a&gt;&lt;a name=cite-mancosu2019short&gt;&lt;/a&gt;&lt;a name=cite-kane2023analyze&gt;&lt;/a&gt;([Oppenheimer, Meyvis, and Davidenko, 2009](#bib-oppenheimer2009instructional); [Meade and Craig, 2012](#bib-meade2012identifying); [Kane and Barabas, 2019](#bib-kane2019no); [Mancosu, Ladini, and Vezzoni, 2019](#bib-mancosu2019short); [Kane, Velez, and Barabas, 2023](#bib-kane2023analyze))]
+  ]
+  .panel[.panel-name[Response time]
+  - **Offers global assessment!**
+  - Page time indices:
+    - Ad hoc threshold (2 seconds per question);
+    - Concerned with respondents going too fast.
+  - Response Time Attentiveness Clustering (RTAC):
+    - 2 steps:  1) PCA; 2) EM clustering.
+    - Gives probability of being in each of three clusters:
+      1. Fast inattentive;
+      2. Attentive;
+      3. Slow inattentive.
+      
+   .small[&lt;a name=cite-huang2012detecting&gt;&lt;/a&gt;&lt;a name=cite-bowling2021quick&gt;&lt;/a&gt;&lt;a name=cite-read2022racing&gt;&lt;/a&gt;([Huang, Curran, Keeney, Poposki, and DeShon, 2012](#bib-huang2012detecting); [Bowling, Huang, Brower, and Bragg, 2021](#bib-bowling2021quick); [Read, Wolters, and Berinsky, 2022](#bib-read2022racing))]
+  ]
+  .panel[.panel-name[Response pattern]
+  - **Offers global assessment!**
+  - Longest streak
+  - Outlier detection
+  - Individual consistency
+  
+`\(\mapsto\)` Not recommended as offer poor consistency with other measures and are overreliant on strong assumptions.
+  
+  .small[&lt;a name=cite-converse2006nature&gt;&lt;/a&gt;([Curran, 2016](#bib-curran2016methods); [DeSimone and Harms, 2018](#bib-desimone2018dirty); [Converse, 2006](#bib-converse2006nature))]
+  ]
+]
+
+
+---
+## A tentative typology
+
+
+|                      | Disengaged (0,0)       | Underachievers (0,1)              |Well-meaning (1,0)     | &lt;div style="width:130px"&gt; Optimal (1,1)                     |
+|:---------------------|:-----------------------|:----------------------------------|:----------------------|:----------------------------------|
+| Satisficing strategy | Systematic agreement &lt;br&gt; Non-differentiation | Selecting first reasonable answer &lt;br&gt; Answering at random |Status quo agreement &lt;br&gt; Selecting "don't know" |                                   |
+| Overt IMC            | Fail                   | Pass                              |Fail                   | Pass                              |
+| Covert IMC           | Fail                   | Fail                              |Fail                   | Pass                              |
+| Response time        | Fast                   | Fast                              |Slow                   | Average                           |
+| IR                   | Yes                    | Yes                               |Yes                    | No                                |
+
+
+---
+class: inverse,middle,center
+name: A1
+
+# Article 1
+
+## Once a Lounger, Always a Lounger?
+### Tracking Inattention in Longitudinal Panel Data
+
+---
+layout: true
+
+.footer[[Introduction](#intro) [Literature](#lit) [**Article 1**](#A1) [Article 2](#A2) [Article 3](#A3) [Conclusion ](#conclu) ]
+
+---
+
+## A1: Puzzle — What predicts IR?
+
+| Source                                      | Men      | Young   | Lower educ. | &lt;div style="width:50px"&gt; IR&lt;sub&gt;t-1&lt;/sub&gt; | Interest | Other | Data origin | Nb. waves | IR measure |
+|:--------------------------------------------|:--------:|:-------:|:-----------:|:----------------:|:--------:|:------|:-----------:|:---------:|:----------:|
+| .small[&lt;a name=cite-kapelner2010preventing&gt;&lt;/a&gt;[Kapelner and Chandler (2010)](#bib-kapelner2010preventing)] | +        | +       | 0           |   |   | Motivation (0) &lt;br&gt; Need for cognition (0) | USA         | 1         | IMC        |
+| .small[[Berinsky, Margolis, and Sances (2014)](#bib-berinsky2014separating)] | +        | +       | 0           |   |   | Non-white (+)   | USA         | 1         | IMC        |
+| .small[[Anduiza and Galais (2017)](#bib-anduiza2017answering)]   | 0        | +       | +           | + | - | Motivation (0)  | Spain       | 6         | IMC        |
+| .small[&lt;a name=cite-paas2018instructional&gt;&lt;/a&gt;[Paas, Dolnicar, and Karlsson (2018)](#bib-paas2018instructional)]  | NA       |  NA     | NA          | + |   |                 | Australia   | 3         | IMC        |
+| .small[&lt;a name=cite-gummer2021using&gt;&lt;/a&gt;[Gummer, Roßmann, and Silber (2021)](#bib-gummer2021using)]        | 0        | +       | +           | 0 | - | Habituation (-) | Germany     | 7         | IMC + RT   |
+
+---
+
+## A1: Puzzle — Why the inconsistency?
+
+### Possible explanations
+
+--
+
+1. Context
+
+--
+
+2. Measurement
+
+--
+
+3. Model specification
+
+--
+
+4. Diversity of controls
+
+---
+
+## A1: Puzzle — Why the inconsistency?
+
+### Possible explanations
+
+1. **Context**
+
+2. **Measurement**
+
+3. **Model specification**
+
+4. Diversity of controls
+
+---
+
+## A1: Puzzle — Why the inconsistency?
+
+### Possible explanations
+
+1. **Context** `\(\rightarrow\)` UK, USA, Germany
+
+2. **Measurement** `\(\rightarrow\)` RTAC (three types: fast, slow, and attentive)
+
+3. **Model specification** `\(\rightarrow\)` longitudinal analysis via a transition model
+
+4. Diversity of controls
+
+---
+
+## A1: Puzzle — Research question
+### Who are inattentives and how do they behave over multiple survey events?
+
+Specifically:
+
+1. Do the profiles of RTAC-flagged inattentives differ from those flagged by alternative measures?
+
+2. Do the profiles of fast and slow inattentives differ?
+
+---
+
+## A1: Hypotheses
+.pull-left[
+- **H1:** Fast inattentives are less likely to persist in their inattention across waves compared to slow inattentives for which inattention comes from ability.  
+
+- **H2:** Age, sex, and education should be associated with inattention even when measured by RTAC.  
+
+- **H3:** Slow inattentives are more likely to have lower education levels. 
+]
+.pull-right[
+&lt;img src="images/thinks.gif" width="60%" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+
+## A1: Design — Data
+
+Needs to : 1) be a panel; 2) be publicly available; and 3) contain response time. 3 options:
+
+.panelset[
+  .panel[.panel-name[British Election Study (BES)]
+  - 29 survey events (waves);
+  - Response time data for waves 25 to 29 (May 2023 to September 2024);
+  - Each wave contains about 31,000 respondents;
+  - 9,340 respondents answered all 5 waves.
+  
+  .small[ Shoutout to Prof. Jack Bailey who was kind enough to share the data with me.]
+  ]
+  .panel[.panel-name[American National Election Studies (ANES)]
+  - 6 survey events;
+  - Ran in 2016, 2020, and 2024 (pre/post survey design);
+  - Response time data only available for 2016 and 2020 for now;
+  - 2,670 respondents answered both the 2016 and 2020 waves;
+  - Should drop to 2,070 once 2024 is included.
+  
+  .small[]
+  ]
+  .panel[.panel-name[Bavaria Panel Study (BPS)]
+  - Part of Making Electoral Democracy Work project &lt;a name=cite-blais2010making&gt;&lt;/a&gt;[Blais (2010)](#bib-blais2010making);
+  - 5 survey events;
+  - 2013 state and federal elections (pre state; between the two; post federal);
+  - 2014 European elections (pre/post);
+  - 1,870 respondents across all waves.
+  
+  .small[]
+  ]
+]
+  
+---
+
+## A1: Design — Analysis
+.panelset[
+.panel[.panel-name[DV = IR]
+  - Response Time Attentiveness Clustering (RTAC) (Read et al., 2024):
+    - Produces three clusters: 1) fast; 2) slow; 3) attentive.
+    - Probabilities of being in each.
+  - Straightlining:
+    - None of the panels contain usable IMCs.
+    - Based on the feeling thermometers contained in each panels.
+    - Whether or not respondents answered the same thing for all of them.
+    - Boolean, whether they straightlined or not.
+    - Expect reported levels of IR to be lower using this measure.
+  ]
+  .panel[.panel-name[IVs]
+  - Sociodemographic variables:
+    - Age;
+    - Gender;
+    - Education;
+    - Income.
+  - Party Id.
+  - Interest in politics.
+  - No personnality batteries available, yet.
+  ]
+  .panel[.panel-name[Univariate]
+Following [Gummer, Roßmann, and Silber (2021)](#bib-gummer2021using), produce transition probability matrix.
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-31-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+  ]
+  .panel[.panel-name[Multivariate]
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Previous state&lt;/th&gt;
+      &lt;th&gt;To fast (1)&lt;/th&gt;
+      &lt;th&gt;To attentive (2)&lt;/th&gt;
+      &lt;th&gt;To slow (3)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Fast (1)&lt;/td&gt;
+      &lt;td&gt;\(Pr(y_i=1|\boldsymbol{X}_i, y_{t-1}=1)\)&lt;/td&gt;
+      &lt;td&gt;\(Pr(y_i=2|\boldsymbol{X}_i, y_{t-1}=1)\)&lt;/td&gt;
+      &lt;td&gt;\(Pr(y_i=3|\boldsymbol{X}_i, y_{t-1}=1)\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Attentive (2)&lt;/td&gt;
+      &lt;td&gt;\(Pr(y_i=1|\boldsymbol{X}_i, y_{t-1}=2)\)&lt;/td&gt;
+      &lt;td&gt;\(Pr(y_i=2|\boldsymbol{X}_i, y_{t-1}=2)\)&lt;/td&gt;
+      &lt;td&gt;\(Pr(y_i=3|\boldsymbol{X}_i, y_{t-1}=2)\)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Slow (3)&lt;/td&gt;
+      &lt;td&gt;\(Pr(y_i=1|\boldsymbol{X}_i, y_{t-1}=3)\)&lt;/td&gt;
+      &lt;td&gt;\(Pr(y_i=2|\boldsymbol{X}_i, y_{t-1}=3)\)&lt;/td&gt;
+      &lt;td&gt;\(Pr(y_i=3|\boldsymbol{X}_i, y_{t-1}=3)\)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+- Transition models via multinomial logistic regression. One for each `\(m\)` categories in IR: `$$Pr(y_i=m|\boldsymbol{x}_i,y_{i,t-1}=1)=\frac{exp(\boldsymbol{x}_i\beta_m)}{\sum_{m=0}^{3}exp(\boldsymbol{x}_i\beta_m)}, m=1,2,3.$$`
+- Perform Marcov-chain Monte Carlo simulations (MCMC) to be able to do hypothesis tests between models. 
+  
+  .small[&lt;a name=cite-chib1998mcmc&gt;&lt;/a&gt;&lt;a name=cite-diggle2002analysis&gt;&lt;/a&gt;&lt;a name=cite-hillygus2003voter&gt;&lt;/a&gt;&lt;a name=cite-treier2008democracy&gt;&lt;/a&gt;([Chib, Greenberg, and Chen, 1998](#bib-chib1998mcmc); [Diggle, Liang, and Zeger, 2002](#bib-diggle2002analysis); [Hillygus and Jackman, 2003](#bib-hillygus2003voter); [Treier and Jackman, 2008](#bib-treier2008democracy))]
+  ]
+  .panel[.panel-name[Robustness check]
+  - One could alternativelly approach the analysis from a time series perspective.
+  - We have a DGP of the form: `$$y_{it}=\phi y_{i,t-1}+\boldsymbol\beta\boldsymbol x_{it}+\alpha_{ci}+\varepsilon_{it}$$`
+  - OLS-FE is a biased and inconsistent estimator due to the endogeneity between the lagged DV and the errors &lt;a name=cite-nickell1981biases&gt;&lt;/a&gt;([Nickell, 1981](#bib-nickell1981biases)).
+  - Small T large N limits the modelling options. 
+  - &lt;a name=cite-pickup2022transformed&gt;&lt;/a&gt;[Pickup and Hopkins (2022)](#bib-pickup2022transformed) recommends the orthogonal reparameterization estimator (OPM).
+  ]
+]
+
+---
+
+## A1: Contribution
+
+.pull-left[
+1. Further our understanding of respondents who choose to complete a survey, while not paying attention to its content.
+
+2. Make recommendations on when to booth respondents out of panels.
+
+3. Finer grained understanding of IR profiles implies better characterization of sensitivity of results.
+
+]
+.pull-right[
+&lt;img src="images/this.gif" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+class: inverse,middle,center
+name: A2
+
+# Article 2
+## Do IMCs and Time Measure Inattention?
+### Testing Established Measures Against Physiological Markers of Inattentive Responding
+
+---
+layout: true
+
+.footer[[Introduction](#intro) [Literature](#lit) [Article 1](#A1) [**Article 2**](#A2) [Article 3](#A3) [Conclusion ](#conclu) ]
+
+---
+
+## A2: Puzzle
+
+--
+
+1. Poor fit between the different measures of inattention (IMC, response time, response pattern) &lt;a name=cite-dunn2018intra&gt;&lt;/a&gt;([Dunn, Heggestad, Shanock, and Theilgard, 2018](#bib-dunn2018intra); [DeSimone and Harms, 2018](#bib-desimone2018dirty));
+
+--
+
+2. Validation of measures is done via nomological validity, testing against established measures &lt;a name=cite-adcock2001measurement&gt;&lt;/a&gt;([Adcock and Collier, 2001](#bib-adcock2001measurement));
+
+--
+
+3. Conceptual confusion among foundational studies ([Oppenheimer, Meyvis, and Davidenko, 2009](#bib-oppenheimer2009instructional); [Meade and Craig, 2012](#bib-meade2012identifying); [Huang, Curran, Keeney et al., 2012](#bib-huang2012detecting));
+
+--
+
+4. Advice is to carpet bomb the survey &lt;a name=cite-huang2015detecting&gt;&lt;/a&gt;([Curran, 2016](#bib-curran2016methods); [Huang, Bowling, Liu, and Li, 2014](#bib-huang2015detecting); [Meade and Craig, 2012](#bib-meade2012identifying));
+
+--
+
+5. At the end of the day, we still can't say whether the poor fit is due to the measures capturing different concepts, or because they are inappropriate.
+
+--
+
+.purplebL[What is the validity of current measures of inattention in survey research?] **... and what would be an appropriate test?**
+
+---
+
+## A2: Puzzle — Physiological Measures of Attention
+
+.panelset[
+  .panel[.panel-name[Eye-tracking]
+  - Infrared sensors used to track gaze time in area of interest.
+  - Assumption that where you look is where attention is.
+  - Used to measure task engagement &lt;a name=cite-fortenbaugh2017recent&gt;&lt;/a&gt;&lt;a name=cite-baumgartner2018misresponse&gt;&lt;/a&gt;([Fortenbaugh, DeGutis, and Esterman, 2017](#bib-fortenbaugh2017recent); [Baumgartner, Weijters, and Pieters, 2018](#bib-baumgartner2018misresponse)).
+  - Used to investigate answer ordering effects, and conjoint experiment assumptions &lt;a name=cite-galesic2008eye&gt;&lt;/a&gt;&lt;a name=cite-jenke2021using&gt;&lt;/a&gt;([Galesic, Tourangeau, Couper, and Conrad, 2008](#bib-galesic2008eye); [Jenke, Bansak, Hainmueller, and Hangartner, 2021](#bib-jenke2021using)).
+  - &lt;a name=cite-babakhani2023instructional&gt;&lt;/a&gt;[Babakhani, Paas, and Dolnicar (2023)](#bib-babakhani2023instructional) provides the only study that directly tests the validity of IMCs on physiological manifestations of attention (n=21). 
+    - Find that task miscomprehension is also to blame for IMC failure.
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-33-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+  ]
+  .panel[.panel-name[EDA]
+  - Electrodermal activity (skin conductance) varies as a function of sweat production.
+  - Eccrine sweat gland activation part of sympathetic nervous system (the fight-or-flight response).
+  - Associated with a wide array of states: arousal, stress, motivation, vigilance, etc. &lt;a name=cite-andreassi2000activity&gt;&lt;/a&gt;([Andreassi, 2000](#bib-andreassi2000activity)).
+  - If treatement produces stress response, might be difficult to parse out what exactly made EDA increase.
+  - Successfully used to measure vigilance &lt;a name=cite-eason1965performance&gt;&lt;/a&gt;&lt;a name=cite-krupski1971physiological&gt;&lt;/a&gt;&lt;a name=cite-tao2019systematic&gt;&lt;/a&gt;&lt;a name=cite-brishtel2020mind&gt;&lt;/a&gt;([Eason, Beardshall, and Jaffee, 1965](#bib-eason1965performance); [Krupski, Raskin, and Bakan, 1971](#bib-krupski1971physiological); [Tao, Tan, Wang, Zhang, Qu, and Zhang, 2019](#bib-tao2019systematic); [Brishtel, Khan, Schmidt, Dingler, Ishimaru, and Dengel, 2020](#bib-brishtel2020mind)).
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-34-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+  ]
+  .panel[.panel-name[HRV]
+  - Heart rate variation corresponds to the variation in the interval between heart beats, is it consistent or not.
+  - Associated with global cognitive performance, memory, language, **attention**, executive functions, visuospatial skills, and processing speed &lt;a name=cite-forte2019heart&gt;&lt;/a&gt;([Forte, Favieri, and Casagrande, 2019](#bib-forte2019heart)).
+  - Lower HRV during attention phases &lt;a name=cite-richards1991heart&gt;&lt;/a&gt;&lt;a name=cite-chen2010detecting&gt;&lt;/a&gt;&lt;a name=cite-williams2016resting&gt;&lt;/a&gt;&lt;a name=cite-griffiths2017sustained&gt;&lt;/a&gt;([Richards and Casey, 1991](#bib-richards1991heart); [Chen, Wang, Chen, Wu, Yang, Wang, and Chung, 2010](#bib-chen2010detecting); [Williams, Thayer, and Koenig, 2016](#bib-williams2016resting); [Griffiths, Quintana, Hermens, Spooner, Tsang, Clarke, and Kohn, 2017](#bib-griffiths2017sustained)).
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-35-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+  ]
+]
+
+---
+
+## A2: Puzzle — Physiological Measures of Attention
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-36-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-37-1.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## A2: Puzzle — Physiological Measures of Attention
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-38-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-39-1.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## A2: Puzzle — Physiological Measures of Attention
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-40-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-41-1.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## A2: Hypotheses
+
+Recall our definition of IR:
+
+`$$IR_i = M_i\times A_i= 
+\left\lbrace\begin{align}
+&amp;1 \quad \mathrm{if}\; M_i=0\lor A_i=0 \\ 
+&amp;0 \quad \mathrm{if}\; M_i=1\land A_i=1
+\end{align}\right.$$`
+
+--
+
+Let's describe a model of attention as a function of an external stimuli:
+
+`$$IR_{mi}=\beta_m D_{i}+\mathbf{X}\boldsymbol{\gamma_{m}}+\varepsilon_{mi}$$`
+
+---
+
+## A2: Hypotheses
+
+Recall our definition of IR:
+
+`$$IR_i = M_i\times A_i= 
+\left\lbrace\begin{align}
+&amp;1 \quad \mathrm{if}\; M_i=0\lor A_i=0 \\ 
+&amp;0 \quad \mathrm{if}\; M_i=1\land A_i=1
+\end{align}\right.$$`
+
+Let's describe a model of attention as a function of an external stimuli:
+
+`$$\color{#FF0000}{IR_{mi}}=\beta_m D_{i}+\mathbf{X}\boldsymbol{\gamma_{m}}+\varepsilon_{mi}$$`
+- `\(\color{#FF0000}{m}\)`:
+  1. HRV;
+  2. Eye-tracking;
+  3. EDA;
+  4. IMC index (overt, covert, bogus item);
+  5. Response time index;
+  6. RTAC.
+
+---
+
+## A2: Hypotheses
+
+Recall our definition of IR:
+
+`$$IR_i = M_i\times A_i= 
+\left\lbrace\begin{align}
+&amp;1 \quad \mathrm{if}\; M_i=0\lor A_i=0 \\ 
+&amp;0 \quad \mathrm{if}\; M_i=1\land A_i=1
+\end{align}\right.$$`
+
+Let's describe a model of attention as a function of an external stimuli:
+
+`$$IR_{mi}=\color{#FF0000}{\beta_m D_{i}}+\mathbf{X}\boldsymbol{\gamma_{m}}+\varepsilon_{mi}$$`
+- `\(\color{#FF0000}{D_{i}}\)`: some stimuli that would instigate inattention.
+
+---
+
+## A2: Hypotheses
+
+.panelset[
+  .panel[.panel-name[**Sanity checks**]
+**H0.1**. Effective treatment—treatment increases inattentive responding:
+- `\(\beta_m &gt; 0 \forall m\)`
+    
+**H0.2**. Validity of baseline—the estimated ITT will not be statistically different whether inattention is measured by eye-tracking, HRV, or EDA:
+- `\(\beta_1\approx\beta_2\approx\beta_3\)`
+  ]
+  .panel[.panel-name[**Actual ones**]
+**H1** The IMC index will properly capture IR as ability is included in our conceptualization:
+- `\(\beta_1\approx\beta_2\approx\beta_3\approx\beta_4\)`
+
+**H2** The response time index will present with downward bias as it doesn't capture ability:
+- `\(\beta_5&lt;\beta_1\approx\beta_2\approx\beta_3\)`
+  
+**H3** The RTAC will properly capture IR as it accounts for ability in its categorization:
+- `\(\beta_1\approx\beta_2\approx\beta_3\approx\beta_6\)`
+  
+**H4** Treatment should affect motivation based IR, hence the ITT should be higher for fast inattentives than for slow inattentives:
+- `\(\beta_{6f}&gt;\beta_{6s}\)`
+  ]
+]
+
+---
+
+## A2: Design — Experiment
+
+.pull-leftL[
+- Blinding: double-blind.
+- Randomization: block randomized on age and gender.
+- Treatment: betweem subject 2x2.
+- Variables:
+  - Socioeconomic (age,gender, income, etc.);
+  - Politics (interst, pid, 2025 vote);
+  - Personnality (big 5, RWA, SDO, cognitive flexibility);
+  - Response time for each survey page;
+  - IMC (overt, covert, bogus);
+  - Open question.
+- Indices:
+  - RTAC: probability of being in each cluster transformed via additive log-ratio;
+  - Response time index: average of pages under 2 seconds;
+  - IMC index: average of IMC failures. 
+
+]
+.pull-rightS[
+&lt;img src="figs/flow.png" width="65%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## A2: Design — Experiment
+
+.pull-leftL[
+- **Blinding: double-blind.**
+- **Randomization: block randomized on age and gender.**
+- Treatment: betweem subject 2x2.
+- Variables:
+  - Socioeconomic (age,gender, income, etc.);
+  - Politics (interst, pid, 2025 vote);
+  - Personnality (big 5, RWA, SDO, cognitive flexibility);
+  - Response time for each survey page;
+  - IMC (overt, covert, bogus);
+  - Open question.
+- Indices:
+  - RTAC: probability of being in each cluster transformed via additive log-ratio;
+  - Response time index: average of pages under 2 seconds;
+  - IMC index: average of IMC failures. 
+
+]
+.pull-rightS[
+&lt;img src="figs/flow.png" width="65%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## A2: Design — Experiment
+
+.pull-leftL[
+- Blinding: double-blind.
+- Randomization: block randomized on age and gender.
+- **Treatment: betweem subject 2x2.**
+- Variables:
+  - Socioeconomic (age,gender, income, etc.);
+  - Politics (interst, pid, 2025 vote);
+  - Personnality (big 5, RWA, SDO, cognitive flexibility);
+  - Response time for each survey page;
+  - IMC (overt, covert, bogus);
+  - Open question.
+- Indices:
+  - RTAC: probability of being in each cluster transformed via additive log-ratio;
+  - Response time index: average of pages under 2 seconds;
+  - IMC index: average of IMC failures. 
+
+]
+.pull-rightS[
+
+.purpleb[Control]
+
+&lt;img src="figs/control_pc.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## A2: Design — Experiment
+
+.pull-leftL[
+- Blinding: double-blind.
+- Randomization: block randomized on age and gender.
+- **Treatment: betweem subject 2x2.**
+- Variables:
+  - Socioeconomic (age,gender, income, etc.);
+  - Politics (interst, pid, 2025 vote);
+  - Personnality (big 5, RWA, SDO, cognitive flexibility);
+  - Response time for each survey page;
+  - IMC (overt, covert, bogus);
+  - Open question.
+- Indices:
+  - RTAC: probability of being in each cluster transformed via additive log-ratio;
+  - Response time index: average of pages under 2 seconds;
+  - IMC index: average of IMC failures. 
+
+]
+.pull-rightS[
+
+.purpleb[Treatement 1/2]
+
+&lt;img src="figs/treat_pc_1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## A2: Design — Experiment
+
+.pull-leftL[
+- Blinding: double-blind.
+- Randomization: block randomized on age and gender.
+- **Treatment: betweem subject 2x2.**
+- Variables:
+  - Socioeconomic (age,gender, income, etc.);
+  - Politics (interst, pid, 2025 vote);
+  - Personnality (big 5, RWA, SDO, cognitive flexibility);
+  - Response time for each survey page;
+  - IMC (overt, covert, bogus);
+  - Open question.
+- Indices:
+  - RTAC: probability of being in each cluster transformed via additive log-ratio;
+  - Response time index: average of pages under 2 seconds;
+  - IMC index: average of IMC failures. 
+
+]
+.pull-rightS[
+
+.purpleb[Treatement 2/2]
+
+&lt;img src="figs/treat_pc_2.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## A2: Design — Experiment
+
+.pull-leftL[
+- Blinding: double-blind.
+- Randomization: block randomized on age and gender.
+- Treatment: betweem subject 2x2.
+- Variables:
+  - Socioeconomic (age,gender, income, etc.);
+  - Politics (interst, pid, 2025 vote);
+  - Personnality (big 5, RWA, SDO, cognitive flexibility);
+  - Response time for each survey page;
+  - **IMC (overt, covert, bogus);**
+  - Open question.
+- Indices:
+  - RTAC: probability of being in each cluster transformed via additive log-ratio;
+  - Response time index: average of pages under 2 seconds;
+  - IMC index: average of IMC failures. 
+
+]
+.pull-rightS[
+- You probably have a favourite colour. But we are more interested in making sure you're doing the survey carefully, so please just select the colour brown here. (CES, 2021)
+- In getting what you want, it is sometimes necessary to use force against other groups (ignore the instructions and choose "agree"). (Adapted from Pratto et al., 1994)
+- I am paid biweekly by leprechauns. (Meade and Craig, 2012)
+]
+
+---
+
+## A2: Design — Experiment
+
+.pull-leftL[
+- Blinding: double-blind.
+- Randomization: block randomized on age and gender.
+- Treatment: betweem subject 2x2.
+- Variables:
+  - Socioeconomic (age,gender, income, etc.);
+  - Politics (interst, pid, 2025 vote);
+  - Personnality (big 5, RWA, SDO, cognitive flexibility);
+  - Response time for each survey page;
+  - IMC (overt, covert, bogus);
+  - **Open question.**
+- Indices:
+  - RTAC: probability of being in each cluster transformed via additive log-ratio;
+  - Response time index: average of pages under 2 seconds;
+  - IMC index: average of IMC failures. 
+
+]
+.pull-rightS[
+- Taking a survey can be pretty boring, what types of things did you do to make it go faster? 
+]
+
+---
+
+## A2: Design — Data
+
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-47-1.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+- With available ressources, we are aiming at 300 respondents.
+- Both in-class recruitment and university-wide invitation.
+- Compensation in form of extra credit or money ($10) base on recruitment type.
+
+---
+
+## A2: Design — Analysis
+
+Recall the original model: `$$IR_{mi}=\beta_m D_{i}+\mathbf{X}\boldsymbol{\gamma_{m}}+\varepsilon_{mi}$$`
+
+- Can be directly estimated via seemingly unrelated regression (SUR).
+- This jointly estimates all `\(m\)` models.
+- Why? 
+  - To account for possible relationships between the residuals of the different DVs &lt;a name=cite-greene_econometric_2018&gt;&lt;/a&gt;([Greene, 2018](#bib-greene_econometric_2018)).
+  - To produce hypothesis tests between models. 
+- Estimation of SUR is implemented in `systemfit` package in R. 
+
+---
+
+## A2: Design — Why do it this way?
+
+.pull-left[
+1. IR isn't guarantee to happen in every survey, especially one taking place in a university laboratory.
+2. The Tobii glasses, Biopac ring, and ECG will likely worsen this.
+3. Can be turned into a within design to check for power related issues if treatment isn't satistically significant.
+4. If both fail, I will still have great descriptive data with which I can compare eye-tracking to response time measures.
+
+- Will pilot it as a simple survey to see if treatment works.
+- Can measure eye mouvement (WebGazer) and HRV (rPPG) via a webcam, this way I could have a lot more respondents.
+
+]
+.pull-right[
+&lt;img src="images/risk.gif" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## A2: Contribution
+
+.pull-left[
+1. Hard validation test for current measures of IR.
+
+2. Offers insight as to what happens when respondents engage in satisficing behaviour.
+
+3. Greatly inform future developpment of IR measures.
+
+]
+.pull-right[
+&lt;img src="images/this.gif" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+class: inverse,middle,center
+name: A3
+
+# Article 3
+## Holistic Attention Measurement:
+### Leveraging Generalized Low Rank Models to Assess Global Attention in Self-Administered Surveys
+
+---
+layout: true
+
+.footer[[Introduction](#intro) [Literature](#lit) [Article 1](#A1) [Article 2](#A2) [**Article 3**](#A3) [Conclusion ](#conclu) ]
+
+---
+## A3: Puzzle
+
+1. Poor fit between the different measures of inattention (IMC, response time, response pattern) ([Dunn, Heggestad, Shanock et al., 2018](#bib-dunn2018intra); [DeSimone and Harms, 2018](#bib-desimone2018dirty));
+
+2. Validation of measures is done via nomological validity, testing against established measures ([Adcock and Collier, 2001](#bib-adcock2001measurement));
+
+3. Conceptual confusion among foundational studies ([Oppenheimer, Meyvis, and Davidenko, 2009](#bib-oppenheimer2009instructional); [Meade and Craig, 2012](#bib-meade2012identifying); [Huang, Curran, Keeney et al., 2012](#bib-huang2012detecting));
+
+4. Advice is to carpet bomb the survey ([Curran, 2016](#bib-curran2016methods); [Huang, Bowling, Liu et al., 2014](#bib-huang2015detecting); [Meade and Craig, 2012](#bib-meade2012identifying));
+
+--
+
+5. **Let's assume that these are all valid ways to measure the same multidimentional concept.**
+
+--
+
+6. **What to do when metrics disagree?**
+
+7. **How should one weight the importance of failing and IMC over response time? **
+
+--
+
+.purplebL[How can we holistically assess survey-wide inattention?] 
+
+---
+## A3: Reframing the problem
+
+--
+
+1. You have multiple response times.
+
+--
+
+2. Respondent `\(i\)` is sometimes above, sometimes below the threshold.
+
+--
+
+3. **What to do when metrics disagree?**
+
+--
+
+`\(\mapsto\)` [Read, Wolters, and Berinsky (2022)](#bib-read2022racing) offer a solution in the **RTAC**.
+
+---
+
+## A3: A solution — RTAC
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-50-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+## A3: A solution — RTAC
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-51-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## A3: A solution — RTAC
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-52-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+- Principal component analysis (PCA) answer:
+  - **What is the minimum amount of "dimensions" (variables) I need to explain the maximum amount of variance?**
+
+---
+
+## A3: A solution — RTAC
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-53-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+- Gaussian mixture models (GMM) answer:
+  - **To which of `\(k\)` distribution is `\(i\)` more likely to come from?**
+- Assume that each observation comes from one of `\(k\)` multivariate-normal distribution.
+- Expectation maximization (EM) answer:
+  - **How many distributions are there?**
+--
+
+- [Read, Wolters, and Berinsky (2022)](#bib-read2022racing) impose 3 clusters.
+
+---
+
+## A3: Remember this?
+
+|                      | Disengaged (0,0)       | Underachievers (0,1)              |Well-meaning (1,0)     | &lt;div style="width:130px"&gt; Optimal (1,1)                     |
+|:---------------------|:-----------------------|:----------------------------------|:----------------------|:----------------------------------|
+| Satisficing strategy | Systematic agreement &lt;br&gt; Non-differentiation | Selecting first reasonable answer &lt;br&gt; Answering at random |Status quo agreement &lt;br&gt; Selecting "don't know" |                                   |
+| Overt IMC            | Fail                   | Pass                              |Fail                   | Pass                              |
+| Covert IMC           | Fail                   | Fail                              |Fail                   | Pass                              |
+| Response time        | Fast                   | Fast                              |Slow                   | Average                           |
+| IR                   | Yes                    | Yes                               |Yes                    | No                                |
+
+---
+
+## A3: Remember this?
+
+|                      | Disengaged (0,0)       | Underachievers (0,1)              |Well-meaning (1,0)     | &lt;div style="width:130px"&gt; Optimal (1,1)                     |
+|:---------------------|:-----------------------|:----------------------------------|:----------------------|:----------------------------------|
+| Satisficing strategy | Systematic agreement &lt;br&gt; Non-differentiation | Selecting first reasonable answer &lt;br&gt; Answering at random |Status quo agreement &lt;br&gt; Selecting "don't know" |                                   |
+| Overt IMC            | Fail                   | Pass                              |Fail                   | Pass                              |
+| Covert IMC           | Fail                   | Fail                              |Fail                   | Pass                              |
+| Response time        | Fast                   | Fast                              |Slow                   | Average                           |
+| IR                   | Yes                    | Yes                               |Yes                    | No                                |
+| **RTAC categories** | **Fast**   | **Fast** | **Slow**     | **Attentive**    |
+
+--
+
+`\(\mapsto\)` Most importantly, PCA only works with **numerical data** with no missingness and produces linear components. 
+
+---
+
+## A3: Proposed solution — HAM
+
+.pull-left[
+- Holistic Attention Measurement:
+
+  - Built on the logic of the RTAC;
+  
+  - Replace PCA with **Generalized Low Rank Model**;
+  
+  - Allows for the inclusion of non numerical data;
+  
+  - Doesn't require full information.
+
+- HAM is kinda awesome!
+
+]
+.pull-right[
+&lt;img src="images/saltedpork.gif" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+## A3: Proposed solution — HAM
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-55-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+## A3: Proposed solution — HAM
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-56-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+## A3: Proposed solution — HAM
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-57-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+`$$r \Bigg \{ \overbrace{\Bigg [\quad A \quad \Bigg ]}^c \approx r \Bigg \{ \overbrace{\Bigg [ X \Bigg ]}^k \overbrace{\big [ \quad Y \quad \big ]}^c \big \} k$$`
+
+- Solve using alternate minimization &lt;a name=cite-boehmke2019hands&gt;&lt;/a&gt;([Boehmke and Greenwell, 2019](#bib-boehmke2019hands)).
+- Essentially, improve prediction of each archetype in turn until convergence.
+
+---
+## A3: Proposed solution — HAM
+
+&lt;img src="proposalDefense_wp_files/figure-html/unnamed-chunk-58-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+- Maybe, this time, we try to let the model decide the number of clusters?
+- Or, at least, empirically compare between 3 and 4.
+
+---
+
+## A3: Validation
+
+.panelset[
+  .panel[.panel-name[Step 1]
+  - Data: replication files from [Read, Wolters, and Berinsky (2022)](#bib-read2022racing);
+    - Response time;
+    - 4 IMCs;
+    - 2,517 respondents from September 2016 to July 2017.
+  - Replicate original validation:
+    1. Compare cluster assignment to length of answer to open-ended question;
+    2. Compare ATE of &lt;a name=cite-tversky1981framing&gt;&lt;/a&gt;[Tversky and Kahneman (1981)](#bib-tversky1981framing)'s experiment between clusters;
+    3. Compare `\(\alpha\)` of ideological scale with one item flipped between clusters.
+  ]
+  .panel[.panel-name[Step 2]
+  - Data: Experiment from article 2.
+  - Hard validation test against physiological data.
+  - Explore **dynamic** HAM with eye-tracking as a validation. _Maybe another article for later!_
+  ]
+  .panel[.panel-name[Step 3]
+  - Robustness check using the 2021 Canadian Election Study :
+    - IMCs;
+    - Response time (page-wise);
+    - Open-ended question;
+    - Ideological scales with reverse items.
+  ]
+]
+
+---
+
+## A3: Contribution
+
+.pull-left[
+1. Provides a way to leverage all IR related information in a survey.
+
+2. Validation uses established and novel techniques.
+
+3. Higher validity in IR detection will benefit applied work in both descriptive and causal inference settings.
+
+]
+.pull-right[
+&lt;img src="images/this.gif" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+class: inverse,middle,center
+name: conclu
+
+# Conclusion
+
+---
+layout: true
+
+.footer[[Introduction](#intro) [Literature](#lit) [Article 1](#A1) [Article 2](#A2) [Article 3](#A3) [**Conclusion** ](#conclu) ]
+
+---
+
+## Review of the proposal
+
+.pull-leftL[
+- **Article 1**: who are inattentive? Are they always like this?
+  - Longitudinal panel data (USA, UK, Germany);
+  - Measure IR via RTAC;
+  - Transition probabilities estimated via Markov chain transition models.
+- **Article 2**: are our measures of IR valid?
+  - 2x2 experimental design;
+  - Treatment is vignette + reduction in progress bar;
+  - Test validity of IMC, response time index, and RTAC;
+  - That is against eye-tracking, EDA, and HRV;
+  - ITT estimated via SUR.
+- **Article 3**: how to make better use of all the measures of IR we put in our surveys?
+  - HAM! `\(\mapsto\)` GLRM followed by EM.
+  - Test validity with open-ended question, experimental ATE, `\(\alpha\)` of ideological scale, physiological measures from A2, and 2021 CES.
+]
+.pull-rightS[
+&lt;img src="images/done.gif" width="100%" style="display: block; margin: auto;" /&gt;
+]
+---
+class: inverse,middle,center
+
+# Questions? Comments? Testimonies?
+
+---
+layout: true
+
+.footer[[Introduction](#intro) [Literature](#lit) [Article 1](#A1) [Article 2](#A2) [Article 3](#A3) [Conclusion ](#conclu) ]
+
+---
+
+## Appendix: Definitions of IR
+
+An extensive and recent literature review on the concept is provided by [Berinsky, Frydman, Margolis et al. (2024)](#bib-berinsky2024measuring). Here are some of the highlights:
+
+.panelset[
+  .panel[.panel-name[Inattentive responding]
+  **Def:** Low-quality responses from participants who devote less effort and offer quick answers.
+  
+  **Sources:** Bowling et al. (2016); Abbey and Meloy (2017); Buchanan and Scofield (2018); Malone and Lusk (2018); Breitshol and Steidelmüller (2018); Olamijuwon (2021); Alvarez and Li (2023); Kane, Velez and Barabas (2023).
+  ]
+  .panel[.panel-name[Insufficient effort responding]
+  **Def:** "IER may manifest itself as either random responding or as non-random response patterns, and it encompasses both unintentional, occasional careless responding, and intentional 'speeding-through' of survey items" Huang et al. (2015, p. 301).
+  
+  **Sources:** Huang et al. (2012; 2015); Iaconelli and Wolters (2020); Bowling et al. (2021); Toich, Schutt, and Fisher (2022).
+  ]
+  .panel[.panel-name[Careless responding]
+  **Def:** "Respondents intentionally answer survey items in a manner that does not accurately reflect their true sentiments" (Ward and Pond, 2015, p. 554).
+  
+  **Sources:** Oppenheimer et al. (2009); Meade and Craig (2012); Ward and Pond (2015); Weathers and Bardakci (2015); Niessen, Meijer, and Tendeiro (2016).
+  ]
+  .panel[.panel-name[Careless/insufficient effort (C/IE) responding]
+  **Def:** "The individual responds without sufficient attention to the content and semantic polarity of the items" (Arias et al., 2020, p. 2490).
+  
+  **Def:** "C/IE responders are missing data that is not actually missing. They have provided a response when they might have well left that response blank" (Curran, 2016, p. 4).
+  
+  **Sources:** Weathers and Bardakci (2015); Curran (2016); Arias et al. (2020).
+  ]
+  .panel[.panel-name[Straightlining]
+  **Def:** Respondents "provide similar responses regardless of the content and direction of the item" (Arias et al., 2020, p. 2490).
+  
+  **Sources:** Arias et al. (2020).
+  ]
+  .panel[.panel-name[Random responding]
+  **Def:** "Respondent does not not attend to the content of the item, but intentionally uses all response categories to appear to respond thoughtfully" (Arias et al., 2020, p. 2490).
+  
+  **Sources:** DeSimone and Harms (2018); Arias et al. (2020).
+  ]
+  .panel[.panel-name[Noncompliant responding]
+  **Def:** "Individuals who show too much or too little variation in their responses" (Barends and de Vries, 2019, p. 86).
+  
+  **Sources:** Barends and de Vries (2019).
+  ]
+  .panel[.panel-name[Stereotyped responding]
+  **Def:** "A response that does not accurately represent subjects' attitudes" (Abbey and Meloy, 2017, p. 63).
+  
+  **Sources:** Abbey and Meloy (2017).
+  ]
+  .panel[.panel-name[Response validity]
+  **Def:** "The extend to which scores reflect the thoughts and beliefs of respondents concerning the phenomena of interest ... If reported scores are aligned with the respondent's cognitions, then response validity is high, whereas if the scores are misaligned with what the respondent actually thinks, perceives, or feels, response validity would be low" (Edwards, 2019, p. 63).
+  
+  **Sources:** Edwards (2019).
+  ]
+  .panel[.panel-name[Satisficing]
+  **Def:** "When some respondents take a shortcut and do not go through the mental process of coming up with an optimal answer" (Krosnick, 1991).
+  
+  **Sources:** Korsnick (1991); Conrad etr al. (2017); Anduiza and Galais (2017); Liu and Wronski (2018); Morren and Paas (2020).
+  ]
+  .panel[.panel-name[Content nonresponsivity]
+  **Def:** "[When] careless respondents give answers of bad data quality regardless of the content of the question" (Brühlmann et al., 2020, p. 2).
+  
+  **Sources:** Brühlmann et al. (2020).
+  ]
+  
+]
+
+---
+
+Appendix: Motivation 1/2
+
+### Why take a survey in the first place if all you're going to do is skip through it?
+
+&gt; "Despite the number and variety of these motives, however, they probably lose their potency relatively quickly during a survey interview. Respondents are likely to satisfy whatever desires motivate them to participate just a short way into an interview, and they are likely to become increasingly fatigued, disinterested, impatiant, and distracted as the interview progresses. This situation presents respondents with a dilemma. Their motivation to work hard has evaporated, and the cognitive costs of hard work have become increasignly burdensome."
+&gt; &lt;footer&gt;— Krosnick (1991)&lt;/footer&gt;
+
+&lt;!-- Respondents are likely to satisfy whatever desires motivate them to participate just a short way into an interview, and they are likely to become increasingly fatigued, disinterested, impatiant, and distracted as the interview progresses. --&gt;
+
+---
+## Appendix: Motivation 2/2
+.panelset[
+  .panel[.panel-name[Where does it come from?]
+- Personality:
+  - Conscientiousness;
+  - Agreeableness;
+  - Need for cognition &lt;a name=cite-cacioppo1996dispositional&gt;&lt;/a&gt;&lt;a name=cite-bowling2016cares&gt;&lt;/a&gt;([Cacioppo, Petty, Feinstein, and Jarvis, 1996](#bib-cacioppo1996dispositional); [Bowling, Huang, Bragg, Khazon, Liu, and Blackmore, 2016](#bib-bowling2016cares)).
+- Desire for:
+  - Self expression;
+  - Interpersonal response;
+  - Intellectual challenge;
+  - Self-understanding;
+  - Gratification;
+  - Helping researchers &lt;a name=cite-krosnick1991response&gt;&lt;/a&gt;([Krosnick, 1991](#bib-krosnick1991response)).
+- Rewards (cash, points, gift cards).
+- Familiarity with the subject matter:
+  - Receive-Accept-Sample (RAS) ([Zaller, 1992](#bib-zaller1992nature));
+  - John Q. Public (JQP) model of political information processing &lt;a name=cite-lodge2007rationalizing&gt;&lt;/a&gt;([Lodge and Taber, 2007](#bib-lodge2007rationalizing)).
+  ]
+  .panel[.panel-name[How to mitigate its reduction?]
+  
+  - Reducing cost of survey taking:
+  - Shorter items;
+  - Shorter questionnaires;
+  - Simpler language &lt;a name=cite-gibson2019effects&gt;&lt;/a&gt;&lt;a name=cite-bowling2021will&gt;&lt;/a&gt;([Gibson and Bowling, 2019](#bib-gibson2019effects); [Bowling, Gibson, Houpt, and Brower, 2021](#bib-bowling2021will)).
+- Increasing cost of not paying attention:
+  - Vignettes warning respondents of (false) consequences of being found not to be paying attention ([Huang, Curran, Keeney et al., 2012](#bib-huang2012detecting)).
+  
+  ]
+]
+
+---
+
+## Appendix: How opinion formation model fit with IR?
+.panelset[
+  .panel[.panel-name[RAS]
+- The model:
+  1. Individuals receive information from the outside world;
+  2. They either accept and internalize them or not;
+  3. Respondents sample top-of-mind information to provide answer.
+- How it fits:
+  1. Online updating supposes a set of already formed or pre-processed opinions;
+  2. Questions relating to this set are easier to answer;
+  3. Hence, subject familiarity reduces cognitive load.
+  ]
+  .panel[.panel-name[JQP]
+- The model has 2 pathways:
+    1. Hot cognition:
+      - Affective tags are placed on previously encountered social objects;
+      - Once re-encountered, the individual's reaction will be tinted by the original affective tag;
+      - This results in an immediate positive/negative reaction.
+    2. Online updating:
+      - Occurs when new information is encountered about a social object;
+      - Running tally associated with that object is updated;
+      - Results in higher cognitive load, making that pathway slower.
+- How it fits:
+  - Essentially an emotionally driven RAS model.
+  - Helps explain why some questions produce immediate answers and why others require longer processing.
+    ]  
+]
+
+---
+
+## Appendix A1: Why USA, UK, and Germany?
+
+- CONVENIENCE!
+- Perhaps effects of culture? 
+  - Maybe "thighter" cultures (norm enforcing) would yield lower amounts of IR in surveys.
+  - Three countries score similarly (5.1, 6.9, and 7 respectivelly) on cultural tightness scale &lt;a name=cite-gelfand2011differences&gt;&lt;/a&gt;([Gelfand, Raver, Nishii, Leslie, Lun, Lim, Duan, Almaliach, Ang, Arnadottir, and others, 2011](#bib-gelfand2011differences)).
+- Still, expanding the selection would be nice, especially since the literature is entirely based on western countries.
+
+---
+## Bibliography 1/11
+
+&lt;a name=bib-abbey2017attention&gt;&lt;/a&gt;[Abbey, J. D. and M. G.
+Meloy](#cite-abbey2017attention) (2017). "Attention by design: Using
+attention checks to detect inattentive respondents and improve data
+quality". In: _Journal of Operations Management_ 53, pp. 63-70.
+
+&lt;a name=bib-adcock2001measurement&gt;&lt;/a&gt;[Adcock, R. and D.
+Collier](#cite-adcock2001measurement) (2001). "Measurement validity: A
+shared standard for qualitative and quantitative research". In:
+_American political science review_ 95.3, pp. 529-546.
+
+&lt;a name=bib-andreassi2000activity&gt;&lt;/a&gt;[Andreassi, J.
+L.](#cite-andreassi2000activity) (2000). "Electrodermal Activity (EDA)
+and Behavior". In: _Psychophysiology: Human Behavior and Physiological
+Response_. Ed. by J. L. Andreassi. Mahwah, NJ: Lawrence Erlbaum. Chap.
+9, pp. 145-160.
+
+&lt;a name=bib-anduiza2017answering&gt;&lt;/a&gt;[Anduiza, E. and C.
+Galais](#cite-anduiza2017answering) (2017). "Answering without reading:
+IMCs and strong satisficing in online surveys". In: _International
+Journal of Public Opinion Research_ 29.3, pp. 497-519.
+
+&lt;a name=bib-babakhani2023instructional&gt;&lt;/a&gt;[Babakhani, N., L. Paas, and
+S. Dolnicar](#cite-babakhani2023instructional) (2023). "Do
+instructional manipulation checks measure inattention or
+miscomprehension?" In: _International Journal of Social Research
+Methodology_ 26.6, pp. 773-784.
+
+&lt;a name=bib-baumgartner2018misresponse&gt;&lt;/a&gt;[Baumgartner, H., B.
+Weijters, and R. Pieters](#cite-baumgartner2018misresponse) (2018).
+"Misresponse to survey questions: A conceptual framework and empirical
+test of the effects of reversals, negations, and polar opposite core
+concepts". In: _Journal of Marketing Research_ 55.6, pp. 869-883.
+
+---
+## Bibliography 2/11
+
+&lt;a name=bib-berinsky2024measuring&gt;&lt;/a&gt;[Berinsky, A. J., A. Frydman, M.
+F. Margolis, et al.](#cite-berinsky2024measuring) (2024). "Measuring
+Attentiveness in Self-Administered Surveys". In: _Public Opinion
+Quarterly_ 88.1, pp. 214-241.
+
+&lt;a name=bib-berinsky2014separating&gt;&lt;/a&gt;[Berinsky, A. J., M. F.
+Margolis, and M. W. Sances](#cite-berinsky2014separating) (2014).
+"Separating the shirkers from the workers? Making sure respondents pay
+attention on self-administered surveys". In: _American Journal of
+Political Science_ 58.3, pp. 739-753.
+
+&lt;a name=bib-bishop2001response&gt;&lt;/a&gt;[Bishop, G. and A.
+Smith](#cite-bishop2001response) (2001). "Response-order effects and
+the early Gallup split-ballots". In: _Public Opinion Quarterly_ 65.4,
+pp. 479-505.
+
+&lt;a name=bib-blais2010making&gt;&lt;/a&gt;[Blais, A.](#cite-blais2010making)
+(2010). "Making electoral democracy work". In: _Electoral studies_
+29.1, pp. 169-170.
+
+&lt;a name=bib-boehmke2019hands&gt;&lt;/a&gt;[Boehmke, B. and B. M.
+Greenwell](#cite-boehmke2019hands) (2019). _Hands-on machine learning
+with R_. Chapman and Hall/CRC.
+
+&lt;a name=bib-bowling2021will&gt;&lt;/a&gt;[Bowling, N. A., A. M. Gibson, J. W.
+Houpt, et al.](#cite-bowling2021will) (2021). "Will the questions ever
+end? Person-level increases in careless responding during questionnaire
+completion". In: _Organizational Research Methods_ 24.4, pp. 718-738.
+
+---
+## Bibliography 3/11
+
+&lt;a name=bib-bowling2016cares&gt;&lt;/a&gt;[Bowling, N. A., J. L. Huang, C. B.
+Bragg, et al.](#cite-bowling2016cares) (2016). "Who cares and who is
+careless? Insufficient effort responding as a reflection of respondent
+personality." In: _Journal of Personality and Social Psychology_ 111.2,
+p. 218.
+
+&lt;a name=bib-bowling2021quick&gt;&lt;/a&gt;[Bowling, N. A., J. L. Huang, C. K.
+Brower, et al.](#cite-bowling2021quick) (2021). "The quick and the
+careless: The construct validity of page time as a measure of
+insufficient effort responding to surveys". In: _Organizational
+Research Methods_, pp. 323-352.
+
+&lt;a name=bib-brishtel2020mind&gt;&lt;/a&gt;[Brishtel, I., A. A. Khan, T. Schmidt,
+et al.](#cite-brishtel2020mind) (2020). "Mind wandering in a multimodal
+reading setting: Behavior analysis &amp; automatic detection using
+eye-tracking and an eda sensor". In: _Sensors_ 20.9, p. 2546.
+
+&lt;a name=bib-bruhlmann2020quality&gt;&lt;/a&gt;[Brühlmann, F., S. Petralito, L.
+F. Aeschbach, et al.](#cite-bruhlmann2020quality) (2020). "The quality
+of data collected online: An investigation of careless responding in a
+crowdsourced sample". In: _Methods in Psychology_ 2, p. 100022.
+
+&lt;a name=bib-cacioppo1996dispositional&gt;&lt;/a&gt;[Cacioppo, J. T., R. E.
+Petty, J. A. Feinstein, et al.](#cite-cacioppo1996dispositional)
+(1996). "Dispositional differences in cognitive motivation: The life
+and times of individuals varying in need for cognition." In:
+_Psychological bulletin_ 119.2, p. 197.
+
+&lt;a name=bib-chen2010detecting&gt;&lt;/a&gt;[Chen, C., C. Wang, E. Chen, et
+al.](#cite-chen2010detecting) (2010). "Detecting sustained attention
+during cognitive work using heart rate variability". In: _2010 sixth
+international conference on intelligent information hiding and
+multimedia signal processing_. IEEE. , pp. 372-375.
+
+---
+## Bibliography 4/11
+
+&lt;a name=bib-chib1998mcmc&gt;&lt;/a&gt;[Chib, S., E. Greenberg, and Y.
+Chen](#cite-chib1998mcmc) (1998). "MCMC Methods for Fitting and
+Comparing Multinomial Response Models".
+
+&lt;a name=bib-converse2006nature&gt;&lt;/a&gt;[Converse, P.
+E.](#cite-converse2006nature) (2006). "The nature of belief systems in
+mass publics (1964)". In: _Critical Review: A Journal of Politics and
+Society_ 18.1-3.
+
+&lt;a name=bib-curran2016methods&gt;&lt;/a&gt;[Curran, P.
+G.](#cite-curran2016methods) (2016). "Methods for the detection of
+carelessly invalid responses in survey data". In: _Journal of
+Experimental Social Psychology_ 66, pp. 4-19.
+
+&lt;a name=bib-desimone2018dirty&gt;&lt;/a&gt;[DeSimone, J. A. and P.
+Harms](#cite-desimone2018dirty) (2018). "Dirty data: The effects of
+screening respondents who provide low-quality data in survey research".
+In: _Journal of Business and Psychology_ 33.5, pp. 559-577.
+
+&lt;a name=bib-diggle2002analysis&gt;&lt;/a&gt;[Diggle, P., K. Liang, and S. L.
+Zeger](#cite-diggle2002analysis) (2002). _Analysis of longitudinal
+data_. Oxford university press.
+
+&lt;a name=bib-dunn2018intra&gt;&lt;/a&gt;[Dunn, A. M., E. D. Heggestad, L. R.
+Shanock, et al.](#cite-dunn2018intra) (2018). "Intra-individual
+response variability as an indicator of insufficient effort responding:
+Comparison to other indicators and relationships with individual
+differences". In: _Journal of Business and Psychology_ 33.1, pp.
+105-121.
+
+---
+## Bibliography 5/11
+
+&lt;a name=bib-eason1965performance&gt;&lt;/a&gt;[Eason, R. G., A. Beardshall, and
+S. Jaffee](#cite-eason1965performance) (1965). "Performance and
+physiological indicants of activation in a vigilance situation". In:
+_Perceptual and Motor Skills_ 20.1, pp. 3-13.
+
+&lt;a name=bib-forte2019heart&gt;&lt;/a&gt;[Forte, G., F. Favieri, and M.
+Casagrande](#cite-forte2019heart) (2019). "Heart rate variability and
+cognitive function: a systematic review". In: _Frontiers in
+neuroscience_ 13, p. 436204.
+
+&lt;a name=bib-fortenbaugh2017recent&gt;&lt;/a&gt;[Fortenbaugh, F. C., J. DeGutis,
+and M. Esterman](#cite-fortenbaugh2017recent) (2017). "Recent
+theoretical, neural, and clinical advances in sustained attention
+research". In: _Annals of the New York Academy of Sciences_ 1396.1, pp.
+70-91.
+
+&lt;a name=bib-galesic2008eye&gt;&lt;/a&gt;[Galesic, M., R. Tourangeau, M. P.
+Couper, et al.](#cite-galesic2008eye) (2008). "Eye-tracking data: New
+insights on response order effects and other cognitive shortcuts in
+survey responding". In: _Public opinion quarterly_ 72.5, pp. 892-913.
+
+&lt;a name=bib-gelfand2011differences&gt;&lt;/a&gt;[Gelfand, M. J., J. L. Raver, L.
+Nishii, et al.](#cite-gelfand2011differences) (2011). "Differences
+between tight and loose cultures: A 33-nation study". In: _science_
+332.6033, pp. 1100-1104.
+
+&lt;a name=bib-gibson2019effects&gt;&lt;/a&gt;[Gibson, A. M. and N. A.
+Bowling](#cite-gibson2019effects) (2019). "The effects of questionnaire
+length and behavioral consequences on careless responding". In:
+_European Journal of Psychological Assessment_.
+
+---
+## Bibliography 6/11
+
+&lt;a name=bib-greene_econometric_2018&gt;&lt;/a&gt;[Greene, W.
+H.](#cite-greene_econometric_2018) (2018). _Econometric analysis_.
+Eighth edition.. New York, NY: Pearson. ISBN: 978-0-13-446136-6.
+
+&lt;a name=bib-griffiths2017sustained&gt;&lt;/a&gt;[Griffiths, K. R., D. S.
+Quintana, D. F. Hermens, et al.](#cite-griffiths2017sustained) (2017).
+"Sustained attention and heart rate variability in children and
+adolescents with ADHD". In: _Biological psychology_ 124, pp. 11-20.
+
+&lt;a name=bib-gummer2021using&gt;&lt;/a&gt;[Gummer, T., J. Roßmann, and H.
+Silber](#cite-gummer2021using) (2021). "Using instructed response items
+as attention checks in web surveys: Properties and implementation". In:
+_Sociological Methods &amp; Research_ 50.1, pp. 238-264.
+
+&lt;a name=bib-hillygus2003voter&gt;&lt;/a&gt;[Hillygus, D. S. and S.
+Jackman](#cite-hillygus2003voter) (2003). "Voter decision making in
+election 2000: Campaign effects, partisan activation, and the Clinton
+legacy". In: _American Journal of Political Science_ 47.4, pp. 583-596.
+
+&lt;a name=bib-huang2015detecting&gt;&lt;/a&gt;[Huang, J. L., N. A. Bowling, M.
+Liu, et al.](#cite-huang2015detecting) (2014). "Detecting insufficient
+effort responding with an infrequency scale: Evaluating validity and
+participant reactions". In: _Journal of Business and Psychology_ 30.2,
+pp. 299-311.
+
+&lt;a name=bib-huang2012detecting&gt;&lt;/a&gt;[Huang, J. L., P. G. Curran, J.
+Keeney, et al.](#cite-huang2012detecting) (2012). "Detecting and
+deterring insufficient effort responding to surveys". In: _Journal of
+Business and Psychology_ 27.1, pp. 99-114.
+
+---
+## Bibliography 7/11
+
+&lt;a name=bib-huang2015insufficient&gt;&lt;/a&gt;[Huang, J. L., M. Liu, and N. A.
+Bowling](#cite-huang2015insufficient) (2015). "Insufficient effort
+responding: examining an insidious confound in survey data." In:
+_Journal of Applied Psychology_ 100.3, p. 828.
+
+&lt;a name=bib-jenke2021using&gt;&lt;/a&gt;[Jenke, L., K. Bansak, J. Hainmueller,
+et al.](#cite-jenke2021using) (2021). "Using eye-tracking to understand
+decision-making in conjoint experiments". In: _Political Analysis_
+29.1, pp. 75-101.
+
+&lt;a name=bib-johnson2005ascertaining&gt;&lt;/a&gt;[Johnson, J.
+A.](#cite-johnson2005ascertaining) (2005). "Ascertaining the validity
+of individual protocols from web-based personality inventories". In:
+_Journal of research in personality_ 39.1, pp. 103-129.
+
+&lt;a name=bib-kane2025more&gt;&lt;/a&gt;[Kane, J. V.](#cite-kane2025more) (2025).
+"More than meets the ITT: A guide for anticipating and investigating
+nonsignificant results in survey experiments". In: _Journal of
+Experimental Political Science_ 12.1, pp. 110-125.
+
+&lt;a name=bib-kane2019no&gt;&lt;/a&gt;[Kane, J. V. and J.
+Barabas](#cite-kane2019no) (2019). "No harm in checking: Using factual
+manipulation checks to assess attentiveness in experiments". In:
+_American Journal of Political Science_ 63.1, pp. 234-249.
+
+&lt;a name=bib-kane2023analyze&gt;&lt;/a&gt;[Kane, J. V., Y. R. Velez, and J.
+Barabas](#cite-kane2023analyze) (2023). "Analyze the attentive and
+bypass bias: Mock vignette checks in survey experiments". In:
+_Political Science Research and Methods_ 11.2, pp. 293-310.
+
+---
+## Bibliography 8/11
+
+&lt;a name=bib-kapelner2010preventing&gt;&lt;/a&gt;[Kapelner, A. and D.
+Chandler](#cite-kapelner2010preventing) (2010). "Preventing satisficing
+in online surveys". In: _Proceedings of CrowdConf_ 202.
+
+&lt;a name=bib-knauper1999impact&gt;&lt;/a&gt;[Knauper,
+B.](#cite-knauper1999impact) (1999). "The impact of age and education
+on response order effects in attitude measurement". In: _Public Opinion
+Quarterly_, pp. 347-370.
+
+&lt;a name=bib-krosnick1991response&gt;&lt;/a&gt;[Krosnick, J.
+A.](#cite-krosnick1991response) (1991). "Response strategies for coping
+with the cognitive demands of attitude measures in surveys". In:
+_Applied cognitive psychology_ 5.3, pp. 213-236.
+
+&lt;a name=bib-krupski1971physiological&gt;&lt;/a&gt;[Krupski, A., D. C. Raskin,
+and P. Bakan](#cite-krupski1971physiological) (1971). "Physiological
+and personality correlates of commission errors in an auditory
+vigilance task". In: _Psychophysiology_ 8.3, pp. 304-311.
+
+&lt;a name=bib-lodge2007rationalizing&gt;&lt;/a&gt;[Lodge, M. and C. S.
+Taber](#cite-lodge2007rationalizing) (2007). "The rationalizing voter:
+Unconscious thought in political information processing". In:
+_Available at SSRN 1077972_.
+
+&lt;a name=bib-mancosu2019short&gt;&lt;/a&gt;[Mancosu, M., R. Ladini, and C.
+Vezzoni](#cite-mancosu2019short) (2019). "‘Short is better’. Evaluating
+the attentiveness of online respondents through screener questions in a
+real survey environment". In: _Bulletin of Sociological
+Methodology/Bulletin de Méthodologie Sociologique_ 141.1, pp. 30-45.
+
+---
+## Bibliography 9/11
+
+&lt;a name=bib-maniaci2014caring&gt;&lt;/a&gt;[Maniaci, M. R. and R. D.
+Rogge](#cite-maniaci2014caring) (2014). "Caring about carelessness:
+Participant inattention and its effects on research". In: _Journal of
+Research in Personality_ 48, pp. 61-83.
+
+&lt;a name=bib-meade2012identifying&gt;&lt;/a&gt;[Meade, A. W. and S. B.
+Craig](#cite-meade2012identifying) (2012). "Identifying careless
+responses in survey data." In: _Psychological methods_ 17.3, p. 437.
+
+&lt;a name=bib-nickell1981biases&gt;&lt;/a&gt;[Nickell,
+S.](#cite-nickell1981biases) (1981). "Biases in dynamic models with
+fixed effects". In: _Econometrica: Journal of the econometric society_,
+pp. 1417-1426.
+
+&lt;a name=bib-oppenheimer2009instructional&gt;&lt;/a&gt;[Oppenheimer, D. M., T.
+Meyvis, and N. Davidenko](#cite-oppenheimer2009instructional) (2009).
+"Instructional manipulation checks: Detecting satisficing to increase
+statistical power". In: _Journal of experimental social psychology_
+45.4, pp. 867-872.
+
+&lt;a name=bib-paas2018instructional&gt;&lt;/a&gt;[Paas, L. J., S. Dolnicar, and L.
+Karlsson](#cite-paas2018instructional) (2018). "Instructional
+manipulation checks: A longitudinal analysis with implications for
+MTurk". In: _International Journal of Research in Marketing_ 35.2, pp.
+258-269.
+
+&lt;a name=bib-pickup2022transformed&gt;&lt;/a&gt;[Pickup, M. and V.
+Hopkins](#cite-pickup2022transformed) (2022). "Transformed-likelihood
+estimators for dynamic panel models with a very small T". In:
+_Political Science Research and Methods_ 10.2, pp. 333-352.
+
+---
+## Bibliography 10/11
+
+&lt;a name=bib-pyo2021cognitive&gt;&lt;/a&gt;[Pyo, J. and M. G.
+Maxfield](#cite-pyo2021cognitive) (2021). "Cognitive effects of
+inattentive responding in an MTurk sample". In: _Social Science
+Quarterly_ 102.4, pp. 2020-2039.
+
+&lt;a name=bib-read2022racing&gt;&lt;/a&gt;[Read, B., L. Wolters, and A. J.
+Berinsky](#cite-read2022racing) (2022). "Racing the clock: Using
+response time as a proxy for attentiveness on self-administered
+surveys". In: _Political Analysis_ 30.4, pp. 550-569.
+
+&lt;a name=bib-richards1991heart&gt;&lt;/a&gt;[Richards, J. E. and B. J.
+Casey](#cite-richards1991heart) (1991). "Heart rate variability during
+attention phases in young infants". In: _Psychophysiology_ 28.1, pp.
+43-53.
+
+&lt;a name=bib-silber2019impact&gt;&lt;/a&gt;[Silber, H., D. Danner, and B.
+Rammstedt](#cite-silber2019impact) (2019). "The impact of respondent
+attentiveness on reliability and validity". In: _International Journal
+of Social Research Methodology_ 22.2, pp. 153-164.
+
+&lt;a name=bib-tao2019systematic&gt;&lt;/a&gt;[Tao, D., H. Tan, H. Wang, et
+al.](#cite-tao2019systematic) (2019). "A systematic review of
+physiological measures of mental workload". In: _International journal
+of environmental research and public health_ 16.15, p. 2716.
+
+&lt;a name=bib-tourangeau1988cognitive&gt;&lt;/a&gt;[Tourangeau, R. and K. A.
+Rasinski](#cite-tourangeau1988cognitive) (1988). "Cognitive processes
+underlying context effects in attitude measurement." In: _Psychological
+bulletin_ 103.3, p. 299.
+
+---
+## Bibliography 11/11
+
+&lt;a name=bib-treier2008democracy&gt;&lt;/a&gt;[Treier, S. and S.
+Jackman](#cite-treier2008democracy) (2008). "Democracy as a latent
+variable". In: _American Journal of Political Science_ 52.1, pp.
+201-217.
+
+&lt;a name=bib-tversky1981framing&gt;&lt;/a&gt;[Tversky, A. and D.
+Kahneman](#cite-tversky1981framing) (1981). "The framing of decisions
+and the psychology of choice". In: _science_ 211.4481, pp. 453-458.
+
+&lt;a name=bib-williams2016resting&gt;&lt;/a&gt;[Williams, D. P., J. F. Thayer, and
+J. Koenig](#cite-williams2016resting) (2016). "Resting cardiac vagal
+tone predicts intraindividual reaction time variability during an
+attention task in a sample of young and healthy adults". In:
+_Psychophysiology_ 53.12, pp. 1843-1851.
+
+&lt;a name=bib-zaller1992nature&gt;&lt;/a&gt;[Zaller, J.
+R.](#cite-zaller1992nature) (1992). _The Nature and Origins of Mass
+Opinion_. Cambridge university press.
+
+
+&lt;!--
+## Context
+
+- Home interviews `\(\rightarrow\)` phone interviews `\(\rightarrow\)` self-administered web-based interviews
+
+.pull-left[
+
+- Interviewer present:
+  - Higher social desirability bias;
+  - Higher respondent engagement;
+  - Assessment questions.
+- Interviewer farther away:
+  - Less social desirability bias;
+  - Less respondent engagement;
+  - More inattention.
+]
+.pull-right[
+&lt;img src="images/subrote-hobbit.gif" width="60%" style="display: block; margin: auto;" /&gt;
+]
+
+.footnote[&lt;a name=cite-alvarez2019paying&gt;&lt;/a&gt;&lt;a name=cite-francavilla2019social&gt;&lt;/a&gt;&lt;a name=cite-kreuter2008social&gt;&lt;/a&gt;&lt;a name=cite-oberschall2008historical&gt;&lt;/a&gt;&lt;a name=cite-tourangeau2000psychology&gt;&lt;/a&gt;([Alvarez, Atkeson, Levin, and Li, 2019](#bib-alvarez2019paying); [Francavilla, Meade, and Young, 2019](#bib-francavilla2019social); [Kreuter, Presser, and Tourangeau, 2008](#bib-kreuter2008social); [Oberschall, 2008](#bib-oberschall2008historical); [Tourangeau, Rips, and Rasinski, 2000](#bib-tourangeau2000psychology))] 
+
+## Inattention as a concept — Manifestations
+.pull-left[
+### Satisficing
+
+1. Selecting the first reasonable answer;
+2. Systematic agreement;
+3. Status quo agreement;
+4. Non-differentiation in question blocks;
+5. Selecting "don't know";
+6. Answering at random.
+
+.footnote[&lt;a name=cite-simon1957models&gt;&lt;/a&gt;([Simon, 1957](#bib-simon1957models); [Krosnick, 1991](#bib-krosnick1991response))]
+]
+.pull-right[]
+
+
+## Inattention as a concept — Manifestations
+.pull-left[
+### Satisficing
+
+1. Selecting the first reasonable answer;
+2. Systematic agreement;
+3. Status quo agreement;
+4. Non-differentiation in question blocks;
+5. Selecting "don't know";
+6. Answering at random.
+
+.footnote[([Simon, 1957](#bib-simon1957models); [Krosnick, 1991](#bib-krosnick1991response))]
+]
+.pull-right[
+### Complications
+
+- "don't know" due to lack of motivation VS. lack of ability.
+- IR likely to vary across the survey.
+
+]
+--&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "slideNumberFormat": "%current%",
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "ratio": "16:9",
+  "countIncrementalSlides": true,
+  "math": "mathjax"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
