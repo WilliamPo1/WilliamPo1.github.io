@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-<p> <font color="#56018D"> <i class="fa fa-cat"></i></font> Political Science Ph.D. student at the University of Western Ontario. </p>
+<p> <font color="#56018D"> <i class="fa fa-cat"></i></font> Political Science Ph.D. candidate (ABD) at the University of Western Ontario. </p>
 
 Budding methodologist working on survey inattention measures and time series, with substantive interests in political psychology and elections. 
 

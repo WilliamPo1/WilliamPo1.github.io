@@ -59,6 +59,7 @@ details {
 </details>
 -->
 
+<!--
 <details>
   <summary>Talks</summary>
   <ul>
@@ -70,6 +71,7 @@ details {
     </li>
   </ul>
 </details>
+-->
 
 <details>
   <summary>R Tutorials</summary>
