@@ -64,6 +64,8 @@ Please go to
 
 And download the material for this year's workshop
 
+&lt;i&gt;Thank you to Western Research, the Society of Graduate Students, and the School of Graduate &amp; Postdoctoral Studies for their support!&lt;/i&gt;
+
 &lt;img src="images/social-science/PNG/SSC_Horiz_Rev.png" width="30%" style="display: block; margin: auto;" /&gt;
 
 ---
@@ -743,7 +745,7 @@ mean(normalVec)
 ```
 
 ```
-## [1] -0.007661918
+## [1] -0.03094287
 ```
 
 ``` r
@@ -751,7 +753,7 @@ my_mean(normalVec)
 ```
 
 ```
-## [1] -0.01
+## [1] -0.03
 ```
 
 ---
@@ -919,7 +921,7 @@ table(dat$female,dat$leftright)
 ```
 
 ```
-##  [1] 2015 2013 2013 2011 2015 2011 2011 2015 2015 2013
+##  [1] 2011 2011 2015 2011 2013 2015 2013 2011 2011 2012
 ```
 
 ``` r
@@ -929,7 +931,7 @@ years[2]
 ```
 
 ```
-## [1] 2013
+## [1] 2011
 ```
 
 ``` r
@@ -938,7 +940,7 @@ years[c(1,5,10)]
 ```
 
 ```
-## [1] 2015 2015 2013
+## [1] 2011 2013 2012
 ```
 
 ---
@@ -955,9 +957,9 @@ years[c(1,5,10)]
 
 ```
 ##            polity proportional year
-## 35900      Canada            0 2015
-## 5214       Norway            1 2013
-## 34329 Switzerland            1 2011
+## 35413    Portugal            1 2015
+## 22227 Switzerland            1 2011
+## 8458      Austria            1 2013
 ```
 
 ``` r
@@ -966,7 +968,7 @@ sub[,1]
 ```
 
 ```
-## [1] "Canada"      "Norway"      "Switzerland"
+## [1] "Portugal"    "Switzerland" "Austria"
 ```
 
 ``` r
@@ -975,8 +977,8 @@ sub[3,]
 ```
 
 ```
-##            polity proportional year
-## 34329 Switzerland            1 2011
+##       polity proportional year
+## 8458 Austria            1 2013
 ```
 
 ``` r
@@ -985,7 +987,7 @@ sub[2,1]
 ```
 
 ```
-## [1] "Norway"
+## [1] "Switzerland"
 ```
 
 ---
@@ -998,7 +1000,7 @@ sub[2,1]
 ```
 
 ```
-## [1] "Norway"
+## [1] "Switzerland"
 ```
 
 ``` r
@@ -1016,7 +1018,7 @@ sub$polity[2]
 ```
 
 ```
-## [1] "Norway"
+## [1] "Switzerland"
 ```
 
 ---
@@ -1080,7 +1082,7 @@ sub$year[1]-sub$year[2]
 ```
 
 ```
-## [1] 2
+## [1] 4
 ```
 ]
 
@@ -1094,7 +1096,7 @@ sub$year
 ```
 
 ```
-## [1] 2015 2013 2011
+## [1] 2015 2011 2013
 ```
 
 ``` r
@@ -1163,7 +1165,7 @@ sub$year
 ```
 
 ```
-## [1] 2015 2013 2011
+## [1] 2015 2011 2013
 ```
 
 ``` r

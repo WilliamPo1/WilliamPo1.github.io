@@ -88,6 +88,8 @@ Please go to
 
 And download the material for this year's workshop
 
+<i>Thank you to Western Research, the Society of Graduate Students, and the School of Graduate & Postdoctoral Studies for their support!</i>
+
 ```{r  fig.align="center", out.width="30%",include=TRUE}
 knitr::include_graphics("images/social-science/PNG/SSC_Horiz_Rev.png")
 ```
