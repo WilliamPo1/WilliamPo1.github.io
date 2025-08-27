@@ -4,7 +4,6 @@
     <title>GAPS R Workshop 2025</title>
     <meta charset="utf-8" />
     <meta name="author" content="William Poirier" />
-    <meta name="date" content="2025-08-12" />
     <script src="R_Workshop25_files/header-attrs/header-attrs.js"></script>
     <link href="R_Workshop25_files/panelset/panelset.css" rel="stylesheet" />
     <script src="R_Workshop25_files/panelset/panelset.js"></script>
@@ -12,21 +11,8 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
 
-.title[
-# GAPS R Workshop 2025
-]
-.author[
-### William Poirier
-]
-.date[
-### 2025-08-12
-]
-
----
-
-
+class: inverse,middle,center
 &lt;style type="text/css"&gt;
 .purpleb {
   font-weight: bold;
@@ -66,17 +52,34 @@ class: center, middle, inverse, title-slide
 
 
 
+# GAPS R Workshop 2025
+
+### William Poirier
+
+2025-08-27
+
+Please go to 
+
+### williampo1.github.io/lab/
+
+And download the material for this year's workshop
+
+&lt;img src="images/social-science/PNG/SSC_Horiz_Rev.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+---
 ## What will we be doing today? 
 
 .pull-left[
-**Main Objective**: Getting familiar with R.
+**Main Objective**: Getting familiar with R &amp; RStudio.
 
 **Schedule**:
-- 10:00-12:00: Software installation and an introduction to "programming"
+- 10:00-12:00: First Steps
 - 12:00-13:00: Lunch
-- 13:00-15:00: First steps in R
+- 13:00-15:00: Working with R
 
-**ASK QUESTIONS!** Katie and Noah will be roaming the room to troubleshoot.
+**ASK QUESTIONS!**
+
+Katy and Noah will be roaming the room to troubleshoot.
 ]
 .pull-right[
 &lt;img src="gifs/giphy.gif" width="65%" style="display: block; margin: auto;" /&gt;
@@ -84,43 +87,1145 @@ class: center, middle, inverse, title-slide
 
 ---
 
-## Pooled Cross-Sectional Time Series
+class: inverse,middle,center
+
+## Session 1: First Steps
+
+---
+
+## Session 1: First Steps
+
+1. What is R?
+
+2. Managing anxieties
+
+3. Software installation
+
+4. RStudio interface
+
+5. Replication: &lt;i&gt;Why do majoritarian systems benefit the right?&lt;/i&gt; (Liñeira and Riera, 2024)
 
 
 
 ---
 
-## Potential Solutions — Bounds Method
+## What is R?
+
+.pull-left[
+&lt;img src="images/Rlogo.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+- A programming language
+]
+.pull-right[
+&lt;img src="images/RStudio_logo_flat.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+- A place to write stuff
+]
+
+---
+
+## What is R?
+
+.pull-left[
+- French; English; Spanish; Mandarin; Japanese; Arabic.
+
+- Are "arguably" programming languages
+]
+.pull-right[
+&lt;img src="images/Microsoft_Office_Word.svg" width="50%" style="display: block; margin: auto;" /&gt;
+
+- A place to write stuff
+]
+
+---
+
+## What is R?
+
+**A programming language made by statisticians for statisticians.**
+
+It will help you to:
+
+- domesticate (or clean) raw data;
+- perform statistical analyses;
+- graph your results;
+- scrape the web;
+- become cooler than folks who use Stata.
+
+--
+
+Why R?
+
+- Free;
+- Active research community developping packages;
+- Handles any data format;
+- Great point of entry for "real" programming languages. 
+
+---
+
+## Managing anxieties
+
+.pull-left[
+- Learning how to code is learning how to talk to your computer.
+
+- R is stupid, it does exactly what you tell it to do.
+
+- You're going to make mistakes and that's great!
+
+- Don't focus on the syntax, focus on the principles.
+
+- Time and effort are the only things you need.
+
+- You'll go from hating it to loving it in no time.
+
+- Google is your best friend!
+]
+.pull-right[
+&lt;img src="gifs/eye.gif" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+I'll say this again: **Don't try to learn the syntax by heart, focus on the principles!** 
+
+You'll learn the syntax as you go.
+
+---
+
+## Sofware installation — R
+
+.pull-left[
+Go to CRAN: .purpleb[https://cloud.r-project.org]
+
+- Comprenhensive R Archive Network;
+- Used to distribute both R and R packages.
+]
+.pull-right[
+&lt;img src="images/Rlogo.png" width="50%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Sofware installation — R
+
+.pull-left[
+.purpleb[Mac]
+&lt;img src="images/R_down_mac.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/R_down_mac2.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+.purpleb[Windows]
+&lt;img src="images/R_down_pc.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/R_down_pc2.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/R_down_pc3.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Sofware installation — R Studio
+
+.pull-left[
+Go to Posit: .purpleb[https://posit.co/download/rstudio-desktop/]
+]
+.pull-right[
+&lt;img src="images/rstudio_down_mac.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## RStudio interface
+
+.purpleb[OPEN RSTUDIO AND FOLLOW ME!!!]
+
+The next few slides are here as a reference.
+
+---
+
+## RStudio interface — Overview
+
+&lt;img src="images/RStudio_overview.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## RStudio interface — Editor
+
+&lt;img src="images/RStudio_editor.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## RStudio interface — Hello World
+
+&lt;img src="images/HelloWorld.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## RStudio interface — Hello World
+
+- To run a line of code:
+  1. Put cursor anywhere on line and press `cmd + enter`/`ctrl + enter`.
+  2. Select line or multiple lines and press `cmd + enter`/`ctrl + enter`.
+  2. Select line or multiple lines and click on `Run` button at top of screen.
+
+---
+## RStudio interface — Housekeeping
+
+&lt;img src="images/housekeeping1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+## RStudio interface — Housekeeping
+
+&lt;img src="images/housekeeping3.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+## RStudio interface — Housekeeping
+
+&lt;img src="images/housekeeping4.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Basics — Directories
+
+.pull-left[
+- **Directory** = How your computer organizes files and folders.
+  - From now own, you need to be a neat freak when it comes to this!
+- **Working directory** = Where R is pointing to
+  - Most errors of beginners comes from wrong working directories.
+- Shortcut, use when folder/file selected:
+  - Mac: `option + command + c`
+  - PC: `shift + right click &gt; Copy as Path`
+
+]
+.pull-right[
+&lt;img src="gifs/filer.gif" width="50%" style="display: block; margin: auto;" /&gt;
+]
+
+
+``` r
+# Option 1: where you want
+setwd("/Users/williampoirier/Dropbox/Website/files/uwo/R_Workshop_2025/rcode") # Mac
+setwd("C:\Users\williampoirier\Dropbox\Website\files\uwo\R_Workshop_2025\rcode") # PC
+
+# Option 2: where the R file is saved
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+```
+
+---
+
+## Basics — Packages
+
+.pull-left[
+- R ships with a suite of basic functions, i.e. base R.
+- Packages contain extra functions that other users have created.
+- 2 things to note:
+  - You only need to install them once.
+  - But, you need to load them each time you open a new session.
+- The Tidyverse is a suite of multiple packages.
+]
+.pull-right[
+&lt;img src="images/tidyverse.png" width="30%" style="display: block; margin: auto;" /&gt;
+]
+
+
+``` r
+# Install from CRAN
+install.packages("tidyverse")
+# Load in your session
+library(tidyverse)
+```
+
+---
+
+## Replication Exercise
+
+.pull-left[
+&lt;img src="images/repli1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+&lt;img src="images/repli2.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.purpleb[OPEN RSTUDIO AND FOLLOW ME!!!]
+
+---
+
+## Basics — Assignment
+
+
+``` r
+# The right way
+banana &lt;- 3
+
+# The wrong way
+banana = 3
+
+# Global assigner
+banana &lt;&lt;- 3
+
+# FOR ENGLISH KEYBOARDS
+# PC: alt + - 
+# MAC: option + -
+
+banana
+```
+
+```
+## [1] 3
+```
+
+---
+
+## Basics — Assignment
+.pull-left[
+
+``` r
+# The right way
+banana &lt;- 3
+
+# The wrong way
+banana = 3
+
+# Global assigner
+banana &lt;&lt;- 3
+
+# FOR ENGLISH KEYBOARDS
+# PC: alt + - 
+# MAC: option + -
+
+banana
+```
+
+```
+## [1] 3
+```
+]
+.pull-right[
+&lt;img src="images/hw_eye.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Basics — Data types
+
+.pull-left[
+
+``` r
+# Integer
+Apple &lt;- 13L
+class(Apple)
+```
+
+```
+## [1] "integer"
+```
+
+``` r
+# Numeric
+Banana &lt;- 13
+class(Banana)
+```
+
+```
+## [1] "numeric"
+```
+
+``` r
+# Character
+Cherry &lt;- "13"
+class(Cherry)
+```
+
+```
+## [1] "character"
+```
+]
+.pull-right[
+
+``` r
+# Logical
+Durian &lt;- TRUE
+class(Durian)
+```
+
+```
+## [1] "logical"
+```
+
+``` r
+# What happens when you add Apple and Banana? 
+# What about Apple and Durian?
+# What about Apple and Cherry?
+```
+]
+
+---
+
+## Basics — Data types
+
+.pull-left[
+
+``` r
+# Integer
+Apple &lt;- 13L
+class(Apple)
+```
+
+```
+## [1] "integer"
+```
+
+``` r
+# Numeric
+Banana &lt;- 13
+class(Banana)
+```
+
+```
+## [1] "numeric"
+```
+
+``` r
+# Character
+Cherry &lt;- "13"
+class(Cherry)
+```
+
+```
+## [1] "character"
+```
+]
+.pull-right[
+
+``` r
+# Logical
+Durian &lt;- TRUE
+class(Durian)
+```
+
+```
+## [1] "logical"
+```
+
+``` r
+# What happens when you add Apple and Banana? 
+# What about Apple and Durian?
+# What about Apple and Cherry?
+
+Apple + Banana
+```
+
+```
+## [1] 26
+```
+
+``` r
+Apple + Durian
+```
+
+```
+## [1] 14
+```
+]
+
+
+---
+
+## Basics — Data structures
 
 .panelset[
-  .panel[.panel-name[What?]
-  Webb, Lebo, and Linn (2020):
-  - ADL: `\(y_t=\alpha_0+\alpha_1 y_{t-1}+\beta_0 x_t+\beta_1x_{t-1}+\varepsilon_t\)`
-  - LRM: `\(\lambda = \frac{\beta_0+\beta_1}{1-\alpha_1}\)`, gives the total effect of a unit change in x on y.
-  - Use Bewley or Delta method to estimate `\(\lambda\)` and its SE.
-  - Distribution of the LRM t-statistic depends on the univariate characteristics of variables in the model, deterministic features of DGP for y, number of IVs, and sample size.
-  - Webb, Linn, and Lebo (2019) provide us with bounds, such that:
-    - Below the lower bound, we would **fail to reject the null** whatever the true univariate characteristics of the series.
-    - Above the upper bound, we would **reject the null** whatever the true univariate characteristics of the series.
-    ] 
-  .panel[.panel-name[Problem Solved?]
-  - Solves part of the problem, no need to bother with Dickey-Fuller tests. ✅
-  - But, still need to check for model specification (appropriate lag-lengths). ❌
+  .panel[.panel-name[Vectors 1/3]
+
+``` r
+# One data type allowed. R's basic data structure.
+
+# A vector
+stuff &lt;- "Kumquat"
+stuff
+```
+
+```
+## [1] "Kumquat"
+```
+
+``` r
+# Also a vector
+stuff &lt;- c("Knickknacks","Kerfuffle","Kumquat")
+stuff
+```
+
+```
+## [1] "Knickknacks" "Kerfuffle"   "Kumquat"
+```
+
+``` r
+# Also a vector
+(otherStuff &lt;- c(T,F,T,T,T,F)) # Parenthesis around assignment prints the new object.
+```
+
+```
+## [1]  TRUE FALSE  TRUE  TRUE  TRUE FALSE
+```
   ]
- ]
- 
+  .panel[.panel-name[2/3]
+
+``` r
+#### Why c() ? 
+
+stuff &lt;- c("Knickknacks","Kerfuffle","Kumquat")
+(scoreOfWordsThatStartsWithK_1 &lt;- 8:10) 
+```
+
+```
+## [1]  8  9 10
+```
+
+``` r
+# OR 
+(scoreOfWordsThatStartsWithK_2 &lt;- c(8,9,10))
+```
+
+```
+## [1]  8  9 10
+```
+
+``` r
+#### What if I want the score from 0 to 100 instead of 0 to 10?
+(scoreOfWordsThatStartsWithK_3 &lt;- 10*scoreOfWordsThatStartsWithK_2)
+```
+
+```
+## [1]  80  90 100
+```
+  ]
+.panel[.panel-name[3/3]
+
+``` r
+#### What if I want to relate the names to the score?
+names(scoreOfWordsThatStartsWithK_1) &lt;- stuff
+
+# Like adding a second dimension to the data!
+scoreOfWordsThatStartsWithK_1
+```
+
+```
+## Knickknacks   Kerfuffle     Kumquat 
+##           8           9          10
+```
+  ]
+  .panel[.panel-name[Matrices 1/2]
+
+``` r
+# Again, only one data type. 2 dimensions of it this time.
+
+(myMatrix &lt;- matrix(1:9,nrow=3,ncol=3))
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+```
+
+``` r
+# Accepts all operations that matrices accept in math
+# Like transpose for example
+t(myMatrix)
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9
+```
+  ]
+  .panel[.panel-name[2/2]
+
+``` r
+# Works with characters as well!
+letterMatrix &lt;- matrix(letters,ncol=2)
+t(letterMatrix)
+```
+
+```
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
+## [1,] "a"  "b"  "c"  "d"  "e"  "f"  "g"  "h"  "i"  "j"   "k"   "l"   "m"  
+## [2,] "n"  "o"  "p"  "q"  "r"  "s"  "t"  "u"  "v"  "w"   "x"   "y"   "z"
+```
+
+``` r
+#### What if I want multiple data types? 
+```
+  ]
+  .panel[.panel-name[Data Frames 1/]
+
+``` r
+# One data type per column, essentially a collection of vectors, i.e. an excel sheet.
+
+(wordData &lt;- data.frame(stuff,scoreOfWordsThatStartsWithK_2))
+```
+
+```
+##         stuff scoreOfWordsThatStartsWithK_2
+## 1 Knickknacks                             8
+## 2   Kerfuffle                             9
+## 3     Kumquat                            10
+```
+  ]
+  .panel[.panel-name[2/2]
+
+``` r
+#### How do I change the column names?
+colnames(wordData) &lt;- c("word","score")
+# OR
+(wordData &lt;- data.frame(word=stuff,
+                        score=scoreOfWordsThatStartsWithK_2))
+```
+
+```
+##          word score
+## 1 Knickknacks     8
+## 2   Kerfuffle     9
+## 3     Kumquat    10
+```
+
+``` r
+#### What happens if I do this?
+# class(wordData)
+```
+  ]
+  .panel[.panel-name[Lists]
+
+``` r
+# Anything you want. Can mix object type and data structures.
+
+(myList &lt;- list(stuff,t(letterMatrix),wordData))
+```
+
+```
+## [[1]]
+## [1] "Knickknacks" "Kerfuffle"   "Kumquat"    
+## 
+## [[2]]
+##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13]
+## [1,] "a"  "b"  "c"  "d"  "e"  "f"  "g"  "h"  "i"  "j"   "k"   "l"   "m"  
+## [2,] "n"  "o"  "p"  "q"  "r"  "s"  "t"  "u"  "v"  "w"   "x"   "y"   "z"  
+## 
+## [[3]]
+##          word score
+## 1 Knickknacks     8
+## 2   Kerfuffle     9
+## 3     Kumquat    10
+```
+  ]
+]
+
 ---
 
+## Basics — Functions
 
+``` r
+#### What is a function?
+
+myFunction &lt;- function(stuff_in){
+  # Some operation
+  return(stuff_out)
+}
+
+my_mean &lt;- function(vector){
+  tmp &lt;- sum(vector)
+  n &lt;- length(vector)
+  out &lt;- round(tmp/n,2)
+  return(out)
+}
+
+normalVec &lt;- rnorm(1000,mean=0,sd=1)
+mean(normalVec)
+```
+
+```
+## [1] 0.03035743
+```
+
+``` r
+my_mean(normalVec)
+```
+
+```
+## [1] 0.03
+```
 
 ---
 
 class: inverse,middle,center
+name: lit
 
-## Questions? Comments? Testimonies?
+# LUNCH!
 
 ---
 
+## Session 2: Working with R
+
+1. Brief review of first session;
+
+2. Importing data;
+
+3. Looking at our data;
+
+4. Indexing;
+
+5. Operators;
+
+6. Diving into the replication file.
+
+---
+## Review
+
+
+``` r
+library(tidyverse)
+library(rio)
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+dat &lt;- import("../data/MajBenRight_clean_2010plus.dta")
+
+class(dat$polity)
+```
+
+```
+## [1] "character"
+```
+
+``` r
+class(dat)
+```
+
+```
+## [1] "data.frame"
+```
+
+---
+## Importing data
+
+- Some data formats can readily be openned by R:
+  - .RData `load()`
+  - .csv `read.csv()` or `read_csv()` from tydiverse
+- Others need specialized packages, there are a ton of them, just use `rio`!
+  - .csv
+  - .psv
+  - .tsv
+  - .sas7bdat/.xpt (SAS)
+  - .sav/.zsav/.por (SPSS)
+  - .dta (Stata)
+  - .xls/xlsx (Excel)
+  - .RData/.rda/.rds/.qs (R)
+  - And a ton more!
+
+---
+## Looking at our data 1/2
+
+.pull-left[
+
+``` r
+# Check number of rows and columns
+dim(dat)
+```
+
+```
+## [1] 37307   650
+```
+
+``` r
+# Check number of rows
+nrow(dat)
+```
+
+```
+## [1] 37307
+```
+
+``` r
+# Check number of columns
+ncol(dat)
+```
+
+```
+## [1] 650
+```
+
+``` r
+# For vector length
+length(scoreOfWordsThatStartsWithK_1)
+```
+
+```
+## [1] 3
+```
+]
+.pull-right[
+
+``` r
+# Check first or last few rows of data
+head(dat)
+tail(dat,n=2)
+```
+
+
+``` r
+# Check unique values of a vector
+head(unique(dat$polity))
+```
+
+```
+## [1] "New Zealand" "Greece"      "Germany"     "Switzerland" "Canada"     
+## [6] "Finland"
+```
+]
+
+---
+## Looking at our data 2/2
+
+
+``` r
+# Check unique values of a vector and how often they appear
+table(dat$leftright)
+```
+
+```
+## 
+##    0    1    2    3    4    5    6    7    8    9   10 
+##  945  672 1615 2768 2968 8586 3092 3522 2631  728 1121
+```
+
+``` r
+# Can create crosstabs from it!
+table(dat$female,dat$leftright)
+```
+
+```
+##    
+##        0    1    2    3    4    5    6    7    8    9   10
+##   0  445  311  766 1343 1468 3979 1702 1995 1443  401  554
+##   1  496  358  844 1418 1494 4564 1387 1516 1181  325  562
+```
+
+---
+## Indexing — Vectors
+
+
+``` r
+# Let's start with a vector.
+# I create one by sampling from the years of dat.
+# Notice that I used $ to select the column year, I'll come back to this.
+(years &lt;- dat$year[sample(1:nrow(dat),10)])
+```
+
+```
+##  [1] 2015 2011 2011 2013 2015 2013 2011 2014 2015 2013
+```
+
+``` r
+# Remember, a vector has one dimension
+# So if I want to know what the second value is, I only need one position.
+years[2]
+```
+
+```
+## [1] 2011
+```
+
+``` r
+# But I can also select multiple elements from the vector
+years[c(1,5,10)]
+```
+
+```
+## [1] 2015 2015 2013
+```
+
+---
+## Indexing — Data Frames/Matrices 1/2
+
+
+``` r
+# Matrices and dataframes have 2 dimensions, so you need two things to find
+# what you are looking for, a row and a column number!
+# In that order [r,c]
+# Let's create as toy example from dat
+(sub &lt;- dat[sample(1:nrow(dat),3),] |&gt; select(polity,proportional,year))
+```
+
+```
+##       polity proportional year
+## 11915 Canada            0 2015
+## 32025  Japan           NA 2013
+## 9252  Canada            0 2015
+```
+
+``` r
+# If I only want to know about the first column
+sub[,1]
+```
+
+```
+## [1] "Canada" "Japan"  "Canada"
+```
+
+``` r
+# If I only want to know about the third row
+sub[3,]
+```
+
+```
+##      polity proportional year
+## 9252 Canada            0 2015
+```
+
+``` r
+# Or what is in the second row of the first column
+sub[2,1]
+```
+
+```
+## [1] "Japan"
+```
+
+---
+## Indexing — Data Frames/Matrices 2/2
+
+
+``` r
+# Or what is in the second row of the first column
+sub[2,1]
+```
+
+```
+## [1] "Japan"
+```
+
+``` r
+# If I know the names of the columns however
+names(sub)
+```
+
+```
+## [1] "polity"       "proportional" "year"
+```
+
+``` r
+# Then I can do this
+sub$polity[2]
+```
+
+```
+## [1] "Japan"
+```
+
+---
+## Operators — Math
+.pull-left[
+
+``` r
+2+3
+```
+
+```
+## [1] 5
+```
+
+``` r
+2-3
+```
+
+```
+## [1] -1
+```
+
+``` r
+2*3
+```
+
+```
+## [1] 6
+```
+
+``` r
+2/3
+```
+
+```
+## [1] 0.6666667
+```
+]
+.pull-right[
+
+``` r
+# Modulo
+2%%3
+```
+
+```
+## [1] 2
+```
+
+``` r
+4%%2
+```
+
+```
+## [1] 0
+```
+
+``` r
+# Can do this with objects as well
+sub$year[1]-sub$year[2]
+```
+
+```
+## [1] 2
+```
+]
+
+---
+## Operators — Logic 1/2
+
+.pull-left[
+
+``` r
+sub$year
+```
+
+```
+## [1] 2015 2013 2015
+```
+
+``` r
+# A is equal to B
+sub$year[1] == sub$year[2]
+```
+
+```
+## [1] FALSE
+```
+
+``` r
+# A is not equal to B
+sub$year[1] != sub$year[2]
+```
+
+```
+## [1] TRUE
+```
+]
+.pull-right[
+
+``` r
+# A is higher than B
+sub$year[1] &gt; sub$year[2]
+```
+
+```
+## [1] TRUE
+```
+
+``` r
+# A is lower than B
+sub$year[1] &lt; sub$year[2]
+```
+
+```
+## [1] FALSE
+```
+
+``` r
+# A is higher or equal to B
+sub$year[1] &gt;= sub$year[2]
+```
+
+```
+## [1] TRUE
+```
+
+``` r
+# A is lower or equal to B
+sub$year[1] &lt;= sub$year[2]
+```
+
+```
+## [1] FALSE
+```
+]
+
+---
+## Operators — Logic 2/2
+
+
+``` r
+sub$year
+```
+
+```
+## [1] 2015 2013 2015
+```
+
+``` r
+# OR
+sub$year[1] == sub$year[2] | sub$year[1] &gt; sub$year[3]
+```
+
+```
+## [1] FALSE
+```
+
+``` r
+# AND
+sub$year[1] == sub$year[2] &amp; sub$year[1] &gt; sub$year[3]
+```
+
+```
+## [1] FALSE
+```
+
+---
+## Exercise 
+
+Subset the data (`dat`) such that:
+  1. Only columns 390 (`polity`), 391 (`year`), and 633 (`proportional`) appear;
+  2. Only data on the `year` 2015 for which `proportional` = 0
+
+How many unique values are there in `polity`?
+
+---
+## Exercise — A solution
+
+
+``` r
+tmp &lt;- dat[,c(390,391,633)]
+subset &lt;- tmp[tmp$year==2015 &amp; tmp$proportional==0,]
+unique(subset$polity)
+```
+
+```
+## [1] "Canada"        "Great Britain"
+```
+
+``` r
+# In tidyverse world
+dat |&gt;
+  select(polity,year,proportional) |&gt;
+  filter(year==2015 &amp; proportional == 0) |&gt;
+  distinct(polity)
+```
+
+```
+##          polity
+## 1        Canada
+## 2 Great Britain
+```
+
+---
+class: inverse,middle,center
+name: lit
+
+## Diving into the replication file
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

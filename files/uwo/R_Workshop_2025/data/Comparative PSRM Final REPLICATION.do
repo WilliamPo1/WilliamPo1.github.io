@@ -21,7 +21,7 @@ These datasets are:
 
 set scheme s1color
 
-global pathown = "C:\Users\robert\Downloads\Replication\"
+global pathown = "/Users/williampoirier/Dropbox/Website/files/uwo/R_Workshop_2025/data"
 
 use "$pathown/cses_imd.dta", replace
 
@@ -35,7 +35,7 @@ gen year = IMD1008_YEAR
 
 sort polity year
 
-merge m:m polity year using "$pathown\macro_bis.dta"
+merge m:m polity year using "$pathown/macro_bis.dta"
 
 rename rile rile_left
 
@@ -51,7 +51,7 @@ drop _merge
 
 replace polity="Great Britain" if polity=="United Kingdom"
 
-merge m:m polity year using "$pathown\lis_bis.dta"
+merge m:m polity year using "$pathown/lis_bis.dta"
 
 tab _merge
 
@@ -77,7 +77,7 @@ gen country_name=polity
 
 sort country_name year
 
-merge m:m country_name year using "$pathown\PS Frag PSRM.dta"
+merge m:m country_name year using "$pathown/PS Frag PSRM.dta"
 
 tab _merge
 

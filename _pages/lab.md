@@ -59,6 +59,7 @@ details {
 </details>
 -->
 
+<!--
 <details>
   <summary>Talks</summary>
   <ul>
@@ -70,10 +71,17 @@ details {
     </li>
   </ul>
 </details>
+-->
 
 <details>
   <summary>R Tutorials</summary>
   <ul>
+  <li>
+      UWO R Workshop 2025 
+      <a href="/files/uwo/R_Workshop_2025.zip" class="btn--faicon">
+        <i class="fa fa-cloud-arrow-down"></i>
+      </a>
+    </li>
     <li>
       UWO R Workshop 2024 
       <a href="/files/uwo/R_Workshop_2024.zip" class="btn--faicon">
