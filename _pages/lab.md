@@ -102,7 +102,7 @@ details > details > ul {
 <details>
 <summary>UWO Quant 1 — Labs</summary>
 <details>
-  <summary> <font color="#56018D"> <i class="fa fa-fish"></i> 2025 </summary>
+  <summary>  <i class="fa fa-fish"></i> 2025 </summary>
   <ul>
     <li>
       Lab 0
@@ -116,7 +116,7 @@ details > details > ul {
   </ul>
 </details>
 <details>
-  <summary> <font color="#56018D"> <i class="fa fa-fish"></i> 2024 </summary>
+  <summary> <i class="fa fa-fish"></i> 2024 </summary>
   <ul>
     <li>
       Lab 0
