@@ -92,7 +92,9 @@ details {
 </details>
 
 <details>
-  <summary>2025 — UWO Quant 1 — Labs</summary>
+<summary>UWO Quant 1 — Labs</summary>
+<details>
+  <summary> 2025 </summary>
   <ul>
     <li>
       Lab 0
@@ -105,9 +107,8 @@ details {
     </li>
   </ul>
 </details>
-
 <details>
-  <summary>2024 — UWO Quant 1 — Labs</summary>
+  <summary> 2024 </summary>
   <ul>
     <li>
       Lab 0
@@ -177,6 +178,9 @@ details {
     </li>
   </ul>
 </details>
+</details>
+
+
 
 <details>
   <summary>Shiny Apps</summary>
