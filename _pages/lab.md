@@ -60,7 +60,7 @@ details > details > ul {
     <li>
       MapleMeth 2025 
       <a href="/files/talks/maplemeth25/maplemeth.html" class="btn--faicon">
-        <i class="fa fa-rocket"></i>
+        <i class="fa fa-arrow-up-right-from-square"></i>
       </a>
     </li>
   </ul>
@@ -74,7 +74,7 @@ details > details > ul {
     <li>
       Proposal Defense 
       <a href="/files/talks/defenseSlides/proposalDefense_wp.html" class="btn--faicon">
-        <i class="fa fa-rocket"></i>
+        <i class="fa fa-arrow-up-right-from-square"></i>
       </a>
     </li>
   </ul>
@@ -102,7 +102,7 @@ details > details > ul {
 <details>
 <summary>UWO Quant 1 — Labs</summary>
 <details>
-  <summary>  <i class="fa fa-fish"></i> 2025 </summary>
+  <summary> - 2025 </summary>
   <ul>
     <li>
       Lab 0
@@ -110,13 +110,13 @@ details > details > ul {
         <i class="fa fa-cloud-arrow-down"></i>
       </a>
       <a href="/files/uwo/Quant1/2025/l0/Lab0.html" class="btn--faicon">
-        <i class="fa fa-rocket"></i>
+        <i class="fa fa-arrow-up-right-from-square"></i>
       </a>
     </li>
   </ul>
 </details>
 <details>
-  <summary> <i class="fa fa-fish"></i> 2024 </summary>
+  <summary> - 2024 </summary>
   <ul>
     <li>
       Lab 0
@@ -196,7 +196,7 @@ details > details > ul {
     <li>
       Sample and Effect size influence on ATE 
       <a href="https://a4te44-william-poirier.shinyapps.io/Shiny/" class="btn--faicon">
-        <i class="fa fa-rocket"></i>
+        <i class="fa fa-arrow-up-right-from-square"></i>
       </a>
     </li>
   </ul>
