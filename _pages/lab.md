@@ -41,6 +41,14 @@ details {
   background-color: #FFFFFF;
   border-radius: 5px;
 }
+
+details > details {
+  margin-left: 20px; /* Or increase to 30px+ for deeper indentation */
+}
+
+details > details > ul {
+  margin-left: 20px;
+}
 </style>
 
 <p> <font color="#56018D"> <i class="fa fa-frog"></i></font> A collection of things I've been working on to help the understanding of statistics. </p>
