@@ -102,7 +102,7 @@ details > details > ul {
 <details>
 <summary>UWO Quant 1 — Labs</summary>
 <details>
-  <summary> - 2025 </summary>
+  <summary> Fall 2025 </summary>
   <ul>
     <li>
       Lab 0
@@ -116,7 +116,7 @@ details > details > ul {
   </ul>
 </details>
 <details>
-  <summary> - 2024 </summary>
+  <summary> Fall 2024 </summary>
   <ul>
     <li>
       Lab 0
