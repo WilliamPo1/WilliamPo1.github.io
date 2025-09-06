@@ -92,14 +92,14 @@ details {
 </details>
 
 <details>
-  <summary>UWO Quant 1 2024 — Labs</summary>
+  <summary>2025 — UWO Quant 1 — Labs</summary>
   <ul>
     <li>
       Lab 0
-      <a href="/files/uwo/Quant1/2025/quant1_Lab0.zip" download class="btn--faicon">
+      <a href="/files/uwo/Quant1/2025/l0/quant1_Lab0.zip" download class="btn--faicon">
         <i class="fa fa-cloud-arrow-down"></i>
       </a>
-      <a href="/files/uwo/Quant1/2025/Lab0.html" class="btn--faicon">
+      <a href="/files/uwo/Quant1/2025/l0/Lab0.html" class="btn--faicon">
         <i class="fa fa-rocket"></i>
       </a>
     </li>
@@ -107,7 +107,7 @@ details {
 </details>
 
 <details>
-  <summary>UWO Quant 1 2024 — Labs</summary>
+  <summary>2024 — UWO Quant 1 — Labs</summary>
   <ul>
     <li>
       Lab 0
