@@ -5,11 +5,13 @@
 #### 0. Initialization ####
 
 #### 0.0 Installing packages, you do this once ####
-# install.packages("tidyverse") makes coding easier, you'll see
-# install.packages("rio") to import data of different formats
-# install.packages("sandwich") for robust se
-# install.packages("marginaleffects") to produce ME and FD
-# install.packages("car") for regression diagnostics
+install.packages("tidyverse") #makes coding easier, you'll see
+install.packages("rio") #to import data of different formats
+install.packages("sandwich") #for robust se
+install.packages("marginaleffects") #to produce ME and FD
+install.packages("car") #for regression diagnostics
+
+
 
 #### 0.1 Loading packages, you this every time you open a new R session. ####
 library(tidyverse)
@@ -95,7 +97,7 @@ fd <- rbind(fd1,fd2,fd3)  |>
 #### 3.1 Figure 1 ####
 ggplot(fd,aes(x=estimate*100,y=fct_rev(term),color=model,shape=model)) +
   geom_vline(xintercept=0,color="#B02539")+
-  geom_pointrange(aes(xmin = conf.high*100, xmax = conf.low*100),
+  geom_pointrange(aes(xmax = conf.high*100, xmin = conf.low*100),
                   position=position_dodge2(width=.8, reverse=T)) +
   scale_x_continuous("First difference in probability of voting for the right (%)")+
   scale_color_manual(values=c("#285F17","#EC5429","#27456B"))+
@@ -103,5 +105,3 @@ ggplot(fd,aes(x=estimate*100,y=fct_rev(term),color=model,shape=model)) +
   theme(axis.title.y=element_blank(),
         legend.title=element_blank())
   
-
-
