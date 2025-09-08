@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## 0. Bonjour/Hi!
 
-- Office: SSC 7323 
+- Office: SSC 7336 
 - Email: wpoirier@uwo.ca
 - Contact policy:
   - Open door = please come in, I'll be happy to help!
