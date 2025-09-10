@@ -82,6 +82,18 @@ details > details > ul {
 -->
 
 <details>
+  <summary>Talks</summary>
+  <ul>
+    <li>
+      Proposal Defense 
+      <a href="/files/talks/APSA_2025/APSA_uppcsts_2025.html" class="btn--faicon">
+        <i class="fa fa-arrow-up-right-from-square"></i>
+      </a>
+    </li>
+  </ul>
+</details>
+
+<details>
   <summary>R Tutorials</summary>
   <ul>
   <li>
