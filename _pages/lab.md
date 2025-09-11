@@ -85,7 +85,7 @@ details > details > ul {
   <summary>Talks</summary>
   <ul>
     <li>
-      Proposal Defense 
+      APSA 2025 
       <a href="/files/talks/APSA_2025/APSA_uppcsts_2025.html" class="btn--faicon">
         <i class="fa fa-arrow-up-right-from-square"></i>
       </a>
