@@ -1,0 +1,297 @@
+---
+title: "POLISCI 9590 - Lab1: Data Management and Recoding Variables"
+author: "William Poirier"
+date: "2025-09-17"
+output: 
+  html_document:
+      toc: true
+      toc_float:
+        collapsed: true
+      theme: journal
+---
+<style>
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #4F2683;
+    border-color: #4F2683;
+}
+
+a {
+    color: #4F2683;
+    text-decoration: none;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 00. What we'll be doing:
+
+0. (Brief) Review of R and RMD;
+1. Import Data;
+2. Explore Data; 
+3. Cleaning Data;
+4. Exercises.
+
+## 0. R and RMD
+
+Open lab 0.
+
+## 1. Import Data
+
+You have seen this in many forms:
+
+  1. Data from packages can be called directly when the package is loaded.
+  2. It can be imported from files on your computer via `rio::import()`, or other functions depending on the file format.
+
+```{r,results = "hide"}
+library(tidyverse)
+data(Arrests, package="carData")
+Arrests <- as_tibble(Arrests)
+```
+
+## 2. Explore Data
+
+### 2.1 The **pipe** `|>`/`%>%`
+
+- The pipe operator prevents us from having to save intermediate states of the data when doing multiple operations. 
+- It takes whatever comes before and plugs it (pipes it) into whatever comes after. 
+- MAC: shift + cmd + m
+- PC: shift + ctrl + m
+
+```{r}
+# Instead of doing
+
+## Select some columns
+dat <- select(Arrests,colour,age,sex)
+## Add a new variable made from an existing one
+dat$male <- ifelse(dat$sex=="Male",1,0)
+## Summarizing the frequencies
+table(dat$colour[dat$male==1])
+
+# You can do
+dat <- Arrests |> 
+  select(colour,age,sex) |> 
+  mutate(male=ifelse(sex=="Male",1,0)) |>
+  filter(male==1) |> 
+  group_by(colour) |>
+  summarise(n=n())
+dat  
+```
+### 2.2 Basic `dplyr` verbs
+
+- `select()`: to select columns;
+- `filter()`: to filter data according to some condition;
+- `mutate()`: create a variable or modify an existing one;
+- `rename()`: change the label/name of an existing variable;
+- `group_by()`: group the data according to some variable(s) such that the following operations are made "group-wise";
+- `summarise()`: reduce the data to some statistics in accordance with groups if previously specified;
+- `arrange()`: order the rows according to the values of a particular variable;
+- `slice()`: keep a set of rows;
+- `slice_head()`: keep the first n rows;
+- `slice_tail()`: keep the last n rows;
+- `na.omit()`: removes any row for which one of the available columns contains a NA;
+- `drop_na()`: removes any row for which NA appears in the specified column.
+
+### 2.3 Examples
+
+1. What is the release rate for employed `Black` and `White`?
+```{r}
+table(Arrests$released)
+head(Arrests$employed=="Yes",n=10)
+c("Yes","No","Maybe")=="Yes"
+
+Arrests |> 
+  mutate(released_bin=ifelse(released=="Yes",1,0)) |> 
+  filter(employed=="Yes") |> 
+  group_by(colour) |>
+  summarise(average=mean(released_bin))
+```
+
+2. Does it differ by sex?
+```{r}
+Arrests |> 
+  mutate(released_bin=ifelse(released=="Yes",1,0)) |>
+  filter(employed=="Yes") |>
+  group_by(colour,sex,citizen) |>
+  summarise(average=mean(released_bin))
+```
+
+3. What is the top 2 and bottom 2 years for the number of arrest? 
+```{r}
+arrestFreqYear <- Arrests |>
+  group_by(year) |>
+  summarise(n=n()) |>
+  arrange(-n)
+
+arrestFreqYear |> slice_head(n=2)
+arrestFreqYear |> slice_tail(n=2)
+
+```
+
+4. From the `UN` dataset found in the `carData` package, extract the following variables (`country`,`ppgdp`,`lifeExpF`,`pctUrban`,`infantMortality`) and find the top 5 countries for `infantMortality` among full information countries.
+```{r}
+data(UN, package="carData")
+UN <- as_tibble(UN,rownames="country")
+
+UN |> 
+  select(country,ppgdp,lifeExpF,pctUrban,infantMortality) |> 
+  na.omit() |> 
+  arrange(-infantMortality) |> 
+  slice_head(n=5)
+```
+
+## 3. Cleaning Data
+
+### 3.1 Renaming Variables
+
+Sometimes, datasets ship with nonsensical variable names. You have two options:
+
+1. Use `rename()` from `dplyr`;
+2. Use `names()`.
+
+```{r}
+data(CES11, package="carData")
+
+# Option 1
+CleanCES <- CES11 |> rename(relImportant = importance)
+names(CleanCES)
+
+# Option 2
+CleanCES <- CES11
+names(CleanCES)
+names(CleanCES)[7] <- "relImportant"
+names(CleanCES)
+```
+
+### 3.2 Creating Variables
+
+This is different from renaming variables in that you create a new column in the dataset. This is done to:
+
+1. Change the strucutre of an existing variable;
+2. Create new variables from existing ones.
+
+There are two ways to create new variables:
+
+1. Using `mutate()` from `dplyr`;
+2. Using `$` and assigning the new values.
+
+Here are a few functions that come in handy in a `mutate()` call when you want to change the structure of a variable:
+
+- `ifelse()`;
+- `case_when()`.
+
+Let's see some examples.
+
+1. Create a dummy variable (binary 0,1) for sex:
+
+```{r}
+# Base R
+CleanCES$female <- 0
+CleanCES$female[CleanCES$gender=="Female"] <- 1
+
+# dplyr
+CleanCES <- CleanCES |> 
+  mutate(female = ifelse(gender=="Female",1,0))
+```
+
+**Note that you must always be carefull with NAs!**
+
+2. Let's introduce some at random and see what happens when using the code above:
+
+```{r}
+# Adding fake NAs for the example
+set.seed(122)
+fakeNA <- sample(c(T,F),size=nrow(CES11),replace=T,prob = c(.01,.99))
+tmp <- CES11 
+tmp$gender[fakeNA] <- NA
+
+# See if it worked
+table(tmp$gender, useNA = "ifany")
+# Another way
+sum(is.na(tmp$gender))
+
+# Let's recode using ifelse
+Clean_tmp <- tmp |> 
+  mutate(female = ifelse(gender=="Female",1,0))
+table(Clean_tmp$female, useNA = "ifany")
+
+# Let's recode using base R
+Clean_tmp$female <- 0
+Clean_tmp$female[Clean_tmp$gender=="Female"] <- 1
+table(Clean_tmp$female, useNA = "ifany")
+```
+
+3. Create an education variable with three levels:
+
+```{r}
+table(CleanCES$education, useNA = "ifany")
+
+CleanCES <- CleanCES |> 
+  mutate(educ_3l = case_when(education %in% c("bachelors","college","higher") ~ "uni",
+                             education %in% c("HS","somePS") ~ "hs",
+                             education == "lessHS" ~ "no hs"))
+
+table(CleanCES$educ_3l, useNA = "ifany")
+
+```
+
+### 3.3 Factors
+
+Remember how I told you there were 4 main data types?
+
+1. **Numeric**: The real numbers (-1,-.5,0,.5,1,3.141593...)
+2. **Character**: Text
+3. **Logical**: `TRUE` (1) or `FALSE` (0) -- abbreviate using `T` and `F`
+4. **Integer**: ..., -3, -2, -1, 0, 1, 2, 3, ...
+
+Well there's a fifth one that you need to know about: **factors**.
+
+Factors place a numerical value on characters. Very usefull when computers use to have limited RAM, but it's not use for this anymore. Today we use it to impose a new ordering to character variables, instead of them being oredered alphabetically.
+
+See for example the order of the `levels` of our `educ_3l` variable:
+```{r}
+table(CleanCES$educ_3l)
+```
+
+This means that if I want to produce a graph out of the data, it's going to be in that order.
+```{r}
+ggplot(CleanCES,aes(x=educ_3l)) +
+  geom_bar()
+```
+
+To prevent this, we can use the `factor` function:
+
+```{r}
+CleanCES <- CleanCES |> 
+  mutate(educ_3l_fctr = factor(educ_3l, levels=c("no hs", "hs", "uni")))
+
+ggplot(CleanCES,aes(x=educ_3l_fctr)) +
+  geom_bar()
+```
+
+
+## 4. Exercises
+
+1. What is the `fertility` rate and `ppgdp` of the 4 countries with the highest female life expectancy (`lifeExpF`)? Make sure you are using no country where `region` is missing.
+```{r}
+UN |> 
+  drop_na(region) |> 
+  arrange(-lifeExpF) |> 
+  select(country,fertility,ppgdp,lifeExpF) |> 
+  slice_head(n=4)
+```
+
+2. What is the `fertility` rate and `ppgdp` of the 2 most urbanized country for each `region`? Make sure you are using no country where `region` is missing.
+```{r}
+
+```
+
+3. Create a variable called `fertility1000`, which is the result of this operation `fertility*1000-infantMortality`. What is the highest country on `fertility1000` in each region?
+```{r}
+
+```
+
+
