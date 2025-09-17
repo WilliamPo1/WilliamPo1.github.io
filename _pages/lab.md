@@ -80,7 +80,7 @@ details > details > ul {
   </ul>
 </details>
 -->
-
+<!--
 <details>
   <summary>Talks</summary>
   <ul>
@@ -92,7 +92,7 @@ details > details > ul {
     </li>
   </ul>
 </details>
-
+-->
 <details>
   <summary>R Tutorials</summary>
   <ul>
