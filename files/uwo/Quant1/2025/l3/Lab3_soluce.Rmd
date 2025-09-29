@@ -1,0 +1,184 @@
+---
+title: "POLISCI 9590 - Lab4: Reshaping Data"
+author: "William Poirier"
+date: "2024-10-01"
+output: 
+  html_document:
+      toc: true
+      toc_float:
+        collapsed: true
+      theme: journal
+---
+<style>
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #4F2683;
+    border-color: #4F2683;
+}
+
+a {
+    color: #4F2683;
+    text-decoration: none;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message = FALSE,warning = FALSE)
+```
+
+## 4. Exercise
+
+Using the data we just cleaned (`CES`):
+
+  1. Compute the average score given to each party per province.
+  2. Present these averages in a graph where the Y axis are the provinces and the X axis the averages. 
+  
+```{r}
+library(tidyverse)
+## Setting up
+library(rio)
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+CES_raw <- import("2021 Canadian Election Study v2.0.dta") 
+
+## A function to replace -99 by NA
+remove99 <- function(x){
+  out <- ifelse(x==-99,NA,x)
+  return(out)
+}
+
+## Cleaning
+CES <- factorize(CES_raw) |> 
+  rename(UUID=cps21_ResponseId,
+         yob=cps21_yob,
+         gender=cps21_genderid,
+         prov=cps21_province,
+         vote=pes21_votechoice2021,
+         pplFeel_Americans=cps21_groups_therm_7,
+         pplFeel_Francophones=cps21_groups_therm_3,
+         pplFeel_LPC=cps21_party_rating_23,
+         pplFeel_CPC=cps21_party_rating_24,
+         pplFeel_NDP=cps21_party_rating_25,
+         pplFeel_BQ=cps21_party_rating_26,
+         pplFeel_GPC=cps21_party_rating_27,
+         pplFeel_PPC=cps21_party_rating_29) |> 
+  select(UUID,yob,gender,prov,vote,
+         pplFeel_Americans,pplFeel_Francophones,
+         pplFeel_LPC,pplFeel_CPC,pplFeel_NDP,
+         pplFeel_BQ,pplFeel_GPC,pplFeel_PPC) |> 
+  filter(!(prov %in% c("Northwest Territories","Nunavut","Yukon"))) |> 
+  mutate(age=2021-as.numeric(as.character(yob)),
+         vt = case_when(
+              vote == "Liberal Party" ~ "LPC",
+              vote == "Conservative Party" ~ "CPC",
+              vote == "ndp" ~ "NDP",
+              vote == "Bloc Québécois" ~ "BQ",
+              vote == "Green Party" ~ "GPC",
+              vote == "People's Party" ~ "PPC",
+              vote == "Another party (specify)" ~ "Other",
+              vote %in% c("I spoiled my vote","Don't know / Prefer not to answer") ~ NA_character_
+            ),
+         prov=factor(prov,levels=c("British Columbia","Alberta","Saskatchewan","Manitoba",
+                                   "Ontario","Quebec",
+                                   "New Brunswick","Prince Edward Island","Nova Scotia",
+                                   "Newfoundland and Labrador"))) |> 
+  mutate_at(vars(starts_with("pplFeel")),remove99)
+
+# Option 1
+CES |> 
+  select(-pplFeel_Americans,-pplFeel_Francophones) |> 
+  group_by(prov) |> 
+  summarise(across(starts_with("pplFeel_"),~mean(.x,na.rm=T))) |> 
+  ungroup() |> 
+  pivot_longer(-prov,names_pattern = "pplFeel_(.*)",names_to = "Party", values_to = "score") |> 
+  mutate(Party=factor(Party,levels=c("LPC","CPC","NDP","BQ","GPC","PPC"))) |> 
+  ggplot(aes(x=score,y=prov,color=Party))+
+  geom_point() +
+  scale_color_manual(values=c("red","blue","orange","cyan","green","purple"))+
+  theme_minimal()+
+  coord_cartesian(xlim=c(0,100))+
+  labs(y="",x="\nFeeling Thermometer Average Score (0-100)")
+
+# Option 2
+CES |> 
+  group_by(prov) |> 
+  summarise(mean_LPC=mean(pplFeel_LPC,na.rm=T),
+            mean_CPC=mean(pplFeel_CPC,na.rm=T),
+            mean_NDP=mean(pplFeel_NDP,na.rm=T),
+            mean_BQ =mean(pplFeel_BQ,na.rm=T),
+            mean_GPC=mean(pplFeel_GPC,na.rm=T),
+            mean_PPC=mean(pplFeel_PPC,na.rm=T)) |> 
+  ungroup() |> 
+  pivot_longer(-prov,names_pattern = "mean_(.*)",names_to = "Party", values_to = "score") |> 
+  mutate(Party=factor(Party,levels=c("LPC","CPC","NDP","BQ","GPC","PPC"))) |> 
+  ggplot(aes(x=score,y=prov,color=Party))+
+  geom_point() +
+  scale_color_manual(values=c("red","blue","orange","cyan","green","purple"))+
+  theme_minimal()+
+  coord_cartesian(xlim=c(0,100))+
+  labs(y="",x="\nFeeling Thermometer Average Score (0-100)")
+
+# Option 3
+LPC <- CES |>
+  select(prov,pplFeel_LPC) |> 
+  group_by(prov) |> 
+  summarise(score=mean(pplFeel_LPC,na.rm=T)) |> 
+  mutate(Party="LPC")
+
+CPC <- CES |>
+  select(prov,pplFeel_CPC) |> 
+  group_by(prov) |> 
+  summarise(score=mean(pplFeel_CPC,na.rm=T)) |> 
+  mutate(Party="CPC")
+
+NDP <- CES |>
+  select(prov,pplFeel_NDP) |> 
+  group_by(prov) |> 
+  summarise(score=mean(pplFeel_NDP,na.rm=T)) |> 
+  mutate(Party="NDP")
+
+BQ <- CES |>
+  select(prov,pplFeel_BQ) |> 
+  group_by(prov) |> 
+  summarise(score=mean(pplFeel_BQ,na.rm=T)) |> 
+  mutate(Party="BQ")
+
+GPC <- CES |>
+  select(prov,pplFeel_GPC) |> 
+  group_by(prov) |> 
+  summarise(score=mean(pplFeel_GPC,na.rm=T)) |> 
+  mutate(Party="GPC")
+  
+PPC <- CES |>
+  select(prov,pplFeel_PPC) |> 
+  group_by(prov) |> 
+  summarise(score=mean(pplFeel_PPC,na.rm=T)) |> 
+  mutate(Party="PPC")
+
+GraphData <- rbind(LPC,CPC,NDP,BQ,GPC,PPC) |> 
+  mutate(Party=factor(Party,levels=c("LPC","CPC","NDP","BQ","GPC","PPC")))
+
+ggplot(GraphData,aes(x=score,y=prov,color=Party))+
+  geom_point() +
+  scale_color_manual(values=c("red","blue","orange","cyan","green","purple"))+
+  theme_minimal()+
+  coord_cartesian(xlim=c(0,100))+
+  labs(y="",x="\nFeeling Thermometer Average Score (0-100)")
+
+# Option 4 - Pivot-first, summarise second
+CES |> 
+  select(UUID,prov,starts_with("pplFeel_")) |> 
+  select(-pplFeel_Americans,-pplFeel_Francophones) |> 
+  pivot_longer(c(-UUID,-prov),names_pattern = "pplFeel_(.*)",names_to = "Party", values_to = "score") |> 
+  group_by(prov,Party) |> 
+  summarise(score=mean(score,na.rm=T)) |> 
+  mutate(Party=factor(Party,levels=c("LPC","CPC","NDP","BQ","GPC","PPC"))) |> 
+  ggplot(aes(x=score,y=prov,color=Party))+
+  geom_point() +
+  scale_color_manual(values=c("red","blue","orange","cyan","green","purple"))+
+  theme_minimal()+
+  coord_cartesian(xlim=c(0,100))+
+  labs(y="",x="\nFeeling Thermometer Average Score (0-100)")
+```
+  
+

@@ -1,0 +1,227 @@
+---
+title: "POLISCI 9590 - Lab3: Reshaping Data"
+author: "William Poirier"
+date: "2024-10-01"
+output: 
+  html_document:
+      toc: true
+      toc_float:
+        collapsed: true
+      theme: journal
+---
+<style>
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #4F2683;
+    border-color: #4F2683;
+}
+
+a {
+    color: #4F2683;
+    text-decoration: none;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message = FALSE,warning = FALSE)
+```
+
+## 000. What we'll be doing
+
+00. Review of last week's exercise
+0. Review of data cleaning
+1. Reshaping data
+2. From wide to long
+3. From long to wide
+4. Exercise
+
+## 00. Last week's exercise
+
+From the `carData::Salaries` data set of 2008-2009 nine-month academic salary for Assistant Professors, Associate Professors and Professors in a college in the U.S., create a graph that presents:
+
+  1. The mean salary per years since PhD with regards to sex per discipline.
+  2. Make sure that the axis, facets and legend are properly named. 
+  3. Rescale the y axis to have salaries in increments of 25000 and the x axis to have years in increments of 5.
+  4. Make sure the legend is on top of the graph.
+
+```{r}
+library(tidyverse)
+range(carData::Salaries$yrs.since.phd)
+range(carData::Salaries$salary)
+
+carData::Salaries |> 
+  mutate(discipline=factor(discipline,
+                           levels=c("A","B"),
+                           labels=c("Theoretical","Applied"))) |> 
+  group_by(yrs.since.phd,sex,discipline) |> 
+  summarise(meanSal=mean(salary)) |> 
+  ggplot(aes(x=yrs.since.phd,y=meanSal,color=sex))+
+  geom_line()+
+  scale_x_continuous("\nYears since PhD.",breaks=seq(0,56,5))+
+  scale_y_continuous("Salaries in USD\n",breaks=seq(0,250000,25000))+
+  scale_color_brewer("",palette = "Set1")+
+  facet_wrap(~discipline)+
+  theme_minimal()+
+  theme(legend.position = "top")
+```
+
+
+
+## 0. Data Cleaning
+
+```{r}
+## Setting up
+library(rio)
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+CES_raw <- import("2021 Canadian Election Study v2.0.dta") 
+
+## A function to replace -99 by NA
+remove99 <- function(x){
+  out <- ifelse(x==-99,NA,x)
+  return(out)
+}
+
+## Cleaning
+CES <- factorize(CES_raw) |> 
+  rename(UUID=cps21_ResponseId,
+         yob=cps21_yob,
+         gender=cps21_genderid,
+         prov=cps21_province,
+         vote=pes21_votechoice2021,
+         pplFeel_Americans=cps21_groups_therm_7,
+         pplFeel_Francophones=cps21_groups_therm_3,
+         pplFeel_LPC=cps21_party_rating_23,
+         pplFeel_CPC=cps21_party_rating_24,
+         pplFeel_NDP=cps21_party_rating_25,
+         pplFeel_BQ=cps21_party_rating_26,
+         pplFeel_GPC=cps21_party_rating_27,
+         pplFeel_PPC=cps21_party_rating_29) |> 
+  select(UUID,yob,gender,prov,vote,
+         pplFeel_Americans,pplFeel_Francophones,
+         pplFeel_LPC,pplFeel_CPC,pplFeel_NDP,
+         pplFeel_BQ,pplFeel_GPC,pplFeel_PPC) |> 
+  filter(!(prov %in% c("Northwest Territories","Nunavut","Yukon"))) |> 
+  mutate(age=2021-as.numeric(as.character(yob)),
+         vt = case_when(
+              vote == "Liberal Party" ~ "LPC",
+              vote == "Conservative Party" ~ "CPC",
+              vote == "ndp" ~ "NDP",
+              vote == "Bloc Québécois" ~ "BQ",
+              vote == "Green Party" ~ "GPC",
+              vote == "People's Party" ~ "PPC",
+              vote == "Another party (specify)" ~ "Other",
+              vote %in% c("I spoiled my vote","Don't know / Prefer not to answer") ~ NA_character_
+            ),
+         prov=factor(prov,levels=c("British Columbia","Alberta","Saskatchewan","Manitoba",
+                                   "Ontario","Quebec",
+                                   "New Brunswick","Prince Edward Island","Nova Scotia",
+                                   "Newfoundland and Labrador"))) |> 
+  mutate_at(vars(starts_with("pplFeel")),remove99)
+```
+
+## 1. Reshaping data, the idea
+
+- **Wide** data: Each unit of analysis is found ONCE in the ID column.
+- **Long** data: The units of analysis are repeated in the ID column. 
+- Going from wide to long: `tidyr::pivot_longer()`
+- Going from long to wide: `tidyr::pivot_wider()`
+
+```{r,message=F,echo=F,results='markup'}
+library(tidyverse)
+DataWide <- tidyr::relig_income |> 
+  mutate(`$10-40k`=`$10-20k`+`$20-30k`+`$30-40k`,
+         `$40-100k`=`$40-50k`+`$50-75k`+`$75-100k`,
+         `>100k`=`$100-150k`+`>150k`) |> 
+  select(religion,`$10-40k`,`$40-100k`,`>100k`) |> 
+  filter(religion %in% c("Atheist","Catholic","Evangelical Prot"))
+DataLong <- DataWide |> pivot_longer(c(`$10-40k`,`$40-100k`,`>100k`),names_to = "salary",values_to = "n")
+
+wide <- modelsummary::datasummary_df(DataWide,output="kableExtra",title = "Wide: Each unit of analysis is found ONCE in the ID column",escape=F)
+long <- modelsummary::datasummary_df(DataLong,output="kableExtra",title = "Long: The units of analysis are repeated in the ID column",,escape=F)
+
+knitr::kables(list(wide, long),format = "html")
+```
+
+
+
+## 2. From wide to long
+
+Using the `CES` data, create a graph that superimposes the histogram of feelings towards Francophones on top of the histogram of feelings towards Americans. 
+
+```{r}
+Long <- CES |> 
+  pivot_longer(c("pplFeel_Americans","pplFeel_Francophones"),
+               names_pattern = "pplFeel_(.*)",
+               names_to = "group",values_to = "score")
+
+ggplot(Long,aes(x=score,fill=group))+
+  geom_histogram(position="identity",bins = 20,alpha=0.3)+
+  theme_minimal()+
+  theme(legend.position = "top")+
+  labs(x="\nFeeling Thermometer Score (0-100)",
+       y="Frequency\n",
+       fill="")
+```
+
+### 2.1 Looking under the hood
+
+Let's do the same exercise, but without the help of `pivot_longer`.
+
+```{r}
+Data_A <- CES |> 
+  select(-pplFeel_Francophones) |> 
+  rename(score=pplFeel_Americans) |> 
+  mutate(group="Americans")
+
+Data_F <- CES |> 
+  select(-pplFeel_Americans) |> 
+  rename(score=pplFeel_Francophones) |> 
+  mutate(group="Francophones")
+
+Long2 <- rbind(Data_A,Data_F)
+
+ggplot(Long2,aes(x=score,fill=group))+
+  geom_histogram(position="identity",bins = 20,alpha=0.3)+
+  theme_minimal()+
+  theme(legend.position = "top")+
+  labs(x="\nFeeling Thermometer Score (0-100)",
+       y="Frequency\n",
+       fill="")
+
+```
+
+
+## 3. From long to wide
+
+From `Long`, go back to the original data.
+
+```{r}
+Wide <- Long |> 
+  pivot_wider(names_from = "group", names_prefix = "pplFeel_",values_from = score)
+```
+
+### 3.1 Looking under the hood
+
+From `Long` to the original data without the use of `pivot_wider`.
+
+```{r}
+Wide2 <- Long2 |> 
+  filter(group=="Americans") |> 
+  rename(pplFeel_Americans=score) |> 
+  mutate(pplFeel_Francophones=Long$score[Long$group=="Francophones"]) |> 
+  select(-group)
+```
+
+## 4. Exercise
+
+Using the data we just cleaned (`CES`):
+
+  1. Compute the average score given to each party per province.
+  2. Present these averages in a graph where the Y axis are the provinces and the X axis the averages. 
+  
+```{r}
+
+```
+  
+

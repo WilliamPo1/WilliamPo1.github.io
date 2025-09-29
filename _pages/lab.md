@@ -143,6 +143,15 @@ details > details > ul {
         <i class="fa fa-arrow-up-right-from-square"></i>
       </a>
     </li>
+    <li>
+      Lab 3
+      <a href="/files/uwo/Quant1/2025/l3/quant1_Lab3.zip" download class="btn--faicon">
+        <i class="fa fa-cloud-arrow-down"></i>
+      </a>
+      <a href="/files/uwo/Quant1/2025/l3/Lab3.html" class="btn--faicon">
+        <i class="fa fa-arrow-up-right-from-square"></i>
+      </a>
+    </li>
   </ul>
 </details>
 <details>
