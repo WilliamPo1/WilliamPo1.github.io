@@ -151,8 +151,8 @@ details > details > ul {
       <a href="/files/uwo/Quant1/2025/l3/Lab3.html" class="btn--faicon">
         <i class="fa fa-arrow-up-right-from-square"></i>
       </a>
-      <a href="/files/uwo/Quant1/2025/l3/Lab3_soluce.html" class="btn--faicon">
-        Solution <i class="fa fa-arrow-up-right-from-square"></i>
+      Solution <a href="/files/uwo/Quant1/2025/l3/Lab3_soluce.html" class="btn--faicon">
+        <i class="fa fa-arrow-up-right-from-square"></i>
       </a>
     </li>
   </ul>
