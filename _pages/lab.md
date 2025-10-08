@@ -163,6 +163,9 @@ details > details > ul {
       <a href="/files/uwo/Quant1/2025/l4/Lab4.html" class="btn--faicon">
         <i class="fa fa-arrow-up-right-from-square"></i>
       </a>
+      Solution <a href="/files/uwo/Quant1/2025/l4/Lab4_solution.html" class="btn--faicon">
+        <i class="fa fa-arrow-up-right-from-square"></i>
+      </a>
     </li>
   </ul>
 </details>
