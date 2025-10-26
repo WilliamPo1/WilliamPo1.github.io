@@ -1,0 +1,321 @@
+---
+title: "POLISCI 9590 - Lab6: Confidence Intervals"
+author: "William Poirier"
+date: "2024-10-29"
+output: 
+  html_document:
+      toc: true
+      toc_float:
+        collapsed: true
+      theme: journal
+---
+<style>
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #4F2683;
+    border-color: #4F2683;
+}
+
+a {
+    color: #4F2683;
+    text-decoration: none;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message = FALSE,warning = FALSE)
+```
+
+## 0. What we'll be doing
+
+1. Confidence Intervals 
+2. Exercises
+
+
+## 1. Confidence Intervals
+
+### 1.1 The reality of inference
+
+Let's have a **population distribution**:
+```{r,messages=F,warning=F}
+library(tidyverse)
+
+set.seed(2543)
+pop <- runif(10000,0,1)
+
+ggplot()+
+  geom_histogram(aes(x=pop),bins=24,color="white")+
+  theme_minimal()+
+  xlab("Population Distribution of X")
+```
+
+Where the true population mean $\mu$ is:
+```{r}
+mean(pop)
+```
+
+and the true population SD $\sigma$ is:
+```{r}
+sqrt(sum((pop - mean(pop))^2)/length(pop))
+```
+
+Let's take a **sample** of size 100 at random from the population:
+
+```{r}
+samp <- sample(pop, 100, replace = TRUE)
+
+# Sample mean
+mean(samp)
+
+# Sample sd
+sd(samp)
+```
+
+Hence, the **sampling error** is $\bar x- \mu$:
+```{r}
+mean(samp)-mean(pop)
+```
+
+**QUESTIONS:**
+
+1. What would happen if I were to take bigger and bigger samples? Why?
+2. What would happen if I took 1000 samples of a 100 individuals? Why?
+
+
+So, let's take a 1000 sample of a 100:
+```{r}
+means <- replicate(1000,
+                   mean(
+                     sample(pop, 100, replace=TRUE)
+                     )
+                   )
+samp.errors <- means - mean(pop)
+ggplot() +
+  geom_histogram(aes(x=samp.errors),bins=25,col="white") +
+  theme_minimal() +
+  geom_vline(xintercept=0, col="red") +
+  labs(x="Distribution of Sampling Errors")
+```
+
+
+We get a **sampling distribution**, the distribution of the sample means around the true, but generally unkown, population mean.
+
+THE ISSUE IS (as the real slim shady would say) : 
+
+```{r, echo=F}
+knitr::include_graphics("slimshady.gif")
+```
+
+```{r echo=FALSE}
+true.se <- sqrt(sum((pop - mean(pop))^2)/length(pop))/sqrt(100)
+ggplot() +
+  stat_function(data = data.frame(x = c(.35, .65)), 
+                mapping = aes(x), 
+                fun = dnorm, 
+                n = 101, 
+                args = list(mean = mean(pop), 
+                            sd = true.se)) + 
+  geom_point(aes(x=.45, y=0), col="red") + 
+  ylab("") + 
+  theme_minimal()
+```
+
+We would like to be able to identify how likely it is that we would observe our sample statistic ($\bar x=.45$) in the population :
+
+```{r}
+pnorm(.45, mean(pop), true.se)
+```
+
+```{r, echo=F}
+s <- seq(.35, .45, length=50)
+ggplot() +
+  geom_polygon(aes(x=c(s, rev(s), s[1]), 
+                   y=c(rep(0, length(s)), 
+                       dnorm(rev(s), mean(pop), true.se), 
+                       0), fill=rgb(1,0,0,.25)), show.legend = FALSE) + 
+  stat_function(data = data.frame(x = c(.35, .65)), 
+                mapping = aes(x), 
+                fun = dnorm, 
+                n = 101, 
+                args = list(mean = mean(pop), 
+                            sd = true.se)) + 
+  geom_point(aes(x=.45, y=0), col="red") + 
+  ylab("") + 
+  theme_minimal()
+```
+
+And we have:
+
+1. The sample mean ($\bar x$);
+2. The sample standard deviation ($sd$).
+
+### 1.2 Formulas & R
+
+If we know $\sigma_{\bar{x}}$ (unlikely)
+
+$$\bar{x} \pm z_{\text{crit}}\frac{\sigma_{x}}{\sqrt{n}}$$
+If we have to estimate $\hat{\sigma}_{\bar{x}} = s_{\bar{x}}$, then:
+
+$$\bar{x} \pm z_{\text{crit}}\frac{s_{x}}{\sqrt{n}}$$
+
+If we have small samples $(n < 120)$:
+
+$$\bar{x} \pm t_{\text{crit}}\frac{s_{x}}{\sqrt{n}}$$
+Note: the formula doesn't require us to know $\mu$, which is nice.
+
+From `ggplot2`, use `mean_cl_normal()`:
+```{r}
+mean_cl_normal(samp)
+```
+
+Or, from `uwo4419`, use `confidenceInterval()` (Allows you to choose the distribution you want):
+```{r}
+uwo4419::confidenceInterval(samp,distr = "normal")
+uwo4419::confidenceInterval(samp,distr = "t")
+```
+
+
+
+### 1.3 Building the intuition
+
+- **There can only be ONE!!!** How do we know where our sample stand in the sampling distribution???
+
+
+```{r}
+set.seed(122)
+# Take 100 sample of size n and compute their means and CI
+it <- 100
+n <- 100
+cis <- lapply(1:it,function(x)mean_cl_normal(sample(pop, n, replace=TRUE)))
+cis <- do.call(rbind.data.frame, cis) |> 
+  mutate(Type=ifelse(ymin>mean(pop) | ymax < mean(pop),"Bad","Good"),
+         sample=1:it)
+
+ggplot(cis,aes(x=sample,y=y,ymin=ymin,ymax=ymax,color=Type))+
+  geom_hline(yintercept=mean(pop))+
+  geom_pointrange(size=0.1)+
+  scale_color_manual("Type of sample",values=c("#F23030","#4F2683"))+
+  labs(y="Sample Means",
+       x="Sample Id")+
+  theme_minimal()+
+  theme(legend.position = "top")
+```
+
+- **Confidence intervals**: created such that $(1-\alpha)\%$ of the intervals we could make from different samples will cover the true, but unknown population value.
+  - Hence, the only thing we can say is that, if $alpha$ is small enough, we are _willing to bet_ that we are in one of the good samples. 
+  
+```{r,echo=FALSE}
+library(rio)
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+CES_raw <- import("2021 Canadian Election Study v2.0.dta") 
+
+## A function to replace -99 by NA
+remove99 <- function(x){
+  out <- ifelse(x==-99,NA,x)
+  return(out)
+}
+
+## Cleaning
+CES <- factorize(CES_raw) |> 
+  rename(UUID=cps21_ResponseId,
+         yob=cps21_yob,
+         gender=cps21_genderid,
+         prov=cps21_province,
+         vote=pes21_votechoice2021,
+         pplFeel_Americans=cps21_groups_therm_7,
+         pplFeel_Francophones=cps21_groups_therm_3,
+         pplFeel_LPC=cps21_party_rating_23,
+         pplFeel_CPC=cps21_party_rating_24,
+         pplFeel_NDP=cps21_party_rating_25,
+         pplFeel_BQ=cps21_party_rating_26,
+         pplFeel_GPC=cps21_party_rating_27,
+         pplFeel_PPC=cps21_party_rating_29) |> 
+  select(UUID,yob,gender,prov,vote,
+         pplFeel_Americans,pplFeel_Francophones,
+         pplFeel_LPC,pplFeel_CPC,pplFeel_NDP,
+         pplFeel_BQ,pplFeel_GPC,pplFeel_PPC) |> 
+  filter(!(prov %in% c("Northwest Territories","Nunavut","Yukon"))) |> 
+  mutate(age=2021-as.numeric(as.character(yob)),
+         vt = case_when(
+              vote == "Liberal Party" ~ "LPC",
+              vote == "Conservative Party" ~ "CPC",
+              vote == "ndp" ~ "NDP",
+              vote == "Bloc Québécois" ~ "BQ",
+              vote == "Green Party" ~ "GPC",
+              vote == "People's Party" ~ "PPC",
+              vote == "Another party (specify)" ~ "Other",
+              vote %in% c("I spoiled my vote","Don't know / Prefer not to answer") ~ NA_character_
+            ),
+         prov=factor(prov,levels=c("British Columbia","Alberta","Saskatchewan","Manitoba",
+                                   "Ontario","Quebec",
+                                   "New Brunswick","Prince Edward Island","Nova Scotia",
+                                   "Newfoundland and Labrador"))) |> 
+  mutate_at(vars(starts_with("pplFeel")),remove99) |> 
+  na.omit()
+```
+  
+
+## 2. Exercise 1
+
+From the `CES` data:
+
+  1. Compute the average score given to each party per province and their confidence intervals.
+  2. Present these in a graph where the Y axis are the provinces and the X axis the averages. 
+  
+```{r}
+CES |> 
+  select(UUID,prov,starts_with("pplFeel_")) |> 
+  select(-pplFeel_Americans,-pplFeel_Francophones) |> 
+  pivot_longer(c(-UUID,-prov),names_pattern = "pplFeel_(.*)",names_to = "Party", values_to = "score") |> 
+  group_by(prov,Party) |> 
+  summarise(ci=mean_cl_normal(score)) |> 
+  unnest_wider(ci) |> 
+  mutate(Party=factor(Party,levels=c("LPC","CPC","NDP","BQ","GPC","PPC"))) |> 
+  ggplot(aes(x=prov,y=y,ymin=ymin,ymax=ymax,color=Party))+
+  annotate('rect', xmin = seq(.5,8.5,2), xmax = seq(1.5,9.5,2), 
+  ymin=-Inf, ymax=Inf, alpha=0.08, fill="black")+
+  geom_pointrange(size=0.1,position=position_dodge(0.5)) +
+  scale_color_manual(values=c("red","blue","orange","cyan","green","purple"))+
+  theme_minimal()+
+  theme(legend.position = "top")+
+  coord_flip(ylim=c(0,100))+
+  labs(x="",y="\nFeeling Thermometer Average Score (0-100)")+
+  guides(color = guide_legend(nrow = 1))
+```
+
+## 3. Exercise 2
+From the `CES` data:
+
+  1. Compute the average age of voters for each party and the corresponding CI.
+  2. Do so using both the normal distribution and the Student's t distribution. (Hint: use `uwo4419::confidenceInterval()`)
+  3. Present this in a graph where the Y axis is the averages and the X axis is the parties. 
+
+```{r}
+#devtools::install_github("https://github.com/davidaarmstrong/uwo4419.git")
+library(uwo4419)
+norm <- CES |> 
+  select(age,vt) |> 
+  group_by(vt) |> 
+  summarise(ci_normal=list(confidenceInterval(age,distr="normal"))) |> 
+  unnest_wider(ci_normal) |> 
+  mutate(dist="Normal")
+ 
+tdist <- CES |> 
+  select(age,vt) |> 
+  group_by(vt) |> 
+  summarise(ci_t=list(confidenceInterval(age,distr="t"))) |> 
+  unnest_wider(ci_t) |> 
+  mutate(dist="Student's t")
+
+rbind(norm,tdist) |> 
+  setNames(c("vt", "y", "ymin", "ymax", "se","dist")) |> 
+  ggplot(aes(x=reorder(vt,y,mean),y=y,ymin=ymin,ymax=ymax,color=dist))+
+  geom_pointrange(position=position_dodge(0.5))+
+  scale_color_manual("",values=c("#F23030","#4F2683"))+
+  theme_minimal()+
+  theme(legend.position = "top")+
+  labs(x="",y="Mean age")
+  
+```
+
