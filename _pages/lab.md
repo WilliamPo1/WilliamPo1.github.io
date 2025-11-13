@@ -196,77 +196,7 @@ details > details > ul {
     </li>
   </ul>
 </details>
-<details>
-  <summary> Fall 2024 </summary>
-  <ul>
-    <li>
-      Lab 0
-      <a href="/files/uwo/Quant1/2024/quant1_Lab0.zip" download class="btn--faicon">
-        <i class="fa fa-cloud-arrow-down"></i>
-      </a>
-    </li>
-    <li>
-      Lab 1
-      <a href="/files/uwo/Quant1/2024/quant1_Lab1.zip" download class="btn--faicon">
-        <i class="fa fa-cloud-arrow-down"></i>
-      </a>
-    </li>
-    <li>
-      Lab 2
-      <a href="/files/uwo/Quant1/2024/quant1_Lab2.zip" download class="btn--faicon">
-        <i class="fa fa-cloud-arrow-down"></i>
-      </a>
-    </li>
-    <li>
-      Lab 3
-      <a href="/files/uwo/Quant1/2024/quant1_Lab3.zip" download class="btn--faicon">
-        <i class="fa fa-cloud-arrow-down"></i>
-      </a>
-    </li>
-    <li>
-      Lab 4
-      <a href="/files/uwo/Quant1/2024/quant1_Lab4.zip" download class="btn--faicon">
-        <i class="fa fa-cloud-arrow-down"></i>
-      </a>
-    </li>
-    <li>
-      Lab 5
-      <a href="/files/uwo/Quant1/2024/quant1_Lab5.zip" download class="btn--faicon">
-        <i class="fa fa-cloud-arrow-down"></i>
-      </a>
-    </li>
-    <li>
-      Lab 6
-      <a href="/files/uwo/Quant1/2024/quant1_Lab6.zip" download class="btn--faicon">
-        <i class="fa fa-cloud-arrow-down"></i>
-      </a>
-    </li>
-    <li>
-      Lab 7
-      <a href="/files/uwo/Quant1/2024/quant1_Lab7.zip" download class="btn--faicon">
-        <i class="fa fa-cloud-arrow-down"></i>
-      </a>
-    </li>
-    <li>
-      Lab 8
-      <a href="/files/uwo/Quant1/2024/quant1_Lab8.zip" download class="btn--faicon">
-        <i class="fa fa-cloud-arrow-down"></i>
-      </a>
-    </li>
-    <li>
-      Lab 9
-      <a href="/files/uwo/Quant1/2024/quant1_Lab9.zip" download class="btn--faicon">
-        <i class="fa fa-cloud-arrow-down"></i>
-      </a>
-    </li>
-    <li>
-      Lab 10
-      <a href="/files/uwo/Quant1/2024/quant1_Lab10.zip" download class="btn--faicon">
-        <i class="fa fa-cloud-arrow-down"></i>
-      </a>
-    </li>
-  </ul>
-</details>
+
 </details>
 
 
