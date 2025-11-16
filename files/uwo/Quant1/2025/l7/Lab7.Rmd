@@ -414,7 +414,7 @@ dat <- import("cses5.rdata") |>
          year=E1008) |>
   mutate(female=ifelse(E2002==2,1,
                        ifelse(E2002 > 3, NA, 0)),
-         educ_low=ifelse(E2003 %in% c(1,3,96),1,ifelse(E2003 >96,NA,0)),
+         educ_low=ifelse(E2003 %in% c(1:3,96),1,ifelse(E2003 >96,NA,0)),
          educ_mid=ifelse(E2003 %in% 4:5,1,      ifelse(E2003 >96,NA,0)),
          educ_hig=ifelse(E2003 %in% 6:9,1,      ifelse(E2003 >96,NA,0)),
          employed=ifelse(E2006 %in% c(1,2,3),1,
