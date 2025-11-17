@@ -196,10 +196,10 @@ details > details > ul {
     </li>
     <li>
       Lab 8
-      <a href="/files/uwo/Quant1/2025/l7/quant1_Lab8.zip" download class="btn--faicon">
+      <a href="/files/uwo/Quant1/2025/l8/quant1_Lab8.zip" download class="btn--faicon">
         <i class="fa fa-cloud-arrow-down"></i>
       </a>
-      <a href="/files/uwo/Quant1/2025/l7/Lab8.html" class="btn--faicon">
+      <a href="/files/uwo/Quant1/2025/l8/Lab8.html" class="btn--faicon">
         <i class="fa fa-arrow-up-right-from-square"></i>
       </a>
     </li>
