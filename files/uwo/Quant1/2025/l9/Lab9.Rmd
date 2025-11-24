@@ -1,0 +1,178 @@
+---
+title: "POLISCI 9590 - Lab9: OLS"
+author: "William Poirier"
+date: "2024-11-26"
+output: 
+  webexercises::webexercises_default:
+      toc: true
+      toc_float:
+        collapsed: true
+      theme: journal
+---
+<style>
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #4F2683;
+    border-color: #4F2683;
+}
+:root {
+    --incorrect: rgb(218, 165, 32);
+    --incorrect_alpha: rgba(218, 165, 32, 0.25);
+    --correct: rgb(160, 32, 240);
+    --correct_alpha: rgba(160, 32, 240, 0.25);
+    --highlight: #4F2683;
+}
+
+a {
+    color: #4F2683;
+    text-decoration: none;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message = FALSE,warning = FALSE)
+#install.packages("webexercises")
+library(webexercises)
+library(tidyverse)
+library(DAMisc)
+```
+
+## 0. What we'll be doing
+
+1. Review of OLS;
+2. The `lm()` function;
+3. Interpretation;
+4. Exercise.
+
+## 1. Review
+- Linear model uses Ordinary Least Squares (OLS) to find the line of best fit.
+- OLS is the Best Linear Unbiased Estimator (BLUE).
+- Bivariate case: $$y=\beta_0+\beta_1 x+\varepsilon$$ $$\widehat y_i=\widehat\beta_0+\widehat\beta_1 x_i$$
+- Minimize the sum of square residuals: $$SSR=\sum_{i=1}^n(y_i-\widehat y_i)^2$$
+
+```{r}
+# An Independent variable X
+X <- rnorm(100,0,1)
+# A Dependent variable Y
+Y <- rnorm(100,0,1)+X
+# Running the regression
+mod <- lm(Y~X)
+# Getting the predicted values (hats) from the model
+Yhat <- predict(mod,type = "response")
+# Making the graph
+dat <- data.frame(X,Y,Yhat)
+ggplot(dat,aes(x=X,y=Y))+
+  geom_segment(aes(xend = X, yend = Yhat),color="red",alpha=0.5) +
+  geom_point(color="#4F2683")+
+  geom_smooth(method="lm",se = F,color="#4F2683")+
+  theme_minimal()
+```
+
+## 2. The `lm()` function
+
+Needs two things: 
+
+1. A `formula` type object;
+2. The data.
+
+```{r}
+X1 <- rnorm(1000)
+X2 <- rnorm(1000)
+X3 <- rnorm(1000)
+X4 <- sample(c("A","B","C"), 1000, replace =T)
+Y <- rnorm(1000) + .5*X1 - .8* X2 + .2*X1*X2 - .3*X3^2 + ifelse(X4=="A",0.2,ifelse(X4=="B",0.4,0.6))
+tmp <- data.frame(Y,X1,X2,X3,X4)
+```
+
+```{r,eval=F}
+# Formulas generally look like this
+Y ~ X1 + X2
+
+# You can add an interaction
+Y ~ X1 + X2 + X1*X2
+
+# A Squared term
+Y ~ X1 + X2 + X1*X2 + I(X3^2)
+
+# A categorical variable
+Y ~ X1 + X2 + X1*X2 + I(X3^2) + factor(X4)
+```
+```{r}
+mod1 <- lm(Y ~ X1 + X2,data=tmp)
+summary(mod1)
+
+mod2 <- lm(Y ~ X1 + X2 + X1*X2,data=tmp)
+summary(mod2)
+
+mod3 <- lm(Y ~ X1 + X2 + X1*X2 + I(X3^2),data=tmp)
+summary(mod3)
+
+mod4 <- lm(Y ~ X1 + X2 + X1*X2 + I(X3^2) + factor(X4),data=tmp)
+summary(mod4)
+```
+
+
+## 3. Interpretation
+
+- Using the `wage1` dataset from `wooldridge`, we regress `wage` on `educ`. Data from 1976.
+
+```{r}
+library(wooldridge)
+data("wage1")
+
+mod <- lm(wage~educ,wage1)
+summary(mod)
+
+ggplot(wage1,aes(educ,wage))+
+  geom_point(color="#4F2683",alpha=0.5)+
+  geom_smooth(method="lm",color="#4F2683",se=F)+
+  geom_smooth(method="loess",color="red",se=F)+
+  theme_minimal()+
+  labs(x="Years of education",y="Hourly earnings")
+```
+
+- Using the `wage1` dataset from `wooldridge`, we regress `wage` on `tenure`. Data from 1976.
+
+```{r}
+mod <- lm(wage~tenure,wage1)
+summary(mod)
+```
+
+- Using the `wage1` dataset from `wooldridge`, we regress `wage` on `exper`. Data from 1976.
+
+```{r}
+mod <- lm(wage~exper,wage1)
+summary(mod)
+```
+
+- Using the `wage1` dataset from `wooldridge`, we regress `wage` on `educ`,`tenure`,`exper`, and `female`. Data from 1976.
+
+```{r}
+mod <- lm(wage~educ+tenure+exper+female,wage1)
+summary(mod)
+```
+
+## 4. Exercise
+
+- Using the data from `approval`:
+  1. Regress `approve` on `gasprice`. `gasprice` is in cents, `approve` is on a scale from 0 to 100% approval.
+  2. What is the effect of a dollar increase in the price of gas on the predicted presidential approval rating?
+  3. Make a plot of the relationship using `geom_smooth(method="lm")`.
+
+```{r,eval=F,echo=F}
+data("approval")
+approval <- approval  |> 
+  mutate(gasprice_dlr=gasprice/100)
+mod <- lm(approve~gasprice_dlr,data=approval)
+summary(mod)
+
+cor(approval$approve,approval$gasprice)
+
+ggplot(approval,aes(gasprice,approve))+
+  geom_point(alpha=0.5,color="blue")+
+  geom_smooth(method="lm",se=F)+
+  geom_smooth(method="loess",color="red",se=F)+
+  theme_minimal()
+```
+
