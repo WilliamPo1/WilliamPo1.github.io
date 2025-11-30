@@ -212,6 +212,15 @@ details > details > ul {
         <i class="fa fa-arrow-up-right-from-square"></i>
       </a>
     </li>
+    <li>
+      Lab 10
+      <a href="/files/uwo/Quant1/2025/l10/quant1_Lab10.zip" download class="btn--faicon">
+        <i class="fa fa-cloud-arrow-down"></i>
+      </a>
+      <a href="/files/uwo/Quant1/2025/l10/Lab10.html" class="btn--faicon">
+        <i class="fa fa-arrow-up-right-from-square"></i>
+      </a>
+    </li>
   </ul>
 </details>
 

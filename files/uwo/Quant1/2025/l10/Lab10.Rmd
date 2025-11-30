@@ -1,0 +1,252 @@
+---
+title: "POLISCI 9590 - Lab10: A review of the course"
+author: "William Poirier"
+date: "2025-12-03"
+output: 
+  webexercises::webexercises_default:
+      toc: true
+      toc_float:
+        collapsed: true
+      theme: journal
+---
+<style>
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #4F2683;
+    border-color: #4F2683;
+}
+:root {
+    --incorrect: rgb(218, 165, 32);
+    --incorrect_alpha: rgba(218, 165, 32, 0.25);
+    --correct: rgb(160, 32, 240);
+    --correct_alpha: rgba(160, 32, 240, 0.25);
+    --highlight: #4F2683;
+}
+
+a {
+    color: #4F2683;
+    text-decoration: none;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message = FALSE,warning = FALSE)
+#install.packages("webexercises")
+library(webexercises)
+library(tidyverse)
+library(DAMisc)
+```
+
+## 1. Data Wrangling in R
+
+- For today's lab, we return to the CES 2021 data.
+
+```{r}
+library(tidyverse)
+library(rio)
+library(uwo4419)
+
+# Data
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+CES_raw <- import("2021 Canadian Election Study v2.0.dta")
+
+## A function to replace -99 by NA
+remove99 <- function(x){
+  out <- ifelse(x==-99,NA,x)
+  return(out)
+}
+
+## Cleaning
+CES <- factorize(CES_raw) |> 
+  # Renaming variables
+  rename(UUID=cps21_ResponseId, 
+         yob=cps21_yob,
+         gender=cps21_genderid,
+         prov=cps21_province,
+         vote=pes21_votechoice2021,
+         pplFeel_Americans=cps21_groups_therm_7,
+         pplFeel_Francophones=cps21_groups_therm_3,
+         pplFeel_LPC=cps21_party_rating_23,
+         pplFeel_CPC=cps21_party_rating_24,
+         pplFeel_NDP=cps21_party_rating_25,
+         pplFeel_BQ=cps21_party_rating_26,
+         pplFeel_GPC=cps21_party_rating_27,
+         pplFeel_PPC=cps21_party_rating_29) |> 
+  # Making my selection
+  select(UUID,yob,gender,prov,vote, 
+         pplFeel_Americans,pplFeel_Francophones,
+         pplFeel_LPC,pplFeel_CPC,pplFeel_NDP,
+         pplFeel_BQ,pplFeel_GPC,pplFeel_PPC) |> 
+  # Removing territories
+  filter(!(prov %in% c("Northwest Territories","Nunavut","Yukon"))) |> 
+  mutate(age=2021-as.numeric(as.character(yob)),
+         vt = case_when(
+              vote == "Liberal Party" ~ "LPC",
+              vote == "Conservative Party" ~ "CPC",
+              vote == "ndp" ~ "NDP",
+              vote == "Bloc Québécois" ~ "BQ",
+              vote == "Green Party" ~ "GPC",
+              vote == "People's Party" ~ "PPC",
+              vote == "Another party (specify)" ~ "Other",
+              vote %in% c("I spoiled my vote","Don't know / Prefer not to answer") ~ NA_character_
+            ),
+         prov=factor(prov,levels=c("British Columbia","Alberta","Saskatchewan","Manitoba",
+                                   "Ontario","Quebec",
+                                   "New Brunswick","Prince Edward Island","Nova Scotia",
+                                   "Newfoundland and Labrador"))) |> 
+  mutate_at(vars(starts_with("pplFeel")),remove99) |> 
+  filter(gender %in% c("A man", "A woman")) |> 
+  mutate(gender=droplevels(gender))
+```
+
+- Using the data we just cleaned (`CES`):
+  1. Compute the average score given to each party per province.
+  2. Present these averages in a graph where the Y axis are the provinces and the X axis the averages. 
+  
+```{r}
+CES |> 
+  select(-pplFeel_Americans,-pplFeel_Francophones) |> 
+  group_by(prov) |> 
+  summarise(across(starts_with("pplFeel_"),~mean(.x,na.rm=T))) |> 
+  ungroup() |> 
+  pivot_longer(-prov,names_pattern = "pplFeel_(.*)",names_to = "Party", values_to = "score") |> 
+  mutate(Party=factor(Party,levels=c("LPC","CPC","NDP","BQ","GPC","PPC"))) |> 
+  ggplot(aes(x=score,y=prov,color=Party))+
+  geom_point() +
+  scale_color_manual(values=c("red","blue","orange","cyan","green","purple"))+
+  theme_minimal()+
+  coord_cartesian(xlim=c(0,100))+
+  labs(y="",x="\nFeeling Thermometer Average Score (0-100)")
+```
+
+## 2. Descriptive Statistics
+
+- What do these numbers mean?
+```{r}
+DAMisc::sumStats(CES,"pplFeel_Francophones") |> 
+  arrange(mean)
+```
+
+## 3. Confidence Intervals
+
+- **There can only be ONE!!!** How do we know where our sample stand in the sampling distribution???
+- **Confidence intervals**: created such that $(1-\alpha)\%$ of the intervals we could make from different samples will cover the true, but unknown population value.
+  - Hence, the only thing we can say is that, if $alpha$ is small enough, we are _willing to bet_ that we are in one of the good samples. 
+  - Can be computed following $\bar X\pm z_{crit}\frac{sd_x}{\sqrt{n}}$
+
+From the `CES` data:
+
+  1. Compute the average score given to each party per province and their confidence intervals.
+  2. Present these in a graph where the Y axis are the provinces and the X axis the averages. 
+  
+```{r}
+CES |> 
+  select(UUID,prov,starts_with("pplFeel_")) |> 
+  select(-pplFeel_Americans,-pplFeel_Francophones) |> 
+  pivot_longer(c(-UUID,-prov),names_pattern = "pplFeel_(.*)",names_to = "Party", values_to = "score") |> 
+  group_by(prov,Party) |> 
+  summarise(ci=mean_cl_normal(score)) |> 
+  unnest_wider(ci) |> 
+  mutate(Party=factor(Party,levels=c("LPC","CPC","NDP","BQ","GPC","PPC"))) |> 
+  ggplot(aes(x=prov,y=y,ymin=ymin,ymax=ymax,color=Party))+
+  annotate('rect', xmin = seq(.5,8.5,2), xmax = seq(1.5,9.5,2), 
+  ymin=-Inf, ymax=Inf, alpha=0.08, fill="black")+
+  geom_pointrange(size=0.1,position=position_dodge(0.5)) +
+  scale_color_manual(values=c("red","blue","orange","cyan","green","purple"))+
+  theme_minimal()+
+  theme(legend.position = "top")+
+  coord_flip(ylim=c(0,100))+
+  labs(x="",y="\nFeeling Thermometer Average Score (0-100)")+
+  guides(color = guide_legend(nrow = 1))
+
+```
+
+## 4. Hypothesis Testing
+- We know from the Weak Law of Large Numbers that our sample mean converges to the population mean as $n$ increases.
+- We know from the Central Limit Theorem that our sampling distribution will be Normal (or Student's t for small samples).
+- Setting our null hypothesis as $\mu_0=0$, we know that either: 
+$$\bar Y \sim N(\mu,\frac{sd_Y}{\sqrt{n}})~~\text{or}~~\bar Y \sim t_{n-1}(\mu,\frac{sd_Y}{\sqrt{n}})$$
+- Therefore, we can compute $z$ or $t$ scores depending on our sample size: $$z=\frac{\bar Y-\mu_0}{\sigma}~~\text{or}~~t=\frac{\bar Y-\mu_0}{\frac{sd_Y}{\sqrt{n}}}$$
+  - Essentially how many standard deviations below or above $\mu_0$ an observation $\bar Y$ is.
+  - We use the $z$ or $t$ scores to compute our p-values.
+
+```{r,echo=F}
+ybar <- 0.5
+mu0 <- 0
+sdy <- 3
+n <- 100
+
+GraphData <- tibble(x=seq(-1,1,0.01),
+                        y=dt(x/(sdy/sqrt(n)),n-1))
+
+shadeleft <- GraphData |> filter(x<=ybar) |> mutate(shade="list(H[A]: mu<0,~p(T<t)==0.951)")
+shaderight <- GraphData |> filter(x>=ybar) |> mutate(shade="list(H[A]: mu>0,~p(T>t)==0.049)")
+shadeboth1 <- GraphData |>  filter(x<=-ybar) |> mutate(shade="list(H[A]: mu!=0,~p(symbol('|')~T~symbol('|')<symbol('|')~t~symbol('|'))==0.099)")
+shadeboth2 <- GraphData |>  filter(x>=ybar) |> mutate(shade="list(H[A]: mu!=0,~p(symbol('|')~T~symbol('|')<symbol('|')~t~symbol('|'))==0.099)",
+                                                        shade=factor(shade,levels=c("list(H[A]: mu<0,~p(T<t)==0.951)","list(H[A]: mu!=0,~p(symbol('|')~T~symbol('|')<symbol('|')~t~symbol('|'))==0.099)","list(H[A]: mu>0,~p(T>t)==0.049)")))
+
+Shade <- rbind(shadeleft,shaderight,shadeboth1) |> 
+  mutate(shade=factor(shade,levels=c("list(H[A]: mu<0,~p(T<t)==0.951)","list(H[A]: mu!=0,~p(symbol('|')~T~symbol('|')<symbol('|')~t~symbol('|'))==0.099)","list(H[A]: mu>0,~p(T>t)==0.049)"))) 
+
+ggplot(Shade)+
+  geom_line(data=GraphData,aes(x=x,y=y))+
+  geom_ribbon(aes(x=x,ymax=y),ymin=0,alpha=0.2,fill="#4F2683")+
+  geom_ribbon(data=shadeboth2,aes(x=x,ymax=y),ymin=0,alpha=0.2,fill="#4F2683")+
+  facet_wrap(~shade,labeller=label_parsed) +
+  scale_y_continuous("Density",breaks = seq(0,10,0.1))+
+  xlab(parse(text="bar(Y)"))+
+  theme_minimal()+
+  labs(title=parse(text="For~H[0]: mu==0"))
+
+```
+
+- For **proportion**, we use the $z$ distribution where $se=sd_Y=\sqrt{\frac{p(1-p)}{n}}$.
+  - But, we need $np\geq5$ AND $n(1-p)\geq5$ for the normal approximation to work.
+  - Where $n$ is the sample size and $p$ is the hypothesized population proportion (our $\mu_0$ from above).
+- For **difference of means**:
+  - Usually we have $H_0: \mu_0=0$. 
+  - For two means we have $H_0=\mu_1=\mu_2$ or $H_0=\mu_1-\mu_2=0$, hence:
+    - $H_A:\mu_1\neq\mu_2 \rightarrow H_A:\mu_1-\mu_2\neq0$
+    - $H_A:\mu_1<\mu_2 \rightarrow H_A:\mu_1-\mu_2<0$
+    - $H_A:\mu_1>\mu_2 \rightarrow H_A:\mu_1-\mu_2>0$
+  - So, our $z-$ or $t-$statistic: $\frac{Estimate~-~H_0Value}{SE}$, with $SE=\sqrt{\frac{\sigma^2_1}{n_1}+\frac{\sigma^2_2}{n_2}}$.
+  - **Paired** t-tests imply that you have the same observations but different variables for both means.
+- A few interpretation exercises:
+1. Is there a difference in the average score given to the CPC between men and women? 
+```{r}
+tTest("gender","pplFeel_CPC",data=CES)
+```
+
+2. Are liberals ranked higher than conservatives on average? 
+```{r}
+t.test(CES$pplFeel_LPC,CES$pplFeel_CPC,paired = T,alternative = "greater")
+```
+
+## 5. Association Tests
+
+| Test | Data type | Why do we use it? | Interpretation|
+|:-----:|:-----:|:------------|:------------|
+|$\chi^2$| Nominal   | Are the frequencies of the contingency table of the two variables randomly distributed?|$H_0$: Frequencies are randomly distributed.|
+|$\phi$| Nominal </br> (2x2 table) |How strong is the relationship (-1 to 1)?|0=no </br> >0.1=moderate </br> >0.3=strong|
+|Cramer's V|Nominal </br> (>2x2 table)|How strong is the relationship (-1 to 1)?|0=no </br> >0.1=moderate </br> >0.3=strong|
+|$\lambda$|Nominal|What is the exact improvement in error in predicting DV by knowing IV?|Percent improvement|
+|$\gamma$| Ordinal | How strong is the relationship (-1 to 1)?|0=no </br> >0.1=moderate </br> >0.3=strong|
+|Somer's d| Ordinal| How strong is the relationship (-1 to 1)? </br> (A $\gamma$ that accounts for ties on IV)|0=no </br> >0.1=moderate </br> >0.3=strong|
+|Kendall's $\tau_b$| Ordinal| How strong is the relationship (-1 to 1)? </br> (A $\gamma$ that accounts for ties on IV and DV)|0=no </br> >0.1=moderate </br> >0.3=strong|
+|Spearman's $\rho_s$| Ordinal |How strong is the relationship (-1 to 1)? </br> (Talk of a correlation. Testing for monotonic relationship)| 0=no </br> >0.1=moderate </br> >0.3=strong|
+|Pearson r|Continuous|How strong is the relationship (-1 to 1)? </br> (Talk of a correlation. Testing for linear relationship)|0=no </br> >0.1=moderate </br> >0.3=strong|
+
+1. Is there a relationship between `vote` and `pplFeel_Francophones`?
+
+```{r}
+makeStats(CES$vote,CES$pplFeel_Francophones,lambda=T,cramersV=T,chisq=T,gamma=T,d=T,taub=T,rho=T)
+```
+2. Is there a linear relationship between `pplFeel_Francophones` and feelings towards the parties?
+
+```{r}
+DAMisc::pwCorrMat(pplFeel_Francophones~pplFeel_LPC+pplFeel_CPC+
+                    pplFeel_NDP+pplFeel_BQ+pplFeel_GPC+pplFeel_PPC,data=CES)
+```
+
+
