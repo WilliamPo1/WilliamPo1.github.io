@@ -58,6 +58,12 @@ details > details > ul {
   <summary>Talks</summary>
   <ul>
     <li>
+      CPSA 2026 
+      <a href="/files/talks/CPSA2026/olal.html" class="btn--faicon">
+        <i class="fa fa-arrow-up-right-from-square"></i>
+      </a>
+    </li>
+    <li>
       MapleMeth 2026 
       <a href="/files/talks/maplemeth26/itmi_mplmeth.html" class="btn--faicon">
         <i class="fa fa-arrow-up-right-from-square"></i>
