@@ -784,14 +784,14 @@ Needs to : 1) be a panel; 2) be publicly available; and 3) contain response time
     - Probabilities of being in each.
   ]
   .panel[.panel-name[IVs]
-  - Sociodemographic variables:
+   - Sociodemographic variables:
     - Age;
     - Gender;
     - Education;
     - Income;
     - Employment status;
     - Citizenship.
-  - Ideology (left-right self-placement).
+  - Ideology (left-right self-placement), Ideology².
   - Big 5 personality traits (GLES, ANES).
   - Religiosity (GLES, ANES).
   - Political interest / attention to politics.
@@ -966,55 +966,31 @@ knitr::include_graphics("figs/prob_matrix_desc.png")
 ## Results — Simple Transition Probabilities
 
 ```{r  fig.align="center", out.width="90%"}
-knitr::include_graphics("figs/prob_matrix_desc_1.png")
+knitr::include_graphics("figs/transition_prop_all.png")
 ```
 
 ---
 
-## Results — Simple Transition Probabilities
+## Results — Simple Transition Probabilities (Germany)
 
 ```{r  fig.align="center", out.width="90%"}
-knitr::include_graphics("figs/prob_matrix_desc_2.png")
+knitr::include_graphics("figs/transition_prop_germ.png")
 ```
 
 ---
 
-## Results — Simple Transition Probabilities
+## Results — Simple Transition Probabilities (UK)
 
 ```{r  fig.align="center", out.width="90%"}
-knitr::include_graphics("figs/prob_matrix_desc_3.png")
+knitr::include_graphics("figs/transition_prop_uk.png")
 ```
 
 ---
 
-## Results — Simple Transition Probabilities
+## Results — Simple Transition Probabilities (USA)
 
 ```{r  fig.align="center", out.width="90%"}
-knitr::include_graphics("figs/prob_matrix_desc_4.png")
-```
-
----
-
-## Results — Simple Transition Probabilities
-
-```{r  fig.align="center", out.width="90%"}
-knitr::include_graphics("figs/prob_matrix_desc_stick.png")
-```
-
----
-
-## Results — Simple Transition Probabilities
-
-```{r  fig.align="center", out.width="90%"}
-knitr::include_graphics("figs/prob_matrix_desc_slip.png")
-```
-
----
-
-## Results — Simple Transition Probabilities
-
-```{r  fig.align="center", out.width="90%"}
-knitr::include_graphics("figs/prob_matrix_desc_slow.png")
+knitr::include_graphics("figs/transition_prop_usa.png")
 ```
 
 ---
@@ -1252,3 +1228,8 @@ knitr::include_graphics("images/subrote-hobbit.gif")
 
 ]
 -->
+
+$$\Pr(IR_{it} = 1) = \sigma\left(\beta_0 - \beta_1 \alpha_i - \beta_2 \left[M_{i0} - g(t)\right]\right)$$
+
+$$\Pr(IR_{it} = 1) = \sigma\left(\underbrace{(\beta_0 - \beta_2 M_{i0})}_{\text{respondent intercept}} -
+  \beta_1 \alpha_i + \beta_2 \cdot g(t)\right)$$

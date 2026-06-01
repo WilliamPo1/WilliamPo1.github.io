@@ -587,14 +587,14 @@ Needs to : 1) be a panel; 2) be publicly available; and 3) contain response time
     - Probabilities of being in each.
   ]
   .panel[.panel-name[IVs]
-  - Sociodemographic variables:
+   - Sociodemographic variables:
     - Age;
     - Gender;
     - Education;
     - Income;
     - Employment status;
     - Citizenship.
-  - Ideology (left-right self-placement).
+  - Ideology (left-right self-placement), Ideology².
   - Big 5 personality traits (GLES, ANES).
   - Religiosity (GLES, ANES).
   - Political interest / attention to politics.
@@ -750,43 +750,25 @@ name: res
 
 ## Results — Simple Transition Probabilities
 
-&lt;img src="figs/prob_matrix_desc_1.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="figs/transition_prop_all.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-## Results — Simple Transition Probabilities
+## Results — Simple Transition Probabilities (Germany)
 
-&lt;img src="figs/prob_matrix_desc_2.png" width="90%" style="display: block; margin: auto;" /&gt;
-
----
-
-## Results — Simple Transition Probabilities
-
-&lt;img src="figs/prob_matrix_desc_3.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="figs/transition_prop_germ.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-## Results — Simple Transition Probabilities
+## Results — Simple Transition Probabilities (UK)
 
-&lt;img src="figs/prob_matrix_desc_4.png" width="90%" style="display: block; margin: auto;" /&gt;
-
----
-
-## Results — Simple Transition Probabilities
-
-&lt;img src="figs/prob_matrix_desc_stick.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="figs/transition_prop_uk.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-## Results — Simple Transition Probabilities
+## Results — Simple Transition Probabilities (USA)
 
-&lt;img src="figs/prob_matrix_desc_slip.png" width="90%" style="display: block; margin: auto;" /&gt;
-
----
-
-## Results — Simple Transition Probabilities
-
-&lt;img src="figs/prob_matrix_desc_slow.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="figs/transition_prop_usa.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -1147,6 +1129,11 @@ Opinion_. Cambridge university press.
 
 ]
 --&gt;
+
+`$$\Pr(IR_{it} = 1) = \sigma\left(\beta_0 - \beta_1 \alpha_i - \beta_2 \left[M_{i0} - g(t)\right]\right)$$`
+
+`$$\Pr(IR_{it} = 1) = \sigma\left(\underbrace{(\beta_0 - \beta_2 M_{i0})}_{\text{respondent intercept}} -
+  \beta_1 \alpha_i + \beta_2 \cdot g(t)\right)$$`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
