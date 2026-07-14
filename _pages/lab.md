@@ -53,6 +53,18 @@ details > details > ul {
 
 <p> <font color="#56018D"> <i class="fa fa-frog"></i></font> A collection of things I've been working on to help the understanding of statistics. </p>
 
+<details>
+  <summary>Tools</summary>
+  <ul>
+    <li>
+      Academic Timeline Planner 
+      <a href="/timeline/" class="btn--faicon">
+        <i class="fa fa-arrow-up-right-from-square"></i>
+      </a>
+    </li>
+  </ul>
+</details>
+
 <!--
 <details>
   <summary>Talks</summary>
