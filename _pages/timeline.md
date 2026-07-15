@@ -255,18 +255,24 @@ function onDragEnd(e){
   renderControls();drawChart();
 }
 
-function drawChart(){
+function buildChartSvg(targetSvg,overrideW,overrideH){
   var vis=visible(),sc=schedule(vis);
-  if(!sc.length){document.getElementById("tlSvg").innerHTML="";document.getElementById("tlTotal").textContent="";document.getElementById("tlDates").textContent="";return;}
+  if(!sc.length){targetSvg.innerHTML="";return;}
   var S0=getStart(),endDate=sc[sc.length-1].e,tw=wb(S0,endDate),tm=Math.round(tw/4.33);
-  document.getElementById("tlTotal").textContent="Total: ~"+tw+" weeks (~"+tm+" months)";
-  document.getElementById("tlDates").textContent=fd(S0)+"  \u2192  "+fd(endDate);
 
-  var ch=MT+MB+vis.length*(BH+BG);
-  var cw=Math.max(document.getElementById("tlChart").clientWidth,600),pw=cw-ML-MR;
-  var svg=document.getElementById("tlSvg");svg.setAttribute("width",cw);svg.setAttribute("height",ch);
+  var baseW=overrideW||Math.max(document.getElementById("tlChart").clientWidth,600);
+  var baseBH=overrideH?Math.max(Math.floor((overrideH-MT-MB)/(vis.length||1)-BG),12):BH;
+  var ch=MT+MB+vis.length*(baseBH+BG);
+  if(overrideH)ch=overrideH;
+  var cw=baseW,pw=cw-ML-MR;
+  targetSvg.setAttribute("width",cw);targetSvg.setAttribute("height",ch);
   var xEnd=aw(endDate,2),tms=xEnd.getTime()-S0.getTime();
   function xs(d){return ML+((d.getTime()-S0.getTime())/tms)*pw;}
+
+  var plotH=ch-MT-MB;
+  var stepH=vis.length?plotH/vis.length:baseBH+BG;
+  var barH=Math.max(stepH*0.7,10);
+  var barOff=(stepH-barH)/2;
 
   var h='<rect width="'+cw+'" height="'+ch+'" fill="white"/>';
   var cur=new Date(S0.getFullYear(),S0.getMonth(),1);
@@ -285,12 +291,21 @@ function drawChart(){
     h+='<text x="'+tx+'" y="'+(MT-8)+'" text-anchor="middle" fill="#56018D" font-weight="600" font-size="10" font-family="sans-serif">Today</text>';
   }
   for(var i=0;i<vis.length;i++){
-    var si=sc[i],y=MT+i*(BH+BG),x1=xs(si.s),x2=xs(si.e),w=Math.max(x2-x1,2);
-    h+='<text x="'+(ML-8)+'" y="'+(y+BH/2+4)+'" text-anchor="end" font-size="11" fill="#333" font-weight="500" font-family="sans-serif">'+vis[i].name+'</text>';
-    h+='<rect x="'+x1+'" y="'+y+'" width="'+w+'" height="'+BH+'" fill="'+vis[i].color+'" rx="3" ry="3" class="tl-bar" data-p="'+vis[i].name.replace(/"/g,"&quot;")+'" data-ds="'+fd(si.s)+'" data-de="'+fd(si.e)+'" data-w="'+si.w+'"/>';
-    if(w>40)h+='<text x="'+(x1+w/2)+'" y="'+(y+BH/2+4)+'" text-anchor="middle" font-size="10" fill="white" font-weight="600" style="pointer-events:none" font-family="sans-serif">'+si.w+'wk</text>';
+    var si=sc[i],y=MT+i*stepH+barOff,x1=xs(si.s),x2=xs(si.e),w=Math.max(x2-x1,2);
+    h+='<text x="'+(ML-8)+'" y="'+(y+barH/2+4)+'" text-anchor="end" font-size="11" fill="#333" font-weight="500" font-family="sans-serif">'+vis[i].name+'</text>';
+    h+='<rect x="'+x1+'" y="'+y+'" width="'+w+'" height="'+barH+'" fill="'+vis[i].color+'" rx="3" ry="3" class="tl-bar" data-p="'+vis[i].name.replace(/"/g,"&quot;")+'" data-ds="'+fd(si.s)+'" data-de="'+fd(si.e)+'" data-w="'+si.w+'"/>';
+    if(w>40)h+='<text x="'+(x1+w/2)+'" y="'+(y+barH/2+4)+'" text-anchor="middle" font-size="10" fill="white" font-weight="600" style="pointer-events:none" font-family="sans-serif">'+si.w+'wk</text>';
   }
-  svg.innerHTML=h;
+  targetSvg.innerHTML=h;
+  return{tw:tw,tm:tm,S0:S0,endDate:endDate};
+}
+
+function drawChart(){
+  var svg=document.getElementById("tlSvg");
+  var info=buildChartSvg(svg);
+  if(!info){document.getElementById("tlTotal").textContent="";document.getElementById("tlDates").textContent="";return;}
+  document.getElementById("tlTotal").textContent="Total: ~"+info.tw+" weeks (~"+info.tm+" months)";
+  document.getElementById("tlDates").textContent=fd(info.S0)+"  \u2192  "+fd(info.endDate);
 
   var tip=document.getElementById("tlTip");
   svg.querySelectorAll(".tl-bar").forEach(function(b){
@@ -323,26 +338,58 @@ window.addStep=function(){
   renderControls();drawChart();
 };
 
+function hslToHex(h,s,l){
+  h/=360;s/=100;l/=100;
+  var r,g,b;
+  if(s===0){r=g=b=l;}else{
+    function hue2rgb(p,q,t){if(t<0)t+=1;if(t>1)t-=1;if(t<1/6)return p+(q-p)*6*t;if(t<1/2)return q;if(t<2/3)return p+(q-p)*(2/3-t)*6;return p;}
+    var q=l<0.5?l*(1+s):l+s-l*s,p=2*l-q;
+    r=hue2rgb(p,q,h+1/3);g=hue2rgb(p,q,h);b=hue2rgb(p,q,h-1/3);
+  }
+  function toHex(x){var hex=Math.round(x*255).toString(16);return hex.length===1?"0"+hex:hex;}
+  return"#"+toHex(r)+toHex(g)+toHex(b);
+}
+function hexToHsl(hex){
+  var r=parseInt(hex.slice(1,3),16)/255,g=parseInt(hex.slice(3,5),16)/255,b=parseInt(hex.slice(5,7),16)/255;
+  var max=Math.max(r,g,b),min=Math.min(r,g,b),h,s,l=(max+min)/2;
+  if(max===min){h=s=0;}else{
+    var d=max-min;s=l>0.5?d/(2-max-min):d/(max+min);
+    if(max===r)h=((g-b)/d+(g<b?6:0))/6;
+    else if(max===g)h=((b-r)/d+2)/6;
+    else h=((r-g)/d+4)/6;
+    h*=360;
+  }
+  return[h,s*100,l*100];
+}
+function lerpColor(hex1,hex2,t){
+  var a=hexToHsl(hex1),b=hexToHsl(hex2);
+  var h1=a[0],h2=b[0],dh=h2-h1;
+  if(dh>180)dh-=360;if(dh<-180)dh+=360;
+  var h=(h1+dh*t+360)%360;
+  var s=a[1]+(b[1]-a[1])*t;
+  var l=a[2]+(b[2]-a[2])*t;
+  return hslToHex(h,s,l);
+}
 window.harmonizeColors=function(){
-  for(var i=0;i<steps.length;i++){
-    steps[i].color=PALETTE[i%PALETTE.length];
+  var c1="#912338",c2="#56018D",n=steps.length;
+  for(var i=0;i<n;i++){
+    steps[i].color=n===1?c1:lerpColor(c1,c2,i/(n-1));
   }
   renderControls();drawChart();
 };
 
 window.exportPng=function(){
-  var svg=document.getElementById("tlSvg");
   var scale=+(document.getElementById("tlScale").value)||4;
   var ratioVal=document.getElementById("tlRatio").value;
-  var w=+svg.getAttribute("width"),ht=+svg.getAttribute("height");
+  var origSvg=document.getElementById("tlSvg");
+  var w=+origSvg.getAttribute("width"),ht=+origSvg.getAttribute("height");
   var cw=w,ch=ht;
-  if(ratioVal!=="auto"){var parts=ratioVal.split(":");var rw=+parts[0],rh=+parts[1];ch=cw*(rh/rw);}
-  var clone=svg.cloneNode(true);
-  clone.setAttribute("viewBox","0 0 "+w+" "+ht);
-  clone.setAttribute("width",cw);
-  clone.setAttribute("height",ch);
-  clone.setAttribute("preserveAspectRatio","none");
-  var svgData=new XMLSerializer().serializeToString(clone);
+  if(ratioVal!=="auto"){var parts=ratioVal.split(":");ch=cw*(+parts[1]/+parts[0]);}
+  // render into an offscreen SVG at the target dimensions
+  var offSvg=document.createElementNS("http://www.w3.org/2000/svg","svg");
+  offSvg.setAttribute("xmlns","http://www.w3.org/2000/svg");
+  buildChartSvg(offSvg,cw,ch);
+  var svgData=new XMLSerializer().serializeToString(offSvg);
   var blob=new Blob([svgData],{type:"image/svg+xml;charset=utf-8"});
   var url=URL.createObjectURL(blob);
   var img=new Image();
