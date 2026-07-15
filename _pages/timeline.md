@@ -141,10 +141,10 @@ var steps=[
   {id:3,name:"Analysis code & simulation",min:1,max:10,value:4,color:"#c97a1e",mode:"both",parallel:true},
   {id:4,name:"Pilot study",min:1,max:8,value:3,color:"#d4a843",mode:"both",parallel:false},
   {id:5,name:"Pre-registration & submission",min:1,max:6,value:2,color:"#5a8a6a",mode:"both",parallel:false},
-  {id:6,name:"Stage 1 review",min:4,max:32,value:18,color:"#4a7a9b",mode:"rr",parallel:false},
-  {id:7,name:"Data collection",min:2,max:16,value:6,color:"#6a5a8a",mode:"both",parallel:false},
-  {id:8,name:"Complete manuscript",min:2,max:16,value:10,color:"#8a6a5a",mode:"both",parallel:false},
-  {id:9,name:"Review & publication",min:2,max:24,value:12,color:"#5a7a7a",mode:"both",parallel:false}
+  {id:6,name:"Stage 1 review",min:4,max:32,value:18,color:"#3a9a8a",mode:"rr",parallel:false},
+  {id:7,name:"Data collection",min:2,max:16,value:6,color:"#4a7a9b",mode:"both",parallel:false},
+  {id:8,name:"Complete manuscript",min:2,max:16,value:10,color:"#6a5a8a",mode:"both",parallel:false},
+  {id:9,name:"Review & publication",min:2,max:24,value:12,color:"#4a3a6a",mode:"both",parallel:false}
 ];
 
 function getStart(){var v=document.getElementById("tlStart").value;if(!v)return new Date();var p=v.split("-");return new Date(+p[0],+p[1]-1,+p[2]);}
@@ -371,26 +371,34 @@ function lerpColor(hex1,hex2,t){
   return hslToHex(h,s,l);
 }
 window.harmonizeColors=function(){
-  var anchors=["#912338","#c97a1e","#d4a843","#5a8a6a","#4a7a9b","#6a5a8a"];
+  var anchors=["#912338","#c97a1e","#d4a843","#5a8a6a","#3a9a8a","#4a7a9b","#6a5a8a"];
   var n=steps.length,colors=[];
   if(n<=anchors.length){
     for(var i=0;i<n;i++) colors.push(anchors[Math.round(i*(anchors.length-1)/(n-1||1))]);
   } else {
-    var base=Math.floor(n/anchors.length);
-    var extra=n%anchors.length;
-    var seed=7;
+    var slots=[];
+    for(var a=0;a<anchors.length;a++) slots.push(1);
+    var remaining=n-anchors.length;
+    while(remaining>0){
+      var candidates=[];
+      var minCount=Math.min.apply(null,slots);
+      for(var a=0;a<anchors.length;a++){if(slots[a]===minCount)candidates.push(a);}
+      var pick=candidates[Math.floor(Math.random()*candidates.length)];
+      slots[pick]++;
+      remaining--;
+    }
     for(var a=0;a<anchors.length;a++){
-      var count=base+(a<extra?1:0);
+      var count=slots[a];
       var hsl=hexToHsl(anchors[a]);
       if(count===1){colors.push(anchors[a]);}
       else{
         for(var j=0;j<count;j++){
-          seed=(seed*31+a*7+j*13)&0xFFFF;
-          var dir=(seed%2===0)?1:-1;
-          var spread=12;
-          var offset=count===1?0:(j-(count-1)/2)*spread*dir/(count-1);
+          var spread=14;
+          var offset=(j-(count-1)/2)*spread/(count-1);
+          var dir=Math.random()<0.5?1:-1;
+          offset=offset*dir;
           var newL=Math.max(20,Math.min(80,hsl[2]+offset));
-          var newS=Math.max(15,Math.min(100,hsl[1]+(offset*0.3)));
+          var newS=Math.max(15,Math.min(100,hsl[1]+(offset*0.2)));
           colors.push(hslToHex(hsl[0],newS,newL));
         }
       }
