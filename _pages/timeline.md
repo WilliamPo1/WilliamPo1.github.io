@@ -28,7 +28,8 @@ layout: single
 .tl-step-name{flex:1;min-width:140px;border:1px solid transparent;background:transparent;font-size:13px;font-weight:500;padding:2px 6px;border-radius:3px;color:#333}
 .tl-step-name:focus{border-color:#56018D;outline:none;background:#fff}
 .tl-step input[type="range"]{width:120px;accent-color:#56018D}
-.tl-step-val{min-width:40px;text-align:right;font-weight:700;font-size:12px;color:#56018D}
+.tl-step-val{width:52px;text-align:right;font-weight:700;font-size:12px;color:#56018D;border:1px solid transparent;background:transparent;padding:2px 4px;border-radius:3px;font-family:inherit}
+.tl-step-val:focus{border-color:#56018D;outline:none;background:#fff}
 .tl-step select{font-size:11px;padding:2px 4px;border:1px solid #ccc;border-radius:3px;background:#fff}
 .tl-step label{font-size:11px;color:#666;display:flex;align-items:center;gap:3px;cursor:pointer;white-space:nowrap}
 .tl-step label input[type="checkbox"]{accent-color:#56018D}
@@ -42,6 +43,11 @@ layout: single
 .tl-chart{width:100%;overflow-x:auto;margin:16px 0}
 .tl-export{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;font-size:13px;font-weight:600;color:#fff;background:#56018D;border:none;border-radius:6px;cursor:pointer;margin-top:8px}
 .tl-export:hover{background:#430168}
+.tl-export-opts{display:inline-flex;align-items:center;gap:8px;margin-top:8px}
+.tl-export-opts select{font-size:13px;padding:4px 8px;border:1px solid #ccc;border-radius:4px;background:#fff}
+.tl-export-opts label{font-size:13px;font-weight:600;color:#333}
+.tl-harmonize{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;font-size:13px;font-weight:600;color:#56018D;background:#f4edf8;border:1px solid #56018D;border-radius:6px;cursor:pointer;margin-top:8px}
+.tl-harmonize:hover{background:#e8d9f0}
 .tl-tip{position:absolute;background:rgba(0,0,0,.85);color:#fff;padding:6px 10px;border-radius:4px;font-size:12px;pointer-events:none;z-index:1000;display:none;white-space:nowrap}
 .tl-swatch{width:14px;height:14px;border-radius:3px;display:inline-block;flex-shrink:0;border:1px solid rgba(0,0,0,.15)}
 .tl-info{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:#56018D;color:#fff;font-size:11px;font-weight:700;cursor:help;position:relative;font-style:italic;font-family:Georgia,serif;flex-shrink:0;user-select:none}
@@ -95,8 +101,26 @@ layout: single
 
 <div class="tl-chart" id="tlChart"><svg id="tlSvg" xmlns="http://www.w3.org/2000/svg"></svg></div>
 
-<div style="display:flex;justify-content:center">
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;align-items:center">
+  <div class="tl-export-opts">
+    <label for="tlRatio">Format:</label>
+    <select id="tlRatio">
+      <option value="auto" selected>Auto (fit content)</option>
+      <option value="2:1">2:1 (wide)</option>
+      <option value="16:9">16:9 (presentation)</option>
+      <option value="4:3">4:3</option>
+      <option value="1:1">1:1 (square)</option>
+    </select>
+    <label for="tlScale">Resolution:</label>
+    <select id="tlScale">
+      <option value="2">2x (standard)</option>
+      <option value="3">3x (high)</option>
+      <option value="4" selected>4x (very high)</option>
+      <option value="6">6x (print quality)</option>
+    </select>
+  </div>
   <button class="tl-export" onclick="exportPng()" title="Download the chart as a PNG image"><i class="fa fa-download"></i> Export PNG</button>
+  <button class="tl-harmonize" onclick="harmonizeColors()" title="Reassign colors to match step order"><i class="fa fa-paint-brush"></i> Harmonize Colors</button>
 </div>
 
 <div class="tl-tip" id="tlTip"></div>
@@ -150,7 +174,7 @@ function renderControls(){
     h+='<span class="tl-swatch" style="background:'+s.color+'"></span>';
     h+='<input class="tl-step-name" type="text" value="'+s.name.replace(/"/g,"&quot;")+'" onchange="updName('+i+',this.value)">';
     h+='<input type="range" min="'+s.min+'" max="'+s.max+'" value="'+s.value+'" step="1" oninput="updVal('+i+',+this.value)">';
-    h+='<span class="tl-step-val">'+s.value+' wk</span>';
+    h+='<input class="tl-step-val" type="text" value="'+s.value+' wk" onfocus="this.value='+s.value+'" onblur="updValDirect('+i+',this)" onkeydown="if(event.key===\'Enter\'){this.blur();}">';
     h+='<select onchange="updMode('+i+',this.value)" title="Which mode(s) this step appears in">';
     h+='<option value="both"'+(s.mode==="both"?" selected":"")+'>Both</option>';
     h+='<option value="rr"'+(s.mode==="rr"?" selected":"")+'>RR only</option>';
@@ -283,7 +307,8 @@ window.setMode=function(m){
   renderControls();drawChart();
 };
 window.updName=function(i,v){steps[i].name=v;drawChart();};
-window.updVal=function(i,v){steps[i].value=v;var el=document.querySelector('.tl-step[data-idx="'+i+'"] .tl-step-val');if(el)el.textContent=v+' wk';drawChart();};
+window.updVal=function(i,v){steps[i].value=v;if(v>=steps[i].max)steps[i].max=v+4;var el=document.querySelector('.tl-step[data-idx="'+i+'"] .tl-step-val');if(el)el.value=v+' wk';drawChart();};
+window.updValDirect=function(i,el){var v=parseInt(el.value,10);if(isNaN(v)||v<steps[i].min)v=steps[i].value;if(v>steps[i].max)steps[i].max=v+4;steps[i].value=v;el.value=v+' wk';renderControls();drawChart();};
 window.updMode=function(i,v){steps[i].mode=v;renderControls();drawChart();};
 window.updPar=function(i,v){steps[i].parallel=v;drawChart();};
 window.moveStep=function(i,d){
@@ -298,16 +323,33 @@ window.addStep=function(){
   renderControls();drawChart();
 };
 
+window.harmonizeColors=function(){
+  for(var i=0;i<steps.length;i++){
+    steps[i].color=PALETTE[i%PALETTE.length];
+  }
+  renderControls();drawChart();
+};
+
 window.exportPng=function(){
   var svg=document.getElementById("tlSvg");
-  var w=+svg.getAttribute("width"),ht=+svg.getAttribute("height"),scale=2;
-  var svgData=new XMLSerializer().serializeToString(svg);
+  var scale=+(document.getElementById("tlScale").value)||4;
+  var ratioVal=document.getElementById("tlRatio").value;
+  var w=+svg.getAttribute("width"),ht=+svg.getAttribute("height");
+  var cw=w,ch=ht;
+  if(ratioVal!=="auto"){var parts=ratioVal.split(":");var rw=+parts[0],rh=+parts[1];ch=cw*(rh/rw);}
+  var clone=svg.cloneNode(true);
+  clone.setAttribute("viewBox","0 0 "+w+" "+ht);
+  clone.setAttribute("width",cw);
+  clone.setAttribute("height",ch);
+  clone.setAttribute("preserveAspectRatio","none");
+  var svgData=new XMLSerializer().serializeToString(clone);
   var blob=new Blob([svgData],{type:"image/svg+xml;charset=utf-8"});
   var url=URL.createObjectURL(blob);
   var img=new Image();
   img.onload=function(){
-    var c=document.createElement("canvas");c.width=w*scale;c.height=ht*scale;
-    var ctx=c.getContext("2d");ctx.scale(scale,scale);ctx.fillStyle="#fff";ctx.fillRect(0,0,w,ht);ctx.drawImage(img,0,0,w,ht);
+    var c=document.createElement("canvas");c.width=cw*scale;c.height=ch*scale;
+    var ctx=c.getContext("2d");ctx.scale(scale,scale);ctx.fillStyle="#fff";ctx.fillRect(0,0,cw,ch);
+    ctx.drawImage(img,0,0,cw,ch);
     c.toBlob(function(b){var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="timeline.png";a.click();URL.revokeObjectURL(a.href);});
     URL.revokeObjectURL(url);
   };
