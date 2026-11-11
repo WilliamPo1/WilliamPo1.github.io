@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.21)  14 JUL 2026 13:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.21)  9 SEP 2026 07:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -962,71 +962,71 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 120.
 
 LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 122.
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 121.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leaders' on input line 137.
+(hyperref)                removing `\leaders' on input line 138.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hrule' on input line 137.
+(hyperref)                removing `\hrule' on input line 138.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dimexpr' on input line 137.
+(hyperref)                removing `\dimexpr' on input line 138.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 137.
+(hyperref)                removing `\hfill' on input line 138.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leaders' on input line 137.
+(hyperref)                removing `\leaders' on input line 138.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hrule' on input line 137.
+(hyperref)                removing `\hrule' on input line 138.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dimexpr' on input line 137.
+(hyperref)                removing `\dimexpr' on input line 138.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 137.
+(hyperref)                removing `\hfill' on input line 138.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leaders' on input line 144.
+(hyperref)                removing `\leaders' on input line 145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hrule' on input line 144.
+(hyperref)                removing `\hrule' on input line 145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dimexpr' on input line 144.
+(hyperref)                removing `\dimexpr' on input line 145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 144.
+(hyperref)                removing `\hfill' on input line 145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leaders' on input line 144.
+(hyperref)                removing `\leaders' on input line 145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hrule' on input line 144.
+(hyperref)                removing `\hrule' on input line 145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dimexpr' on input line 144.
+(hyperref)                removing `\dimexpr' on input line 145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 144.
+(hyperref)                removing `\hfill' on input line 145.
 
 [1
 
@@ -1034,41 +1034,35 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 al/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leaders' on input line 148.
+(hyperref)                removing `\leaders' on input line 149.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hrule' on input line 148.
+(hyperref)                removing `\hrule' on input line 149.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dimexpr' on input line 148.
+(hyperref)                removing `\dimexpr' on input line 149.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 148.
+(hyperref)                removing `\hfill' on input line 149.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leaders' on input line 148.
+(hyperref)                removing `\leaders' on input line 149.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hrule' on input line 148.
+(hyperref)                removing `\hrule' on input line 149.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\dimexpr' on input line 148.
+(hyperref)                removing `\dimexpr' on input line 149.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 148.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--150
-\OT1/cmss/m/n/10.95 (+14) sociale-des-applications-de-tracage-en-temps-de-pande
-mie-technophobie-crainte-sanitaire-ou-
- []
+(hyperref)                removing `\hfill' on input line 149.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1246,11 +1240,11 @@ Package rerunfilecheck Info: File `cv_web.out' has not changed.
 (rerunfilecheck)             Checksum: 0EE2DF66F9CF4277C4E1B06488A003AE;5774.
  ) 
 Here is how much of TeX's memory you used:
- 26118 strings out of 474116
- 502521 string characters out of 5743682
- 1965187 words of memory out of 5000000
+ 26116 strings out of 474116
+ 502507 string characters out of 5743682
+ 1966187 words of memory out of 5000000
  47959 multiletter control sequences out of 15000+600000
- 569224 words of font info for 111 fonts, out of 8000000 for 9000
+ 569159 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  129i,13n,129p,1003b,470s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/fontawesome5/FontAweso
@@ -1261,10 +1255,10 @@ ts/cm/cmss17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmssi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmssi17.pfb>
-Output written on cv_web.pdf (4 pages, 104841 bytes).
+Output written on cv_web.pdf (4 pages, 104495 bytes).
 PDF statistics:
- 165 PDF objects out of 1000 (max. 8388607)
- 142 compressed objects within 2 object streams
+ 164 PDF objects out of 1000 (max. 8388607)
+ 141 compressed objects within 2 object streams
  23 named destinations out of 1000 (max. 500000)
  37021 words of extra memory for PDF output out of 42996 (max. 10000000)
 

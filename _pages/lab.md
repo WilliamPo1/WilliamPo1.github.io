@@ -130,6 +130,18 @@ details > details > ul {
 </details>
 
 <details>
+  <summary>LaTeX Tutorial</summary>
+  <ul>
+  <li>
+      IRMS LaTeX Workshop 2026 
+      <a href="/files/talks/LatexWorkshop2026.zip" class="btn--faicon">
+        <i class="fa fa-cloud-arrow-down"></i>
+      </a>
+    </li>
+  </ul>
+</details>
+
+<details>
 <summary>UWO Quant 1 — Labs</summary>
 <details>
   <summary> Fall 2025 </summary>
