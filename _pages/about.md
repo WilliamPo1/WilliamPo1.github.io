@@ -7,9 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-<p> <font color="#56018D"> <i class="fa fa-cat"></i></font> Political Science Ph.D. candidate (ABD) at the University of Western Ontario. </p>
+<p> <font color="#56018D"> <i class="fa fa-cat"></i></font> Postdoctoral researcher at IRMS </p>
 
-Budding methodologist working on survey inattention measures and time series, with substantive interests in political psychology and elections. 
+Methodologist working on survey inattention measures, with substantive interests in political psychology and elections. 
 
 Obstinate in using R for everything, like this representation of 1000 draws from a normal distribution! <font color="#56018D"> <i class="fa fa-kiwi-bird"></i></font>
 

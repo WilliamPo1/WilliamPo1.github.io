@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "William Poirier"
 title_separator          : "-"
 name                     : &name "William Poirier"
-description              : &description "William Poirier — Political Science Ph.D. candidate at Western University"
+description              : &description "William Poirier — Postdoctoral researcher at IRMS"
 url                      : https://WilliamPo1.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "WilliamPo1/WilliamPo1.github.io"
@@ -26,7 +26,7 @@ author:
   pronouns         : # example: "she/her"  
   bio              : "Quant methods enthusiast"
   location         : #
-  employer         : "Western University"
+  employer         : "Concordia University"
   uri              : # URL
   email            : "wpoirier@uwo.ca" 
 
